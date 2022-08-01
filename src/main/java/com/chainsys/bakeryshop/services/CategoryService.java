@@ -6,12 +6,13 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.chainsys.bakeryshop.pojo.Category;
+import com.chainsys.bakeryshop.model.Category;
 import com.chainsys.bakeryshop.repository.CategoryRepository;
 
 @Service
 public class CategoryService {
-    @Autowired
+    private static final Iterable<Integer>  = null;
+	@Autowired
      CategoryRepository categoryRepository;
     public List<Category> getAllCategory() {
 
@@ -22,12 +23,19 @@ public class CategoryService {
      
        categoryRepository.save(category);
     }
-
+   
     public void removeCategoryById(int id) {
        categoryRepository.deleteById(id);
     }
 
-    public Optional<Category> updateCategoryById(int id) {
-         return categoryRepository.findById(id);
-    }
+//    public Optional<Category> updateCategoryById(Category category) {
+//         return categoryRepository.findAllById(category);
+//    }
+
+	public Optional<Category> updateCategoryById(int id) {
+	
+		return categoryRepository.findAllById(category));
+	}
+
+	
 }

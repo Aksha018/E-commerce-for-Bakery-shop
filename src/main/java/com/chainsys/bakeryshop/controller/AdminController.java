@@ -15,8 +15,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import com.chainsys.bakeryshop.DTO.ProductDTO;
-import com.chainsys.bakeryshop.pojo.Category;
-import com.chainsys.bakeryshop.pojo.Product;
+import com.chainsys.bakeryshop.model.Category;
+import com.chainsys.bakeryshop.model.Product;
 import com.chainsys.bakeryshop.services.CategoryService;
 import com.chainsys.bakeryshop.services.ProductService;
 
@@ -89,13 +89,13 @@ public class AdminController {
                @RequestParam("productImage") MultipartFile file,
                @RequestParam("imgName") String imgName) throws IOException {
           Product product = new Product();
-          product.setProduct_id(productDTO.getproduct_id());
-          product.setProduct_name(productDTO.getproduct_name());
-          product.setCategory_id(categoryService.updateCategoryById(productDTO.getCategory_id()).get());
-          product.setStock_in_hand(productDTO.getStock_in_hand());
+          product.setProductid(productDTO.getProductid());
+          product.setProductname(productDTO.getProductname());
+          product.setCategoryid(categoryService.updateCategoryById(productDTO.getCategoryid()).get());
+          product.setStockinhand(productDTO.getStockinhand());
           product.setPrice(productDTO.getPrice());
           product.setDescription(productDTO.getDescription());
-          product.setImageName(productDTO.getImage());
+          product.setImage(productDTO.getImage());
           
           String imageUUID;
           if (!file.isEmpty()) {
@@ -106,7 +106,7 @@ public class AdminController {
                imageUUID = imgName;
 
           }
-          product.setImageName(imageUUID);
+          product.setImage(imageUUID);
           productService.addproduct(product);
           return "redirect:/admin/products";
      }
@@ -121,12 +121,12 @@ public class AdminController {
      public String updateProduct(@PathVariable("id") long id, Model model) {
           Product product = productService.getProductsById(id);
           ProductDTO productDTO = new ProductDTO();
-          productDTO.setproduct_id(productDTO.getproduct_id());
-          productDTO.setproduct_name(productDTO.getproduct_name());
-          productDTO.setCategory_id(product.getCategory_id().getcategory_id());
+          productDTO.setProductid(productDTO.getProductid());
+          productDTO.setProductname(productDTO.getProductname());
+          productDTO.setCategoryid(product.getCategoryid().getcategoryid());
           productDTO.setPrice(product.getPrice());
           productDTO.setDescription(product.getDescription());
-          productDTO.setImage(product.getImageName());
+          productDTO.setImage(product.getImage());
 
           model.addAttribute("categories", categoryService.getAllCategory());
           model.addAttribute("productDTO", productDTO);

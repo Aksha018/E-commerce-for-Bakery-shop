@@ -1,20 +1,22 @@
 package com.chainsys.bakeryshop.DTO;
 
+import com.chainsys.bakeryshop.model.Category;
+
 public class CategoryDTO {
 
-  private int category_id;
-  private String category_name;
+  private Category categoryid;
+  private String categoryname;
   
-  public int getCategory_id() {
-	return category_id;
+  public Category getCategoryid() {
+	return categoryid;
 }
-public void setCategory_id(int category_id) {
-	this.category_id = category_id;
+public void setCategoryid(Category categoryid) {
+	this.categoryid = categoryid;
 }
-public String getCategory_name() {
-	return category_name;
+public String getCategoryname() {
+	return categoryname;
 }
-public void setCategory_name(String category_name) {
-	this.category_name = category_name;
+public void setCategoryname(String categoryname) {
+	this.categoryname = categoryname;
 }  
 }

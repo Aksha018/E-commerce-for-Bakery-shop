@@ -2,13 +2,13 @@ package com.chainsys.bakeryshop.repository;
 
 import java.util.List;
 
-import org.springframework.data.jpa.repository.config.JpaRepositoryConfigExtension;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.chainsys.bakeryshop.pojo.Category;
-import com.chainsys.bakeryshop.pojo.Product;
+import com.chainsys.bakeryshop.model.Category;
 
 @Repository 
-public class CategoryRepository extends JpaRepository<Category,Integer>{
-   List<Product> findAllByCategory_Id(int id);
+public interface CategoryRepository extends JpaRepository<Category,Integer> {
+	List<Category> findAllByCategory_Id(int id);
+	
    }

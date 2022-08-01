@@ -1,4 +1,4 @@
-package com.chainsys.bakeryshop.pojo;
+package com.chainsys.bakeryshop.model;
 
 import java.sql.Time;
 import java.util.Date;
