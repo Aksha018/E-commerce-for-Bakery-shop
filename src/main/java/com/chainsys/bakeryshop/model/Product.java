@@ -2,27 +2,31 @@ package com.chainsys.bakeryshop.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "product")
 public class Product {
-//    @Id
-//   @GeneratedValue(strategy = GenerationType.AUTO)
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "PRODUCT_ID")
 	private long productId;
 	@Column(name = "PRODUCT_NAME")
 	private String productName;
-//    @ManyToOne(fetch = FetchType.LAZY)
-//   @JoinColumn(name = "category_id", referencedColumnName = "category_id")
-	@Column(name = "CATEGORY_ID")
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "CATEGORY_ID", referencedColumnName = "CATEGORY_ID")
 	private Category categoryId;
 	@Column(name = "STOCK_IN_HAND")
 	private int stockInhand;
 	private double price;
 	private String description;
 	private String image;
-
 	public long getProductId() {
 		return productId;
 	}
@@ -65,6 +69,7 @@ public class Product {
 	public void setImage(String image) {
 		this.image = image;
 	}
+
 	
 	
 }

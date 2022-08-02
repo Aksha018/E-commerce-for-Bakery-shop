@@ -4,12 +4,13 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "payment")
 public class Payment {
-//@Id
+@Id
 //@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "PAYMENT_ID")
 	private int paymentId;

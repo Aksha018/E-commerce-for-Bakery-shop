@@ -2,22 +2,25 @@ package com.chainsys.bakeryshop.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "category")
 public class Category {
-//    @Id
-//    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Id
+   // @GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name="CATEGORY_ID")
-    private Category categoryId;
+    private int  categoryId;
 	@Column(name="CATEGORY_NAME")
     private String categoryName;
 	
-	public Category getCategoryId() {
+	public int getCategoryId() {
 		return categoryId;
 	}
-	public void setCategoryId(Category categoryId) {
+	public void setCategoryId(int categoryId) {
 		this.categoryId = categoryId;
 	}
 	public String getCategoryName() {

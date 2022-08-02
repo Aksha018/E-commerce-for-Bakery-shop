@@ -2,12 +2,13 @@ package com.chainsys.bakeryshop.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "person")
 public class Person {
-//	@Id
+	@Id
 //	   @GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "PERSON_ID")
 	private int personId;
