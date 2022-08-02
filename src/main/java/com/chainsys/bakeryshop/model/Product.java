@@ -10,73 +10,61 @@ public class Product {
 //    @Id
 //   @GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "PRODUCT_ID")
-	private long productid;
+	private long productId;
 	@Column(name = "PRODUCT_NAME")
-	private String productname;
+	private String productName;
 //    @ManyToOne(fetch = FetchType.LAZY)
 //   @JoinColumn(name = "category_id", referencedColumnName = "category_id")
 	@Column(name = "CATEGORY_ID")
-	private Category categoryid;
+	private Category categoryId;
 	@Column(name = "STOCK_IN_HAND")
-	private int stockinhand;
+	private int stockInhand;
 	private double price;
 	private String description;
 	private String image;
 
-	public long getProductid() {
-		return productid;
+	public long getProductId() {
+		return productId;
 	}
-
-	public void setProductid(long productid) {
-		this.productid = productid;
+	public void setProductId(long productId) {
+		this.productId = productId;
 	}
-
-	public String getProductname() {
-		return productname;
+	public String getProductName() {
+		return productName;
 	}
-
-	public void setProductname(String productname) {
-		this.productname = productname;
+	public void setProductName(String productName) {
+		this.productName = productName;
 	}
-
-	public Category getCategoryid() {
-		return categoryid;
+	public Category getCategoryId() {
+		return categoryId;
 	}
-
-	public void setCategoryid(Category categoryid) {
-		this.categoryid = categoryid;
+	public void setCategoryId(Category categoryId) {
+		this.categoryId = categoryId;
 	}
-
-	public int getStockinhand() {
-		return stockinhand;
+	public int getStockInhand() {
+		return stockInhand;
 	}
-
-	public void setStockinhand(int stockinhand) {
-		this.stockinhand = stockinhand;
+	public void setStockInhand(int stockInhand) {
+		this.stockInhand = stockInhand;
 	}
-
 	public double getPrice() {
 		return price;
 	}
-
 	public void setPrice(double price) {
 		this.price = price;
 	}
-
 	public String getDescription() {
 		return description;
 	}
-
 	public void setDescription(String description) {
 		this.description = description;
 	}
-
 	public String getImage() {
 		return image;
 	}
-
 	public void setImage(String image) {
 		this.image = image;
 	}
-
+	
+	
 }

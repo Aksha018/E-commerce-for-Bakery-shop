@@ -2,6 +2,7 @@ package com.chainsys.bakeryshop.model;
 
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
@@ -10,58 +11,74 @@ import javax.persistence.Table;
 public class Payment {
 //@Id
 //@GeneratedValue(strategy = GenerationType.AUTO)
-private int payment_id;
-private Date payment_date;
-private int order_id;
-private int preorder_id;
-private float amount;
-private String payment_mode;
-private String payment_description;
+	@Column(name = "PAYMENT_ID")
+	private int paymentId;
+	@Column(name = "PAYMENT_DATE")
+	private Date paymentDate;
+	@Column(name = "ORDER_ID")
+	private int orderId;
+	@Column(name = "PREORDER_ID")
+	private int preorderId;
+	private float amount;
+	@Column(name = "PAYMENT_MODE")
+	private String paymentMode;
+	@Column(name = "PAYMENT_DESCRIPTION")
+	private String paymentDescription;
 
-public int getPayment_id() {
-	return payment_id;
-}
-public void setPayment_id(int payment_id) {
-	this.payment_id = payment_id;
-}
-public Date getPayment_date() {
-	return payment_date;
-}
-public void setPayment_date(Date payment_date) {
-	this.payment_date = payment_date;
-}
-public int getOrder_id() {
-	return order_id;
-}
-public void setOrder_id(int order_id) {
-	this.order_id = order_id;
-}
-public int getPreorder_id() {
-	return preorder_id;
-}
-public void setPreorder_id(int preorder_id) {
-	this.preorder_id = preorder_id;
-}
-public float getAmount() {
-	return amount;
-}
-public void setAmount(float amount) {
-	this.amount = amount;
-}
-public String getPayment_mode() {
-	return payment_mode;
-}
-public void setPayment_mode(String payment_mode) {
-	this.payment_mode = payment_mode;
-}
-public String getPayment_description() {
-	return payment_description;
-}
-public void setPayment_description(String payment_description) {
-	this.payment_description = payment_description;
-}
+	public int getPaymentId() {
+		return paymentId;
+	}
 
+	public void setPaymentId(int paymentId) {
+		this.paymentId = paymentId;
+	}
 
+	public Date getPaymentDate() {
+		return paymentDate;
+	}
 
+	public void setPaymentDate(Date paymentDate) {
+		this.paymentDate = paymentDate;
+	}
+
+	public int getOrderId() {
+		return orderId;
+	}
+
+	public void setOrderId(int orderId) {
+		this.orderId = orderId;
+	}
+
+	public int getPreorderId() {
+		return preorderId;
+	}
+
+	public void setPreorderId(int preorderId) {
+		this.preorderId = preorderId;
+	}
+
+	public float getAmount() {
+		return amount;
+	}
+
+	public void setAmount(float amount) {
+		this.amount = amount;
+	}
+
+	public String getPaymentMode() {
+		return paymentMode;
+	}
+
+	public void setPaymentMode(String paymentMode) {
+		this.paymentMode = paymentMode;
+	}
+
+	public String getPaymentDescription() {
+		return paymentDescription;
+	}
+
+	public void setPaymentDescription(String paymentDescription) {
+		this.paymentDescription = paymentDescription;
+	}
 
 }

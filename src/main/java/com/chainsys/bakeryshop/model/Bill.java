@@ -2,6 +2,7 @@ package com.chainsys.bakeryshop.model;
 
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
@@ -10,34 +11,45 @@ import javax.persistence.Table;
 public class Bill {
 //@Id
 //@GeneratedValue(strategy = GenerationType.AUTO)
-private int BILL_ID;
-private Date BILL_DATE;
-private int ORDER_ID;
-private int PREORDER_ID;
+	@Column(name = "BILL_ID")
+	private int billId;
+	@Column(name = "BILL_DATE")
+	private Date billDate;
+	@Column(name = "ORDER_ID")
+	private int orderId;
+	@Column(name = "PREORDER_ID")
+	private int preorderId;
 
-public int getBILL_ID() {
-	return BILL_ID;
-}
-public void setBILL_ID(int bILL_ID) {
-	BILL_ID = bILL_ID;
-}
-public Date getBILL_DATE() {
-	return BILL_DATE;
-}
-public void setBILL_DATE(Date bILL_DATE) {
-	BILL_DATE = bILL_DATE;
-}
-public int getORDER_ID() {
-	return ORDER_ID;
-}
-public void setORDER_ID(int oRDER_ID) {
-	ORDER_ID = oRDER_ID;
-}
-public int getPREORDER_ID() {
-	return PREORDER_ID;
-}
-public void setPREORDER_ID(int pREORDER_ID) {
-	PREORDER_ID = pREORDER_ID;
-}
+	public int getBillId() {
+		return billId;
+	}
+
+	public void setBillId(int billId) {
+		this.billId = billId;
+	}
+
+	public Date getBillDate() {
+		return billDate;
+	}
+
+	public void setBillDate(Date billDate) {
+		this.billDate = billDate;
+	}
+
+	public int getOrderId() {
+		return orderId;
+	}
+
+	public void setOrderId(int orderId) {
+		this.orderId = orderId;
+	}
+
+	public int getPreorderId() {
+		return preorderId;
+	}
+
+	public void setPreorderId(int preorderId) {
+		this.preorderId = preorderId;
+	}
 
 }

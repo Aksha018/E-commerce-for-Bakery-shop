@@ -11,7 +11,6 @@ import com.chainsys.bakeryshop.repository.CategoryRepository;
 
 @Service
 public class CategoryService {
-    private static final Iterable<Integer>  = null;
 	@Autowired
      CategoryRepository categoryRepository;
     public List<Category> getAllCategory() {

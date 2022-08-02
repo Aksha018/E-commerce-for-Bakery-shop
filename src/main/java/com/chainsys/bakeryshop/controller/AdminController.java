@@ -89,10 +89,10 @@ public class AdminController {
                @RequestParam("productImage") MultipartFile file,
                @RequestParam("imgName") String imgName) throws IOException {
           Product product = new Product();
-          product.setProductid(productDTO.getProductid());
-          product.setProductname(productDTO.getProductname());
-          product.setCategoryid(categoryService.updateCategoryById(productDTO.getCategoryid()).get());
-          product.setStockinhand(productDTO.getStockinhand());
+          product.setProductId(productDTO.getProductId());
+          product.setProductName(productDTO.getProductName());
+          product.setCategoryid(categoryService.updateCategoryById(productDTO.getCategoryId()).get());
+          product.setStockInhand(productDTO.getStockInhand());
           product.setPrice(productDTO.getPrice());
           product.setDescription(productDTO.getDescription());
           product.setImage(productDTO.getImage());
@@ -121,9 +121,9 @@ public class AdminController {
      public String updateProduct(@PathVariable("id") long id, Model model) {
           Product product = productService.getProductsById(id);
           ProductDTO productDTO = new ProductDTO();
-          productDTO.setProductid(productDTO.getProductid());
-          productDTO.setProductname(productDTO.getProductname());
-          productDTO.setCategoryid(product.getCategoryid().getcategoryid());
+          productDTO.setProductId(productDTO.getProductId());
+          productDTO.setProductName(productDTO.getProductName());
+          productDTO.setCategoryId(product.getCategoryId().getCategoryId());
           productDTO.setPrice(product.getPrice());
           productDTO.setDescription(product.getDescription());
           productDTO.setImage(product.getImage());

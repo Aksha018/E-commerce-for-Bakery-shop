@@ -3,57 +3,69 @@ package com.chainsys.bakeryshop.DTO;
 import com.chainsys.bakeryshop.model.Category;
 
 public class ProductDTO {
-	
-	private long productid;
-	private String productname;
-	private Category categoryid;
-	private int stockinhand;
+
+	private long productId;
+	private String productName;
+	private Category categoryId;
+	private int stockInhand;
 	private double price;
 	private String description;
 	private String image;
-	
-	public long getProductid() {
-		return productid;
+
+	public long getProductId() {
+		return productId;
 	}
-	public void setProductid(long productid) {
-		this.productid = productid;
+
+	public void setProductId(long productId) {
+		this.productId = productId;
 	}
-	public String getProductname() {
-		return productname;
+
+	public String getProductName() {
+		return productName;
 	}
-	public void setProductname(String productname) {
-		this.productname = productname;
+
+	public void setProductName(String productName) {
+		this.productName = productName;
 	}
-	public Category getCategoryid() {
-		return categoryid;
+
+	public Category getCategoryId() {
+		return categoryId;
 	}
-	public void setCategoryid(Category categoryid) {
-		this.categoryid = categoryid;
+
+	public void setCategoryId(Category categoryId) {
+		this.categoryId = categoryId;
 	}
-	public int getStockinhand() {
-		return stockinhand;
+
+	public int getStockInhand() {
+		return stockInhand;
 	}
-	public void setStockinhand(int stockinhand) {
-		this.stockinhand = stockinhand;
+
+	public void setStockInhand(int stockInhand) {
+		this.stockInhand = stockInhand;
 	}
+
 	public double getPrice() {
 		return price;
 	}
+
 	public void setPrice(double price) {
 		this.price = price;
 	}
+
 	public String getDescription() {
 		return description;
 	}
+
 	public void setDescription(String description) {
 		this.description = description;
 	}
+
 	public String getImage() {
 		return image;
 	}
+
 	public void setImage(String image) {
 		this.image = image;
 	}
-	
 
 }

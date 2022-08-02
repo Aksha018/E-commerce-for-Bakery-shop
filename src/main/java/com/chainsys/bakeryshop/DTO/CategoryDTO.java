@@ -4,19 +4,23 @@ import com.chainsys.bakeryshop.model.Category;
 
 public class CategoryDTO {
 
-  private Category categoryid;
-  private String categoryname;
-  
-  public Category getCategoryid() {
-	return categoryid;
-}
-public void setCategoryid(Category categoryid) {
-	this.categoryid = categoryid;
-}
-public String getCategoryname() {
-	return categoryname;
-}
-public void setCategoryname(String categoryname) {
-	this.categoryname = categoryname;
-}  
+	private Category categoryId;
+	private String categoryName;
+
+	public Category getCategoryId() {
+		return categoryId;
+	}
+
+	public void setCategoryId(Category categoryId) {
+		this.categoryId = categoryId;
+	}
+
+	public String getCategoryName() {
+		return categoryName;
+	}
+
+	public void setCategoryName(String categoryName) {
+		this.categoryName = categoryName;
+	}
+
 }
