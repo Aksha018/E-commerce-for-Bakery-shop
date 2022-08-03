@@ -38,7 +38,6 @@ public class CategoryService {
 		return categorylist;
 	}
 
-	@Transactional
 	public Category save(Category cat) {
 		//System.out.println("values to insert");
 		return categoryRepository.save(cat);

@@ -19,4 +19,5 @@ public interface CategoryRepository extends JpaRepository<Category,Integer> {
 	void deleteById(int id);
 
 	List<Category> findAll();
+	
 }

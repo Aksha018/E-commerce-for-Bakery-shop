@@ -72,10 +72,10 @@ public class AdminController {
 //          categoryService.deleteCategoryById(id);
 //          return "redirect:/admin/categories";
 //     }
-	@GetMapping("/admin/category/deletecategory{id}")
-	public String deleteDoctro(@RequestParam("docid") int id) {
+	@GetMapping("/deletecategory")
+	public String deleteCategory(@RequestParam("categoryId") int id) {
 		categoryService.deleteCategoryById(id);
-		return "redirect:/category/categorylist";
+		return "redirect:/admin/list";
 
 	}
 
@@ -89,17 +89,17 @@ public class AdminController {
 //               return "404";
 //          }
 //     }
-	@GetMapping("/admin/category/update/{id}")
+	@GetMapping("/update")
 	public String showUpdate(@RequestParam("categoryId") int id, Model model) {
 		Category cat = categoryService.findById(id);
 		model.addAttribute("updatecategory", cat);
-		return "update-doctor-form";
+		return "update-category";
 	}
 
 	@PostMapping("updatecategory")
 	public String updateCategory(@ModelAttribute("updatecategory") Category cat) {
 		categoryService.save(cat);
-		return "redirect:/category/categorylist";
+		return "redirect:/admin/list";
 	}
 
 	// products
@@ -110,11 +110,11 @@ public class AdminController {
 //          return "products";
 //     }
 
-	@GetMapping("/admin/product")
+	@GetMapping("/productlist")
 	public String getProduct(Model model) {
 		List<Product> productlist = productService.getProduct();
 		model.addAttribute("allproduct", productlist);
-		return "list-product";
+		return "product-list";
 	}
 
 //	 @GetMapping("/admin/products/add")
@@ -123,17 +123,17 @@ public class AdminController {
 //          model.addAttribute("categories", categoryService.getAllCategory());
 //          return "addproduct";
 //     }
-	@GetMapping("/admin/product/add")
+	@GetMapping("/addform")
 	public String addProduct(Model model) {
 		Product prod = new Product();
-		model.addAttribute("addproduct", prod);
+		model.addAttribute("product", prod);
 		return "add-product";
 	}
 
-	@PostMapping("/newproduct")
-	public String addNewProduct(@ModelAttribute("addproduct") Product prod) {
+	@PostMapping("/addproduct")
+	public String addNewProduct(@ModelAttribute("product") Product prod) {
 		productService.save(prod);
-		return "redirect:/product/productlist";
+		return "redirect:/admin/productlist";
 	}
 
 //	  @GetMapping("/admin/product/delete/{id}")
@@ -142,9 +142,9 @@ public class AdminController {
 //          return "redirect:/admin/products";
 //     }
 	@GetMapping("/deleteproduct")
-	public String deleteProduct(@RequestParam("productId") int id) {
+	public String deleteProduct(@RequestParam("id") int id) {
 		productService.deleteProductById(id);
-		return "redirect:/product/productlist";
+		return "redirect:/admin/productlist";
 	}
 
 //     @GetMapping("/admin/product/update/{id}")
@@ -163,17 +163,18 @@ public class AdminController {
 //
 //          return "addproduct";
 //     }
-//	@GetMapping("/admin/product/update/{id}")
-//	public String showUpdateForm(@RequestParam("productId") int id, Model model) {
-//		Product prod = productService.findById(id);
-//		model.addAttribute("updateproduct", prod);
-//		return "update-product";
-//	}
+	
+	@GetMapping("/updateform")
+	public String showUpdates(@RequestParam("id") int id, Model model) {
+		Product prod = productService.findByCategoryId(id);
+		model.addAttribute("updateproduct", prod);
+		return "update-product";
+	}
 
-	@PostMapping("updateproduct")
+	@PostMapping("update")
 	public String updateProduct(@ModelAttribute("updateproduct") Product prod) {
 		productService.save(prod);
-		return "redirect:/product/productlist";
+		return "redirect:/admin/productlist";
 	}
 }
 

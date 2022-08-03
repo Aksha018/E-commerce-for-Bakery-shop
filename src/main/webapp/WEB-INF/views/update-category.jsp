@@ -11,7 +11,7 @@
 <body>
 	<div id="root">
 		<div id="form">
-			<form:form action="update" method="post" modelAttribute="updatecategory">
+			<form:form action="updatecategory" method="post" modelAttribute="updatecategory">
 				<div>
 					<label for="categoryId">Category Id</label>
 					<div>

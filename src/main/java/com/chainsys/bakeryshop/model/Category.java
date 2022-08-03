@@ -2,8 +2,6 @@ package com.chainsys.bakeryshop.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -11,12 +9,11 @@ import javax.persistence.Table;
 @Table(name = "category")
 public class Category {
     @Id
-   // @GeneratedValue(strategy = GenerationType.AUTO)
+//    @GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name="CATEGORY_ID")
-    private int  categoryId;
+    private int categoryId;
 	@Column(name="CATEGORY_NAME")
     private String categoryName;
-	
 	public int getCategoryId() {
 		return categoryId;
 	}
@@ -29,7 +26,6 @@ public class Category {
 	public void setCategoryName(String categoryName) {
 		this.categoryName = categoryName;
 	}
-	
 	
    
 }

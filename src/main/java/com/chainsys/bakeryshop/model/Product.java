@@ -14,7 +14,7 @@ import javax.persistence.Table;
 @Table(name = "product")
 public class Product {
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	//@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "PRODUCT_ID")
 	private long productId;
 	@Column(name = "PRODUCT_NAME")
@@ -24,8 +24,11 @@ public class Product {
 	private Category categoryId;
 	@Column(name = "STOCK_IN_HAND")
 	private int stockInhand;
+	@Column(name = "PRICE")
 	private double price;
+	@Column(name = "DESCRIPTION")
 	private String description;
+	@Column(name = "IMAGE")
 	private String image;
 	public long getProductId() {
 		return productId;
@@ -69,7 +72,8 @@ public class Product {
 	public void setImage(String image) {
 		this.image = image;
 	}
-
+	
 	
 	
 }
+	

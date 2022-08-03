@@ -5,18 +5,17 @@ import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.chainsys.bakeryshop.model.Person;
+import com.chainsys.bakeryshop.model.Payment;
 
-@Repository
-public interface PersonRepository extends JpaRepository<Person,Integer> {
+@Repository 
+public interface PaymentRepository extends JpaRepository<Payment, Integer> {
 	
-	 Person findById(int id);
+	Payment findById(int id);
 
-	Person save(Person person); 
+	Payment save(Payment cat); 
 	
 	void deleteById(int id);
 
-	List<Person> findAll();
-
+	List<Payment> findAll();
 
 }

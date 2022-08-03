@@ -13,7 +13,7 @@ import com.chainsys.bakeryshop.model.Product;
 public interface ProductRepository extends CrudRepository<Product,Long> {
 //	List<Product> findAllByCategory_Id(int id);
 //	
-//	Product findById(int id);
+	Product findById(long id);
 //
 //	Product save(Product cat); // used for adding a new product and modifying the product.
 //

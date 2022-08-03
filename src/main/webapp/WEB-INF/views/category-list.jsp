@@ -18,7 +18,7 @@
 			<tbody>
 				<c:forEach var="category" items="${allcategory}">
 					<tr>
-						<td>${category.categoryID}</td>
+						<td>${category.categoryId}</td>
 						<td>${category.categoryName}</td>
 						
 					</tr>
