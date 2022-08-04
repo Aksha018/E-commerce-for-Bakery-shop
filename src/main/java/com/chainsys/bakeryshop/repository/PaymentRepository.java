@@ -8,13 +8,13 @@ import org.springframework.stereotype.Repository;
 import com.chainsys.bakeryshop.model.Payment;
 
 @Repository 
-public interface PaymentRepository extends JpaRepository<Payment, Integer> {
+public interface PaymentRepository extends JpaRepository<Payment, Long> {
 	
-	Payment findById(int id);
+	Payment findById(long id);
 
 	Payment save(Payment cat); 
 	
-	void deleteById(int id);
+	void deleteById(long id);
 
 	List<Payment> findAll();
 

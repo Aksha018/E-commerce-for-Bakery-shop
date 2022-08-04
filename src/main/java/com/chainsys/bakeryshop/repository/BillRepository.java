@@ -8,13 +8,13 @@ import org.springframework.stereotype.Repository;
 import com.chainsys.bakeryshop.model.Bill;
 
 @Repository 
-public interface BillRepository extends JpaRepository<Bill,Integer> {
+public interface BillRepository extends JpaRepository<Bill,Long> {
 		
-		Bill findById(int id);
+		Bill findById(long id);
 
 		Bill save(Bill person); 
 		
-		void deleteById(int id);
+		void deleteById(long id);
 
 		List<Bill> findAll();
 }

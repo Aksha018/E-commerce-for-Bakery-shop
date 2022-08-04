@@ -10,22 +10,22 @@ import com.chainsys.bakeryshop.repository.PaymentRepository;
 
 	@Service
 	public class PaymentService {
-		@Autowired 
-		PaymentRepository PaymentRepository;
+		@Autowired
+		PaymentRepository paymentRepository;
 		
-		public List<Payment> getOrder() {
-			List<Payment> Paymentlist = PaymentRepository.findAll();
+		public List<Payment> getPayment() {
+			List<Payment> Paymentlist = paymentRepository.findAll();
 			return Paymentlist;
 		}
 		public Payment save(Payment pay) {
-			return PaymentRepository.save(pay);
+			return paymentRepository.save(pay);
 		}
 
-		public Payment findByCategoryId(long id) {
-			return PaymentRepository.findById(id);
+		public  Payment findByPaymentId(long id) {
+			return paymentRepository.findById(id);
 		}
-		public void deleteOrderById(long id) {
-			PaymentRepository.deleteById(id);
+		public void deletePaymentById(long id) {
+			paymentRepository.deleteById(id);
 		}
 
 }

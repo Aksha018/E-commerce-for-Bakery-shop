@@ -73,7 +73,32 @@ public class Product {
 		this.image = image;
 	}
 	
+	private Person person;
 	
+	
+	public Person getPerson() {
+		return person;
+	}
+	public void setPerson(Person person) {
+		this.person = person;
+	}
+	//Constructor
+	public Product(long productId, String productName, Category categoryId, int stockInhand, double price,
+			String description, String image, Person person) {
+		super();
+		this.productId = productId;
+		this.productName = productName;
+		this.categoryId = categoryId;
+		this.stockInhand = stockInhand;
+		this.price = price;
+		this.description = description;
+		this.image = image;
+		this.person = person;
+	}
+	
+	public Product() {
+		
+	}
 	
 }
 	

@@ -8,13 +8,13 @@ import org.springframework.stereotype.Repository;
 import com.chainsys.bakeryshop.model.Orders;
 
 @Repository 
-public interface OrderRepository extends JpaRepository<Orders,Integer> {
+public interface OrderRepository extends JpaRepository<Orders,Long> {
 		
-	Orders findById(int id);
+	Orders findById(long id);
 
 	Orders save(Orders person); 
 		
-		void deleteById(int id);
+		void deleteById(long id);
 
 		List<Orders> findAll();
 

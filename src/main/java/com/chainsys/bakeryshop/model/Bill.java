@@ -1,6 +1,6 @@
 package com.chainsys.bakeryshop.model;
 
-import java.util.Date;
+import java.sql.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -10,10 +10,10 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "bill")
 public class Bill {
-@Id
+	@Id
 //@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "BILL_ID")
-	private int billId;
+	private long billId;
 	@Column(name = "BILL_DATE")
 	private Date billDate;
 	@Column(name = "ORDER_ID")
@@ -21,11 +21,11 @@ public class Bill {
 	@Column(name = "PREORDER_ID")
 	private int preorderId;
 
-	public int getBillId() {
+	public long getBillId() {
 		return billId;
 	}
 
-	public void setBillId(int billId) {
+	public void setBillId(long billId) {
 		this.billId = billId;
 	}
 
