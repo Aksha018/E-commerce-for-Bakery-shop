@@ -67,7 +67,7 @@ public class PersonController {
 		personservice.deletePersonById(id);
 		return "redirect:/person/personlist";
 	}
-	
+	//PersonProductDTO
 	@GetMapping()
 	public String getproductlist(@RequestParam("id") int id, Model model) {
 		PersonProductDTO dto = personservice.getPersonProductDTO(id);
