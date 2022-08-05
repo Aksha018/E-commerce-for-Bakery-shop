@@ -19,12 +19,6 @@
 					</div>
 				</div>
 				<div>
-					<label for="preorderId">PreOrder Id</label>
-					<div>
-						<form:input path="preorderId" />
-					</div>
-				</div>
-				<div>
 					<label for="orderDate">Order Date</label>
 					<div>
 						<form:input path="orderDate" />
@@ -40,6 +34,12 @@
 					<label for="productId">Product Id</label>
 					<div>
 						<form:input path="productId" />
+					</div>
+				</div>
+				<div>
+					<label for="quantity">Quantity</label>
+					<div>
+						<form:input path="quantity" />
 					</div>
 				</div>
 				<div>
@@ -64,6 +64,12 @@
 					<label for="deliveryDate">Delivery Date</label>
 					<div>
 						<form:input path="deliveryDate" />
+					</div>
+				</div>
+				<div>
+					<label for="deliveryAddress">Delivery Address</label>
+					<div>
+						<form:input path="deliveryAddress" />
 					</div>
 				</div>
 				<div>

@@ -12,7 +12,7 @@ public interface PersonRepository extends JpaRepository<Person,Integer> {
 	
 	 Person findById(int id);
 
-	Person save(Person person); 
+	Person save(Person payment); 
 	
 	void deleteById(int id);
 

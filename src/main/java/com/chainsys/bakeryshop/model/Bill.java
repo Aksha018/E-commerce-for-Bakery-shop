@@ -18,8 +18,6 @@ public class Bill {
 	private Date billDate;
 	@Column(name = "ORDER_ID")
 	private int orderId;
-	@Column(name = "PREORDER_ID")
-	private int preorderId;
 
 	public long getBillId() {
 		return billId;
@@ -43,14 +41,6 @@ public class Bill {
 
 	public void setOrderId(int orderId) {
 		this.orderId = orderId;
-	}
-
-	public int getPreorderId() {
-		return preorderId;
-	}
-
-	public void setPreorderId(int preorderId) {
-		this.preorderId = preorderId;
 	}
 
 }

@@ -12,7 +12,7 @@ public interface PaymentRepository extends JpaRepository<Payment, Long> {
 	
 	Payment findById(long id);
 
-	Payment save(Payment cat); 
+	Payment save(Payment payment); 
 	
 	void deleteById(long id);
 

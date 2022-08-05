@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.chainsys.bakeryshop.DTO.PersonOrderDTO;
 import com.chainsys.bakeryshop.DTO.PersonProductDTO;
 import com.chainsys.bakeryshop.model.Bill;
 import com.chainsys.bakeryshop.model.Orders;
@@ -68,7 +69,7 @@ public class PersonController {
 		return "redirect:/person/personlist";
 	}
 	//PersonProductDTO
-	@GetMapping()
+	@GetMapping("/")
 	public String getproductlist(@RequestParam("id") int id, Model model) {
 		PersonProductDTO dto = personservice.getPersonProductDTO(id);
 		model.addAttribute(dto.getPerson());
@@ -207,5 +208,10 @@ public class PersonController {
 		paymentService.deletePaymentById(id);
 		return "redirect:/person/paymentlist";
 	}
-
+    public PersonOrderDTO getPersonOrder(@RequestParam("id") int id, Model model) {
+    	PersonOrderDTO dto = new PersonOrderDTO();
+    	model.addAttribute(dto.getPerson());
+    	model.addAttribute(dto.getOrder());
+    	return "person-order-list";
+    }
 }

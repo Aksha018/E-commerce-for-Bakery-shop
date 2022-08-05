@@ -4,19 +4,24 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import com.chainsys.bakeryshop.DTO.CategoryProductDTO;
 import com.chainsys.bakeryshop.model.Product;
+import com.chainsys.bakeryshop.repository.CategoryRepository;
 import com.chainsys.bakeryshop.repository.ProductRepository;
 
 @Service
 public class ProductService {
 	@Autowired 
 	ProductRepository productRepository;
+	@Autowired
+	CategoryRepository categoryRepository;
 	public List<Product> getProduct() {
 		List<Product> productlist = productRepository.findAll();
 		return productlist;
 	}
-	public Product save(Product prod) {
-		return productRepository.save(prod);
+	public Product save(Product product) {
+		return productRepository.save(product);
 	}
 
 	public Product findByCategoryId(long id) {
@@ -26,39 +31,11 @@ public class ProductService {
 		productRepository.deleteById(id);
 	}
 
+	
+	public CategoryProductDTO getCategoryProductDTO(int id) {
+		CategoryProductDTO dto = new CategoryProductDTO();
+		dto.setCategory(categoryRepository.findById(id));
+		dto.setProduct(productRepository.findAll());
+		return dto;
 	}
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-//     @Autowired
-//     ProductRepository productRepository;
-//     public List<Product> getAllProducts() {return productRepository.findAll();}
-//     public void addproduct(Product product) {
-//        productRepository.save(product);
-//     }
-//
-//     public void removeProductById(long id) {
-//        productRepository.deleteById(id);
-//     }
-//     public Product getProductsById(long id) {
-//        return productRepository.getById(id);
-//     }
-//     public List<Product>getAllProductByCategoryId(int id) {
-//        return productRepository.findAllByCategory_Id(id);
-//     }
-	
+}

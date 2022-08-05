@@ -12,14 +12,15 @@
 		<thead>
 			<tr>
 				<th>Order Id</th>
-				<th>PreOrder Id</th>
 				<th>Order Date</th>
 				<th>Person Id</th>
 				<th>Product Id</th>
+				<th>Quantity</th>
 				<th>Price</th>
 				<th>Amount</th>
 				<th>Delivery Time</th>
 				<th>Delivery Date</th>
+				<th>Delivery Address</th>
 				<th>Status</th>
 		  </tr>
 		</thead>
@@ -27,14 +28,15 @@
 			<c:forEach var="order" items="${allorder}">
 				<tr>
 					<td>${order.orderId}</td>
-					<td>${order.preorderId}</td>
 					<td>${order.orderDate}</td>
 					<td>${order.personId}</td>
 					<td>${order.productId}</td>
+					<td>${order.quantity}</td>
 					<td>${order.price}</td>
 					<td>${order.amount}</td>
 					<td>${order.deliveryTime}</td>
 					<td>${order.deliveryDate}</td>
+					<td>${order.deliveryAddress}</td>
 					<td>${order.status}</td>
 					
 				</tr>

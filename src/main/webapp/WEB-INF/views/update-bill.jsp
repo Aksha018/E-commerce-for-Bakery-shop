@@ -30,12 +30,6 @@
 						<form:input path="orderId" />
 					</div>
 				</div>
-				<div>
-					<label for="preorderId">PreOrder Id</label>
-					<div>
-						<form:input path="preorderId" />
-					</div>
-				</div>
 				<form:button>Update New</form:button>
 			</form:form>
 		</div>

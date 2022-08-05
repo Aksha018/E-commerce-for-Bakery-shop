@@ -12,7 +12,7 @@ public interface BillRepository extends JpaRepository<Bill,Long> {
 		
 		Bill findById(long id);
 
-		Bill save(Bill person); 
+		Bill save(Bill bill); 
 		
 		void deleteById(long id);
 

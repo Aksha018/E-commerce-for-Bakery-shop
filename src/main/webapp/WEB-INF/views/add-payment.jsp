@@ -31,12 +31,6 @@
 					</div>
 				</div>
 				<div>
-					<label for="preorderId">PreOrder Id</label>
-					<div>
-						<form:input path="preorderId" />
-					</div>
-				</div>
-				<div>
 					<label for="amount">Amount</label>
 					<div>
 						<form:input path="amount" />

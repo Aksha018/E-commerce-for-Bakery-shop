@@ -22,9 +22,7 @@
 				<tr>
 					<td>${bill.billId}</td>
 					<td>${bill.billDate}</td>
-					<td>${bill.orderId}</td>
-					<td>${bill.preorderId}</td>
-					
+					<td>${bill.orderId}</td>					
 				</tr>
 			</c:forEach>
 		</tbody>

@@ -1,9 +1,13 @@
 package com.chainsys.bakeryshop.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -12,7 +16,7 @@ import javax.persistence.Table;
 @Table(name = "person")
 public class Person {
 	@Id
-//	   @GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "PERSON_ID")
 	private int personId;
 	@Column(name = "PERSON_NAME")
@@ -25,8 +29,11 @@ public class Person {
 	private long mobileNumber;
 	@Column(name = "PERSON_TYPE")
 	private String personType;
-
-	
+    @OneToMany(
+    		mappedBy = "person",fetch = FetchType.LAZY
+    		)
+    
+	private List<Orders> order = new ArrayList<>();
 	public int getPersonId() {
 		return personId;
 	}
@@ -63,6 +70,11 @@ public class Person {
 	public void setPersonType(String personType) {
 		this.personType = personType;
 	}
-	@OneToMany
-	private List<Product> pro;
+	public List<Orders> getOrder() {
+		return order;
+	}
+	public void setOrder(List<Orders> order) {
+		this.order = order;
+	}
+    
 }

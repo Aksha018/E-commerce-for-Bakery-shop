@@ -18,8 +18,8 @@ public class BillService {
 		return billlist;
 	}
 
-	public Bill save(Bill b) {
-		return billRepository.save(b);
+	public Bill save(Bill bill) {
+		return billRepository.save(bill);
 	}
 
 	public Bill findByBillId(long id) {

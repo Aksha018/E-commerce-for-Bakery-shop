@@ -18,8 +18,6 @@ public class Payment {
 	private Date paymentDate;
 	@Column(name = "ORDER_ID")
 	private int orderId;
-	@Column(name = "PREORDER_ID")
-	private int preorderId;
 	@Column(name = "AMOUNT")
 	private float amount;
 	@Column(name = "PAYMENT_MODE")
@@ -50,15 +48,7 @@ public class Payment {
 	public void setOrderId(int orderId) {
 		this.orderId = orderId;
 	}
-
-	public int getPreorderId() {
-		return preorderId;
-	}
-
-	public void setPreorderId(int preorderId) {
-		this.preorderId = preorderId;
-	}
-
+	
 	public float getAmount() {
 		return amount;
 	}

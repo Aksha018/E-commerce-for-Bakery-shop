@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import com.chainsys.bakeryshop.DTO.CategoryProductDTO;
 import com.chainsys.bakeryshop.model.Category;
 import com.chainsys.bakeryshop.model.Product;
 import com.chainsys.bakeryshop.services.CategoryService;
@@ -29,12 +31,6 @@ public class AdminController {
 		return "admin";
 	}
 
-//     @GetMapping("/admin/categories")
-//     public String category(Model model) {
-//          model.addAttribute("categories", categoryService);
-//          return "categories";
-//     }
-
 	@GetMapping("/list")
 	public String getcategory(Model model) {
 		List<Category> categorylist = categoryService.getCategory();
@@ -42,36 +38,20 @@ public class AdminController {
 		return "category-list";
 	}
 
-//    @GetMapping("/admin/categories/add")
-//     public String addCategory(Model model) {
-//          model.addAttribute("category", new Category());
-//          return "addcategory";
-//     }
 	@GetMapping("/addcatgoryform")
 	public String showAddForm(Model model) {
-		Category cat = new Category();
-		model.addAttribute("addcategory", cat);
+		Category category = new Category();
+		model.addAttribute("addcategory", category);
 		return "add-category";
 	}
 
-//     
-//     @PostMapping("/admin/categories/add")
-//     public String postCategory(@ModelAttribute("category") Category category) {
-//          categoryService.addCategory(category);
-//          return "redirect:/admin/categories";
-//     }
 	@PostMapping("/add")
-	public String addNewCategory(@ModelAttribute("addcategory") Category cat) {
-		System.out.println(cat);
-		categoryService.save(cat);
+	public String addNewCategory(@ModelAttribute("addcategory") Category category) {
+		System.out.println(category);
+		categoryService.save(category);
 		return "redirect:/admin/list";
 	}
 
-//	@GetMapping("/admin/categories/delete/{id}")
-//     public String deleteCategory(@PathVariable("id") int id) {
-//          categoryService.deleteCategoryById(id);
-//          return "redirect:/admin/categories";
-//     }
 	@GetMapping("/deletecategory")
 	public String deleteCategory(@RequestParam("categoryId") int id) {
 		categoryService.deleteCategoryById(id);
@@ -79,37 +59,20 @@ public class AdminController {
 
 	}
 
-//	@GetMapping("/admin/categories/update/{id}")
-//     public String updateCategoryById(@PathVariable int id, Model model) {
-//          Optional<Category> category = categoryService.updateCategoryById(id);
-//          if (category.isPresent()) {
-//               model.addAttribute("category", category.get());
-//               return "addcategory";
-//          } else {
-//               return "404";
-//          }
-//     }
 	@GetMapping("/update")
 	public String showUpdate(@RequestParam("categoryId") int id, Model model) {
-		Category cat = categoryService.findById(id);
-		model.addAttribute("updatecategory", cat);
+		Category category = categoryService.findById(id);
+		model.addAttribute("updatecategory", category);
 		return "update-category";
 	}
 
 	@PostMapping("updatecategory")
-	public String updateCategory(@ModelAttribute("updatecategory") Category cat) {
-		categoryService.save(cat);
+	public String updateCategory(@ModelAttribute("updatecategory") Category category) {
+		categoryService.save(category);
 		return "redirect:/admin/list";
 	}
 
 	// products
-
-//     @GetMapping("/admin/products")
-//     public String products(Model model) {
-//          model.addAttribute("products", productService.getAllProducts());
-//          return "products";
-//     }
-
 	@GetMapping("/productlist")
 	public String getProduct(Model model) {
 		List<Product> productlist = productService.getProduct();
@@ -117,64 +80,44 @@ public class AdminController {
 		return "product-list";
 	}
 
-//	 @GetMapping("/admin/products/add")
-//     public String addProducts(Model model) {
-//          model.addAttribute("productDTO", new ProductDTO());
-//          model.addAttribute("categories", categoryService.getAllCategory());
-//          return "addproduct";
-//     }
 	@GetMapping("/addform")
 	public String addProduct(Model model) {
-		Product prod = new Product();
-		model.addAttribute("product", prod);
+		Product product = new Product();
+		model.addAttribute("product", product);
 		return "add-product";
 	}
 
 	@PostMapping("/addproduct")
-	public String addNewProduct(@ModelAttribute("product") Product prod) {
-		productService.save(prod);
+	public String addNewProduct(@ModelAttribute("product") Product product) {
+		productService.save(product);
 		return "redirect:/admin/productlist";
 	}
 
-//	  @GetMapping("/admin/product/delete/{id}")
-//     public String deleteProduct(@PathVariable("id") long id) {
-//          productService.removeProductById(id);
-//          return "redirect:/admin/products";
-//     }
 	@GetMapping("/deleteproduct")
 	public String deleteProduct(@RequestParam("id") int id) {
 		productService.deleteProductById(id);
 		return "redirect:/admin/productlist";
 	}
 
-//     @GetMapping("/admin/product/update/{id}")
-//     public String updateProduct(@PathVariable("id") long id, Model model) {
-//          Product product = productService.getProductsById(id);
-//          ProductDTO productDTO = new ProductDTO();
-//          productDTO.setProductId(productDTO.getProductId());
-//          productDTO.setProductName(productDTO.getProductName());
-//          productDTO.setCategoryId(product.getCategoryId().getCategoryId());
-//          productDTO.setPrice(product.getPrice());
-//          productDTO.setDescription(product.getDescription());
-//          productDTO.setImage(product.getImage());
-//
-//          model.addAttribute("categories", categoryService.getAllCategory());
-//          model.addAttribute("productDTO", productDTO);
-//
-//          return "addproduct";
-//     }
-	
 	@GetMapping("/updateform")
 	public String showUpdates(@RequestParam("id") int id, Model model) {
-		Product prod = productService.findByCategoryId(id);
-		model.addAttribute("updateproduct", prod);
+		Product product = productService.findByCategoryId(id);
+		model.addAttribute("updateproduct", product);
 		return "update-product";
 	}
 
 	@PostMapping("update")
-	public String updateProduct(@ModelAttribute("updateproduct") Product prod) {
-		productService.save(prod);
+	public String updateProduct(@ModelAttribute("updateproduct") Product product) {
+		productService.save(product);
 		return "redirect:/admin/productlist";
+	}
+	//CategoryProductDTO
+	public String getProductCategory(@RequestParam("id") int id, Model model) {
+		
+		CategoryProductDTO dto = new CategoryProductDTO();
+		model.addAttribute("getcategory",dto.getCategory());
+		model.addAttribute("getproductlist",dto.getProduct());
+		return "category-product";
 	}
 }
 

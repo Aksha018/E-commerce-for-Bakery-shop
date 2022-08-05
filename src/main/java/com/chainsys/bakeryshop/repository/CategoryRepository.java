@@ -14,7 +14,7 @@ public interface CategoryRepository extends JpaRepository<Category,Integer> {
 
 	Category findById(int id);
 
-	Category save(Category cat); // used for adding a new category and modifying the category.
+	Category save(Category category); // used for adding a new category and modifying the category.
 
 	void deleteById(int id);
 

@@ -14,6 +14,27 @@ import com.chainsys.bakeryshop.repository.CategoryRepository;
 public class CategoryService {
 	@Autowired
 	CategoryRepository categoryRepository;
+	public List<Category> getCategory() {
+		List<Category> categorylist = categoryRepository.findAll();
+		return categorylist;
+	}
+
+	public Category save(Category category) {
+		//System.out.println("values to insert");
+		return categoryRepository.save(category);
+	}
+
+	public Category findById(int id) {
+		return categoryRepository.findById(id);
+	}
+
+	@Transactional
+	public void deleteCategoryById(int id) {
+		categoryRepository.deleteById(id);
+	}
+
+	}
+
 //	@Autowired
 //     CategoryRepository categoryRepository;
 //    public List<Category> getAllCategory() {
@@ -33,23 +54,4 @@ public class CategoryService {
 //	public void  updateCategoryById(Category categoryId) {
 //	 categoryRepository.findAllByCategory_Id(categoryId);
 //	}
-	public List<Category> getCategory() {
-		List<Category> categorylist = categoryRepository.findAll();
-		return categorylist;
-	}
-
-	public Category save(Category cat) {
-		//System.out.println("values to insert");
-		return categoryRepository.save(cat);
-	}
-
-	public Category findById(int id) {
-		return categoryRepository.findById(id);
-	}
-
-	@Transactional
-	public void deleteCategoryById(int id) {
-		categoryRepository.deleteById(id);
-	}
-
-	}
+	
