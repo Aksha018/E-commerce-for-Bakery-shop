@@ -23,9 +23,6 @@ public class Category {
 	@Column(name="CATEGORY_NAME")
     private String categoryName;
 	
-     @OneToMany(mappedBy = "category",fetch = FetchType.LAZY)
-	 private List<Product> product = new ArrayList<>();
-
 	public int getCategoryId() {
 		return categoryId;
 	}
@@ -41,14 +38,14 @@ public class Category {
 	public void setCategoryName(String categoryName) {
 		this.categoryName = categoryName;
 	}
-
+	
+	@OneToMany(mappedBy = "category",fetch = FetchType.LAZY)
+	 private List<Product> product = new ArrayList<>();
 	public List<Product> getProduct() {
 		return product;
 	}
 
 	public void setProduct(List<Product> product) {
 		this.product = product;
-	}
-     
-     
+	}   
 }

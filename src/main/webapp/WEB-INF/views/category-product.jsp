@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Add Category</title>
+<title>Category product</title>
 </head>
 <body>
 	<div id="root">

@@ -69,11 +69,11 @@ public class PersonController {
 		return "redirect:/person/personlist";
 	}
 	//PersonProductDTO
-	@GetMapping("/")
+	@GetMapping("/getproduct")
 	public String getproductlist(@RequestParam("id") int id, Model model) {
 		PersonProductDTO dto = personservice.getPersonProductDTO(id);
-		model.addAttribute(dto.getPerson());
-		model.addAttribute(dto.getPro());
+		model.addAttribute("getperson",dto.getPerson());
+		model.addAttribute("getproduct",dto.getPro());
 		return "person-product-list";
 	}
 	
@@ -120,6 +120,14 @@ public class PersonController {
 				orderService.deleteOrderById(id);
 			return "redirect:/person/orderlist";
 		}
+		//PersonOrderDTO 
+		@GetMapping("/getorder")
+		 public String getPersonOrder(@RequestParam("id") int id, Model model) {
+		    	PersonOrderDTO dto = new PersonOrderDTO();
+		    	model.addAttribute("getorder",dto.getPerson());
+		    	model.addAttribute("getpersonlist",dto.getOrder());
+		    	return "person-order-list";
+		    }
 
 //BILL
 
@@ -208,10 +216,6 @@ public class PersonController {
 		paymentService.deletePaymentById(id);
 		return "redirect:/person/paymentlist";
 	}
-    public PersonOrderDTO getPersonOrder(@RequestParam("id") int id, Model model) {
-    	PersonOrderDTO dto = new PersonOrderDTO();
-    	model.addAttribute(dto.getPerson());
-    	model.addAttribute(dto.getOrder());
-    	return "person-order-list";
-    }
+	
+   
 }

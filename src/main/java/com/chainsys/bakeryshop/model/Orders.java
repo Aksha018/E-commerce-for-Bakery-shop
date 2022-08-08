@@ -39,12 +39,7 @@ public class Orders {
 	private String deliveryAddress;
 	@Column(name = "STATUS")
 	private String status;
-    @ManyToOne
-    @JoinColumn(name="PERSON_ID",insertable = false, nullable =false,updatable = false) 
-	private Person person;
-	public long getOrderId() {
-		return orderId;
-	}
+	
 	public void setOrderId(long orderId) {
 		this.orderId = orderId;
 	}
@@ -108,6 +103,16 @@ public class Orders {
 	public void setStatus(String status) {
 		this.status = status;
 	}
+	
+    @ManyToOne
+    @JoinColumn(name="PERSON_ID",insertable = false, nullable =false,updatable = false) 
+	private Person person;
+    
+	public long getOrderId() {
+		return orderId;
+	}
+	
+	//constructor
 	public Person getPerson() {
 		return person;
 	}

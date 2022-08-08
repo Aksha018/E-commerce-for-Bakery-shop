@@ -30,10 +30,6 @@ public class Product {
 	@Column(name = "IMAGE")
 	private String image;
 	
-	@ManyToOne
-	@JoinColumn(name = "CATEGORY_ID", insertable = false, nullable = false, updatable = false)
-	private Category category;
-
 	public long getProductId() {
 		return productId;
 	}
@@ -89,7 +85,11 @@ public class Product {
 	public void setImage(String image) {
 		this.image = image;
 	}
-
+	
+	@ManyToOne
+	@JoinColumn(name = "CATEGORY_ID", insertable = false, nullable = false, updatable = false)
+	private Category category;
+	
 	public Category getCategory() {
 		return category;
 	}

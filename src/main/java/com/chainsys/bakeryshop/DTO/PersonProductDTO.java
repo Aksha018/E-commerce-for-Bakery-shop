@@ -7,13 +7,13 @@ import com.chainsys.bakeryshop.model.Product;
 
 public class PersonProductDTO {
 
-	private List<Product> pro;
+	private List<Product> product;
 	private Person person;
 	public List<Product> getPro() {
-		return pro;
+		return product;
 	}
 	public void setPro(List<Product> pro) {
-		this.pro = pro;
+		this.product = product;
 	}
 	public Person getPerson() {
 		return person;

@@ -29,17 +29,14 @@ public class Person {
 	private long mobileNumber;
 	@Column(name = "PERSON_TYPE")
 	private String personType;
-    @OneToMany(
-    		mappedBy = "person",fetch = FetchType.LAZY
-    		)
-    
-	private List<Orders> order = new ArrayList<>();
-	public int getPersonId() {
-		return personId;
-	}
+	
 	public void setPersonId(int personId) {
 		this.personId = personId;
 	}
+	public int getPersonId() {
+		return personId;
+	}
+	
 	public String getPersonName() {
 		return personName;
 	}
@@ -70,9 +67,17 @@ public class Person {
 	public void setPersonType(String personType) {
 		this.personType = personType;
 	}
-	public List<Orders> getOrder() {
+	
+	 @OneToMany(
+	    		mappedBy = "person",fetch = FetchType.LAZY
+	    		)
+	    
+		private List<Orders> order = new ArrayList<>();
+	    public List<Orders> getOrder() 
+	    {
 		return order;
-	}
+     	}
+	    
 	public void setOrder(List<Orders> order) {
 		this.order = order;
 	}

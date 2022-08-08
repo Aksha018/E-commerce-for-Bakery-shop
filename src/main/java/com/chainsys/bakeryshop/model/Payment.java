@@ -1,17 +1,23 @@
 package com.chainsys.bakeryshop.model;
 
 import java.sql.Date;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "payment")
 public class Payment {
-@Id
-//@GeneratedValue(strategy = GenerationType.AUTO)
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "PAYMENT_ID")
 	private long paymentId;
 	@Column(name = "PAYMENT_DATE")
@@ -48,7 +54,7 @@ public class Payment {
 	public void setOrderId(int orderId) {
 		this.orderId = orderId;
 	}
-	
+
 	public float getAmount() {
 		return amount;
 	}
@@ -72,5 +78,15 @@ public class Payment {
 	public void setPaymentDescription(String paymentDescription) {
 		this.paymentDescription = paymentDescription;
 	}
+	
+	@OneToMany(mappedBy = "Payment",fetch = FetchType.LAZY)
+	 private List<Orders> Order = new ArrayList<>();
+	public List<Orders> getOrder() {
+		return Order;
+	}
+
+	public void setOrder(List<Orders> Order) {
+		this.Order = Order;
+	}   
 
 }

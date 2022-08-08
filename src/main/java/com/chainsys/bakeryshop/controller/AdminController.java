@@ -111,6 +111,7 @@ public class AdminController {
 		productService.save(product);
 		return "redirect:/admin/productlist";
 	}
+	
 	//CategoryProductDTO
 	public String getProductCategory(@RequestParam("id") int id, Model model) {
 		
