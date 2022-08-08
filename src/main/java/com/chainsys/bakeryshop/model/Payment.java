@@ -78,15 +78,4 @@ public class Payment {
 	public void setPaymentDescription(String paymentDescription) {
 		this.paymentDescription = paymentDescription;
 	}
-	
-	@OneToMany(mappedBy = "Payment",fetch = FetchType.LAZY)
-	 private List<Orders> Order = new ArrayList<>();
-	public List<Orders> getOrder() {
-		return Order;
-	}
-
-	public void setOrder(List<Orders> Order) {
-		this.Order = Order;
-	}   
-
 }
