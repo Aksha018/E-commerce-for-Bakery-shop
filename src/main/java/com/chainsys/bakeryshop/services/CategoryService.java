@@ -1,57 +1,39 @@
 package com.chainsys.bakeryshop.services;
 
 import java.util.List;
-import java.util.Optional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
-
 import com.chainsys.bakeryshop.model.Category;
 import com.chainsys.bakeryshop.repository.CategoryRepository;
+import com.chainsys.bakeryshop.repository.ProductRepository;
 
 @Service
 public class CategoryService {
 	@Autowired
 	CategoryRepository categoryRepository;
+	@Autowired
+	ProductRepository productRepository;
+	
 	public List<Category> getCategory() {
 		List<Category> categorylist = categoryRepository.findAll();
 		return categorylist;
-	}
+	}	
 
-	public Category save(Category category) {
-		//System.out.println("values to insert");
+	public Category save( Category category) {
 		return categoryRepository.save(category);
 	}
 
 	public Category findById(int id) {
-		return categoryRepository.findById(id);
+		return categoryRepository.findByCategoryId(id);
+	}
+	public Category findByCategoryId(int i) {
+		return categoryRepository.findByCategoryId(i);
 	}
 
-	@Transactional
-	public void deleteCategoryById(int id) {
+	public void deleteById(int id) {
 		categoryRepository.deleteById(id);
-	}
-
-	}
-
-//	@Autowired
-//     CategoryRepository categoryRepository;
-//    public List<Category> getAllCategory() {
-//
-//         return categoryRepository.findAll();
-//    }
-//
-//     public void addCategory(Category category) {
-//     
-//       categoryRepository.save(category);
-//    }
-//   
-//    public void deleteCategoryById(int id) {
-//       categoryRepository.deleteById(id);
-//    }
-//
-//	public void  updateCategoryById(Category categoryId) {
-//	 categoryRepository.findAllByCategory_Id(categoryId);
-//	}
 	
+		
+	}
+}
+

@@ -10,7 +10,7 @@ import com.chainsys.bakeryshop.model.Orders;
 @Repository 
 public interface OrderRepository extends JpaRepository<Orders,Long> {
 		
-	Orders findById(long id);
+	Orders findByOrderId(long list);
 
 	Orders save(Orders order); 
 		

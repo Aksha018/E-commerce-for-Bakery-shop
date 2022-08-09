@@ -93,7 +93,7 @@ label {
 <h1 align="center">Sign Up</h1>
     <div id="root" class="box">
         <div id="form">
-            <form:form action="adduser" method="post" modelAttribute="adduser">
+            <form:form action="addperson" method="post" modelAttribute="addperson">
                 <div>
                     <label for="personId">Person Id </label>
                     <div>

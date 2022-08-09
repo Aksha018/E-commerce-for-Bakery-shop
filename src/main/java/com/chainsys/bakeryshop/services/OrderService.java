@@ -29,19 +29,30 @@ public class OrderService {
 	}
 
 	public  Orders findByOrderId(long id) {
-		return orderRepository.findById(id);
+		return orderRepository.findByOrderId(id);
 	}
 	public void deleteOrderById(long id) {
 		orderRepository.deleteById(id);
 	}
-	
-	public PersonOrderDTO getPersonOrderDTO(int id) {
-		PersonOrderDTO dto = new PersonOrderDTO();
-		
-		dto.setPerson(personRepository.findById(id));
-		dto.setOrder(orderRepository.findAll());
-		
-		return dto;
-		
-	}
 }
+
+
+
+
+
+
+
+
+
+
+	
+//	public PersonOrderDTO getPersonOrderDTO(int id) {
+//		PersonOrderDTO dto = new PersonOrderDTO();
+//		
+//		dto.setPerson(personRepository.findById(id));
+//		dto.setOrder(orderRepository.findAll());
+//		
+//		return dto;
+		
+	
+

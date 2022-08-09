@@ -18,6 +18,7 @@ public class PaymentOrderDTO {
 	public List<Orders> getOrdert() {
 		return Order;
 	}
+	
 	public void setProduct(List<Orders> Order) {
 		this.Order = Order;
 	}

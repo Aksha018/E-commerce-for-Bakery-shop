@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 
 import com.chainsys.bakeryshop.DTO.PersonProductDTO;
 import com.chainsys.bakeryshop.model.Person;
-import com.chainsys.bakeryshop.model.Product;
 import com.chainsys.bakeryshop.repository.PersonRepository;
 import com.chainsys.bakeryshop.repository.ProductRepository;
 
@@ -34,14 +33,20 @@ public class PersonService {
 	public void deletePersonById(int id) {
 		personRepository.deleteById(id);
 	}
-
-	public PersonProductDTO getPersonProductDTO(int id) {
-		PersonProductDTO dto = new PersonProductDTO();
-		Person pro = new Person();
-		dto.setPerson(personRepository.findById(id));
-		dto.setPro(productRepository.findAll());
-
-		return dto;
-
-	}
+	
+	
+	
+	
+	
+	
+	
+//	public PersonProductDTO getPersonProductDTO(int id) {
+//		PersonProductDTO dto = new PersonProductDTO();
+//		Person product = new Person();
+//		dto.setPerson(personRepository.findById(id));
+//		dto.setPro(productRepository.findAll());
+//
+//		return dto;
+//
+//	}
 }

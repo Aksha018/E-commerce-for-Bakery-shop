@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.chainsys.bakeryshop.DTO.PersonOrderDTO;
-import com.chainsys.bakeryshop.DTO.PersonProductDTO;
 import com.chainsys.bakeryshop.model.Bill;
 import com.chainsys.bakeryshop.model.Orders;
 import com.chainsys.bakeryshop.model.Payment;
@@ -28,8 +27,19 @@ import com.chainsys.bakeryshop.services.PersonService;
 public class PersonController {
 	@Autowired
 	PersonService personservice;
-
-
+	
+	@Autowired
+	PaymentService paymentService;
+	@Autowired
+	BillService billservice;
+	
+	@GetMapping("/index")
+	public String index(Model model) 
+	{
+		Person theperson = new Person();
+		model.addAttribute("addperson", theperson);
+	return "login";
+	}
 	@GetMapping("/personlist")
 	public String getPersonAll(Model model) {
 		List<Person> personlist = personservice.getPerson();
@@ -40,12 +50,12 @@ public class PersonController {
 	@GetMapping("/addpersonform")
 	public String showAdd(Model model) {
 		Person theperson = new Person();
-		model.addAttribute("add", theperson);
+		model.addAttribute("addperson", theperson);
 		return "add-person";
 	}
 
 	@PostMapping("/addperson")
-	public String addNewPerson(@ModelAttribute("add") Person theperson) {
+	public String addNewPerson(@ModelAttribute("addperson") Person theperson) {
 		personservice.save(theperson);
 		return "redirect:/person/personlist";
 	}
@@ -68,71 +78,15 @@ public class PersonController {
 		personservice.deletePersonById(id);
 		return "redirect:/person/personlist";
 	}
-	//PersonProductDTO
-	@GetMapping("/getproduct")
-	public String getproductlist(@RequestParam("id") int id, Model model) {
-		PersonProductDTO dto = personservice.getPersonProductDTO(id);
-		model.addAttribute("getperson",dto.getPerson());
-		model.addAttribute("getproduct",dto.getPro());
-		return "person-product-list";
-	}
 	
-	//ORDER
-
-		@Autowired
-		OrderService orderService;
 		
-		@GetMapping("/orderlist")
-		public String getorderAll(Model model) {
-			List<Orders> orderlist = orderService.getOrder();
-			model.addAttribute("allorder", orderlist);
-			return "order-list";
-		}
-
-		@GetMapping("/addorderform")
-		public String show(Model model) {
-			Orders theorder = new Orders();
-			model.addAttribute("add", theorder);
-			return "add-orders";
-		}
-
-		@PostMapping("/addorder")
-		public String addNewOrder(@ModelAttribute("add") Orders theorder) {
-			orderService.save(theorder);
-			return "redirect:/person/orderlist";
-		}
-
-		@GetMapping("/updateorderform")
-		public String orderUpdateForm(@RequestParam("id") long id, Model model) {
-			Orders theorder = orderService.findByOrderId(id);
-			model.addAttribute("update", theorder);
-			return "update-order";
-		}
-
-		@PostMapping("/updateorder")
-		public String updateorder(@ModelAttribute("update") Orders theorder) {
-			orderService.save(theorder);
-			return "redirect:/person/orderlist";
-		}
-
-		@GetMapping("/deleteorder")
-		public String deleteorder(@RequestParam("id") long id) {
-				orderService.deleteOrderById(id);
-			return "redirect:/person/orderlist";
-		}
-		//PersonOrderDTO 
-		@GetMapping("/getorder")
-		 public String getPersonOrder(@RequestParam("id") int id, Model model) {
-		    	PersonOrderDTO dto = new PersonOrderDTO();
-		    	model.addAttribute("getorder",dto.getPerson());
-		    	model.addAttribute("getpersonlist",dto.getOrder());
-		    	return "person-order-list";
-		    }
-
+	
+	
+	
+	
 //BILL
 
-	@Autowired
-	BillService billservice;
+	
 	
 	@GetMapping("/billlist")
 	public String getBillDetailsAll(Model model) {
@@ -174,9 +128,6 @@ public class PersonController {
 	}
 	
 //PAYMENT
-
-	@Autowired
-	PaymentService paymentService;
 	
 
 	@GetMapping("/paymentlist")
@@ -216,6 +167,14 @@ public class PersonController {
 		paymentService.deletePaymentById(id);
 		return "redirect:/person/paymentlist";
 	}
-	
+//	@GetMapping("/getpayment")
+//	public String getpayment(@RequestParam("id") int id, Model model) {
+//		PersonProductDTO dto = paymentService.getPaymentOrderDTO(id);
+//		model.addAttribute("getpayment",dto.getPayment());
+//		model.addAttribute("getorder",dto.getOrder());
+//		return "person-product-list";
+//	}
+//	
    
 }
+

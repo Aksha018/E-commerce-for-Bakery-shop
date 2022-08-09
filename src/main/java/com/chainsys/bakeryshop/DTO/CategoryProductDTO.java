@@ -3,23 +3,28 @@ package com.chainsys.bakeryshop.DTO;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.chainsys.bakeryshop.model.Category;
-import com.chainsys.bakeryshop.model.Product;
+import org.springframework.beans.factory.annotation.Autowired;
 
+import com.chainsys.bakeryshop.model.Product;
 public class CategoryProductDTO {
-	private Category category;
-	 private List<Product> product = new ArrayList<>();
-	public Category getCategory() {
-		return category;
-	}
-	public void setCategory(Category category) {
-		this.category = category;
-	}
+	private List<Product> product = new ArrayList<Product>();
+	@Autowired
+	private int category;
+
 	public List<Product> getProduct() {
 		return product;
 	}
-	public void setProduct(List<Product> product) {
-		this.product = product;
+
+	public void addcategoryAndProduct(Product products) {
+		product.add(products);
 	}
-	 
+
+	public int getCategory() {
+		return category;
+	}
+
+	public void setCategory(int category) {
+		this.category = category;
+	}
+
 }

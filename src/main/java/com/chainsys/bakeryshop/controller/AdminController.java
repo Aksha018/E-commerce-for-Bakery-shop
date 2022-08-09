@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.chainsys.bakeryshop.DTO.CategoryProductDTO;
 import com.chainsys.bakeryshop.model.Category;
 import com.chainsys.bakeryshop.model.Product;
 import com.chainsys.bakeryshop.services.CategoryService;
@@ -20,7 +19,7 @@ import com.chainsys.bakeryshop.services.ProductService;
 @Controller
 @RequestMapping("/admin")
 public class AdminController {
-	public static String uploadDir = System.getProperty("user.dir") + "/src/main/resources/static/productImages";
+//	public static String uploadDir = System.getProperty("user.dir") + "/src/main/resources/static/productImages";
 	@Autowired
 	CategoryService categoryService;
 	@Autowired
@@ -54,7 +53,7 @@ public class AdminController {
 
 	@GetMapping("/deletecategory")
 	public String deleteCategory(@RequestParam("categoryId") int id) {
-		categoryService.deleteCategoryById(id);
+		categoryService.deleteById(id);
 		return "redirect:/admin/list";
 
 	}
@@ -73,6 +72,7 @@ public class AdminController {
 	}
 
 	// products
+	
 	@GetMapping("/productlist")
 	public String getProduct(Model model) {
 		List<Product> productlist = productService.getProduct();
@@ -101,7 +101,11 @@ public class AdminController {
 
 	@GetMapping("/updateform")
 	public String showUpdates(@RequestParam("id") int id, Model model) {
-		Product product = productService.findByCategoryId(id);
+		Product product = productService.findByProductId(id);
+		if (product==null) {
+        	System.out.println("debug:product is null");
+        	return " ";
+        }
 		model.addAttribute("updateproduct", product);
 		return "update-product";
 	}
@@ -112,41 +116,42 @@ public class AdminController {
 		return "redirect:/admin/productlist";
 	}
 	
-	//CategoryProductDTO
-	public String getProductCategory(@RequestParam("id") int id, Model model) {
-		
-		CategoryProductDTO dto = new CategoryProductDTO();
-		model.addAttribute("getcategory",dto.getCategory());
-		model.addAttribute("getproductlist",dto.getProduct());
-		return "category-product";
-	}
+	 @GetMapping("/getcategoryproductdetails")
+	    public String getCategoryProductDetails(@RequestParam("categoryId") int id, Model model) {
+	     Category category = categoryService.findByCategoryId(id);  
+	     if(category==null) {
+	    	 System.out.println("debug:category is null");
+	    	 return "";
+	     }
+	     model.addAttribute("getcategory",category);
+	        model.addAttribute("getproductlist", productService.getProductsByCategoryId(id));
+	        return "category-product";
+	    }
 }
 
-//     // To upload img in database
-//     @PostMapping("/admin/products/add")
-//     public String productAddPost(@ModelAttribute("productDTO") ProductDTO productDTO,
-//               @RequestParam("productImage") MultipartFile file,
-//               @RequestParam("imgName") String imgName) throws IOException {
-//          Product product = new Product();
-//          product.setProductId(productDTO.getProductId());
-//          product.setProductName(productDTO.getProductName());
-//          product.setCategoryId(categoryService.updateCategoryById(productDTO.getCategoryId()).get());
-//          product.setStockInhand(productDTO.getStockInhand());
-//          product.setPrice(productDTO.getPrice());
-//          product.setDescription(productDTO.getDescription());
-//          product.setImage(productDTO.getImage());
-//          
-//          String imageUUID;
-//          if (!file.isEmpty()) {
-//               imageUUID = file.getOriginalFilename();
-//               Path fileAndPathName = Paths.get(uploadDir, imageUUID);
-//               Files.write(fileAndPathName, file.getBytes());
-//          } else {
-//               imageUUID = imgName;
-//
-//          }
-//          product.setImage(imageUUID);
-//          productService.addproduct(product);
-//          return "redirect:/admin/products";
-//     }
-//     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
