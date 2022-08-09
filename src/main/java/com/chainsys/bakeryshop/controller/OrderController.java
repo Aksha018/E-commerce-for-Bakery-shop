@@ -7,6 +7,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.chainsys.bakeryshop.DTO.PersonOrderDTO;
@@ -15,6 +16,7 @@ import com.chainsys.bakeryshop.model.Person;
 import com.chainsys.bakeryshop.services.OrderService;
 import com.chainsys.bakeryshop.services.PersonService;
 
+@RequestMapping("/person")
 public class OrderController {
 	
 	@Autowired

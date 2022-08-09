@@ -19,7 +19,6 @@ import com.chainsys.bakeryshop.services.ProductService;
 @Controller
 @RequestMapping("/admin")
 public class AdminController {
-//	public static String uploadDir = System.getProperty("user.dir") + "/src/main/resources/static/productImages";
 	@Autowired
 	CategoryService categoryService;
 	@Autowired
