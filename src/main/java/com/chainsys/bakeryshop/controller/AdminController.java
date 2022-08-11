@@ -24,12 +24,12 @@ public class AdminController {
 	@Autowired
 	ProductService productService;
 
-	@GetMapping("/adminhome")
-	public String adminHome() {
-		return "admin";
-	}
-
-	@GetMapping("/list")
+	@GetMapping("/home")
+	public String index(Model model)
+	{
+      return "index";
+		}
+	@GetMapping("/categorylist")
 	public String getcategory(Model model) {
 		List<Category> categorylist = categoryService.getCategory();
 		model.addAttribute("allcategory", categorylist);
@@ -47,13 +47,13 @@ public class AdminController {
 	public String addNewCategory(@ModelAttribute("addcategory") Category category) {
 		System.out.println(category);
 		categoryService.save(category);
-		return "redirect:/admin/list";
+		return "redirect:/admin/categorylist";
 	}
 
 	@GetMapping("/deletecategory")
 	public String deleteCategory(@RequestParam("categoryId") int id) {
 		categoryService.deleteById(id);
-		return "redirect:/admin/list";
+		return "redirect:/admin/categorylist";
 
 	}
 
@@ -67,7 +67,7 @@ public class AdminController {
 	@PostMapping("updatecategory")
 	public String updateCategory(@ModelAttribute("updatecategory") Category category) {
 		categoryService.save(category);
-		return "redirect:/admin/list";
+		return "redirect:/admin/categorylist";
 	}
 
 	// products
@@ -114,6 +114,7 @@ public class AdminController {
 		productService.save(product);
 		return "redirect:/admin/productlist";
 	}
+	
 	
 	 @GetMapping("/getcategoryproductdetails")
 	    public String getCategoryProductDetails(@RequestParam("categoryId") int id, Model model) {

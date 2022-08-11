@@ -11,14 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.chainsys.bakeryshop.DTO.PersonOrderDTO;
-import com.chainsys.bakeryshop.model.Bill;
-import com.chainsys.bakeryshop.model.Orders;
-import com.chainsys.bakeryshop.model.Payment;
 import com.chainsys.bakeryshop.model.Person;
-import com.chainsys.bakeryshop.services.BillService;
-import com.chainsys.bakeryshop.services.OrderService;
-import com.chainsys.bakeryshop.services.PaymentService;
 import com.chainsys.bakeryshop.services.PersonService;
 
 @Controller
@@ -27,7 +20,7 @@ public class PersonController {
 	@Autowired
 	PersonService personservice;
 
-	@GetMapping("/index")
+	@GetMapping("/login")
 	public String index(Model model) {
 		Person theperson = new Person();
 		model.addAttribute("addperson", theperson);
@@ -44,12 +37,12 @@ public class PersonController {
 	@GetMapping("/addpersonform")
 	public String showAdd(Model model) {
 		Person theperson = new Person();
-		model.addAttribute("addperson", theperson);
+		model.addAttribute("add", theperson);
 		return "add-person";
 	}
 
 	@PostMapping("/addperson")
-	public String addNewPerson(@ModelAttribute("addperson") Person theperson) {
+	public String addNewPerson(@ModelAttribute("add") Person theperson) {
 		personservice.save(theperson);
 		return "redirect:/person/personlist";
 	}
@@ -72,5 +65,6 @@ public class PersonController {
 		personservice.deletePersonById(id);
 		return "redirect:/person/personlist";
 	}
+	
 
 }

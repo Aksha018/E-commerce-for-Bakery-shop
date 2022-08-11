@@ -5,10 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.chainsys.bakeryshop.DTO.PersonOrderDTO;
-import com.chainsys.bakeryshop.DTO.PersonProductDTO;
 import com.chainsys.bakeryshop.model.Orders;
-import com.chainsys.bakeryshop.model.Person;
 import com.chainsys.bakeryshop.repository.OrderRepository;
 import com.chainsys.bakeryshop.repository.PersonRepository;
 
@@ -45,14 +42,6 @@ public class OrderService {
 
 
 
-	
-//	public PersonOrderDTO getPersonOrderDTO(int id) {
-//		PersonOrderDTO dto = new PersonOrderDTO();
-//		
-//		dto.setPerson(personRepository.findById(id));
-//		dto.setOrder(orderRepository.findAll());
-//		
-//		return dto;
-		
+
 	
 

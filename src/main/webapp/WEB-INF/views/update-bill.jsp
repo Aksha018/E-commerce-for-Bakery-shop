@@ -30,6 +30,18 @@
 						<form:input path="orderId" />
 					</div>
 				</div>
+				<div>
+					<label for="orderId">Order Id</label>
+					<div>
+						<form:input path="orderId" />
+					</div>
+				</div>
+				<div>
+					<label for="billAmount">Bill Amount</label>
+					<div>
+						<form:input path="billAmount" />
+					</div>
+				</div>
 				<form:button>Update New</form:button>
 			</form:form>
 		</div>

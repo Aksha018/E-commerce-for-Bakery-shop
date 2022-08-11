@@ -3,6 +3,7 @@ package com.chainsys.bakeryshop.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -11,13 +12,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.chainsys.bakeryshop.model.Payment;
+import com.chainsys.bakeryshop.services.OrderService;
 import com.chainsys.bakeryshop.services.PaymentService;
 
+@Controller
 @RequestMapping("/person")
 public class PaymentController {
 
 	@Autowired
 	PaymentService paymentService;
+	@Autowired
+	OrderService orderService;
 
 	@GetMapping("/paymentlist")
 	public String getPaymentAll(Model model) {
@@ -57,5 +62,12 @@ public class PaymentController {
 		paymentService.deletePaymentById(id);
 		return "redirect:/person/paymentlist";
 	}
+//PaymentOrderDTO	
+	@GetMapping("/getpaymentorder")
+    public String getpaymentorder(@RequestParam("orderid") long id, Model model) {
+    	model.addAttribute("getorder",orderService.findByOrderId(id));
+    	model.addAttribute("getpayment",paymentService.getPayment());
+    	return "payment-order";
+    }
 
 }

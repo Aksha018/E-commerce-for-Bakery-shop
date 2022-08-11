@@ -1,65 +1,46 @@
 package com.chainsys.bakeryshop.model;
 
 import java.sql.Date;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.Size;
 
 @Entity
 @Table(name = "orders")
 public class Orders {
 
+	
+	//@GeneratedValue(strategy = GenerationType.AUTO)
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	@NotEmpty
 	@Column(name = "ORDER_ID")
 	private long orderId;
-	@NotEmpty
-	@Size(min = 5, max = 5, message = "Please enter valid date")
 	@Column(name = "ORDER_DATE")
 	private Date orderDate;
-	@NotEmpty
-	@Size(min = 5, max = 6, message = "Please enter integer only")
 	@Column(name = "PERSON_ID")
 	private int personId;
-	@NotEmpty
-	@Size(min = 5, max = 6, message = "Please enter integer only")
 	@Column(name = "PRODUCT_ID")
 	private int productId;
-	@NotEmpty
-	@Size(min = 5, max = 10, message = "Please enter integer only")
 	@Column(name = "QUANTITY")
 	private int quantity;
-	@NotEmpty
-	@Size(min = 9, max = 10, message = "Please enter integer only")
 	@Column(name = "PRICE")
 	private int price;
-	@NotEmpty
-	@Size(min = 9, max = 10, message = "Please enter integer only")
 	@Column(name = "AMOUNT")
 	private float amount;
-	@NotEmpty
-	@Size(min = 5, max = 5, message = "Please enter valid time")
 	@Column(name = "DELIVERY_TIME")
 	private String deliveryTime;
-	@NotEmpty
-	@Size(min = 5, max = 5, message = "Please enter valid date")
 	@Column(name = "DELIVERY_DATE")
 	private Date deliveryDate;
-	@NotEmpty
-	@Size(min = 10, max = 100, message = "Enter Alphabets only")
 	@Column(name = "DELIVERY_ADDRESS")
 	private String deliveryAddress;
-	@NotEmpty
-	@Size(min = 5, max = 5, message = "Enter characters only")
 	@Column(name = "STATUS")
 	private String status;
 
@@ -162,5 +143,42 @@ public class Orders {
 	public void setPerson(Person person) {
 		this.person = person;
 	}
+	public void setOrderId(int orderId) {
+		this.orderId = orderId;
+	}
+	
+@OneToMany(mappedBy = "product",fetch = FetchType.LAZY)	 
+  private List<Orders> order;
+	    public List<Orders>getOrder() 
+	    {
+		return order;
+  	}	    
+	public void setOrder(List<Orders> order) {
+		this.order = order;
+	}
+	
+	@OneToMany(mappedBy = "orders",fetch = FetchType.LAZY)	 
+    private List<Bill> bill;
 
+	    public List<Bill>  getBill() 
+	    {
+		return bill;
+    	}
+	    
+	public void setBill(List<Bill> bill) {
+		this.bill = bill;
+	}
+	
+	@OneToMany(mappedBy = "orders",fetch = FetchType.LAZY)	 
+    private List<Payment> payment;
+
+	    public List<Payment>  getPayment() 
+	    {
+		return payment;
+    	}
+	    
+	public void setPayment(List<Payment> payment) {
+		this.payment = payment;
+	}
+	
 }

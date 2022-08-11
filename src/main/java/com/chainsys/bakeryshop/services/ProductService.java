@@ -1,12 +1,18 @@
 package com.chainsys.bakeryshop.services;
 
+import java.util.Iterator;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.chainsys.bakeryshop.DTO.OrderProductDTO;
+import com.chainsys.bakeryshop.DTO.PersonOrderDTO;
+import com.chainsys.bakeryshop.model.Orders;
+import com.chainsys.bakeryshop.model.Person;
 import com.chainsys.bakeryshop.model.Product;
 import com.chainsys.bakeryshop.repository.CategoryRepository;
+import com.chainsys.bakeryshop.repository.OrderRepository;
 import com.chainsys.bakeryshop.repository.ProductRepository;
 
 @Service
@@ -15,6 +21,8 @@ public class ProductService {
 	ProductRepository productRepository;
 	@Autowired
 	CategoryRepository categoryRepository;
+	@Autowired
+	OrderRepository orderRepository;
 	
 	public List<Product> getProduct() {
 		List<Product> productlist = productRepository.findAll();
@@ -45,4 +53,15 @@ public class ProductService {
 		productRepository.deleteById(id);
 	}
 	
+	public OrderProductDTO getOrderProductDTO(long id) {
+		Product product = productRepository.findByProductId(id);
+		OrderProductDTO dto = new OrderProductDTO();
+		dto.setProduct(product);
+		List<Orders> order = orderRepository.findByProductId(id);
+		Iterator<Orders> itr = order.iterator();
+		while (itr.hasNext()) {
+			dto.addOrder((Orders) itr.next());
+		}
+		return dto;
 }
+	}

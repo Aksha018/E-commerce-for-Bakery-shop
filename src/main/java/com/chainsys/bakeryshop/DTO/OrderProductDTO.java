@@ -4,21 +4,26 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.chainsys.bakeryshop.model.Orders;
-import com.chainsys.bakeryshop.model.Person;
+import com.chainsys.bakeryshop.model.Product;
 
-public class PersonOrderDTO {
-	private Person person;
+public class OrderProductDTO {
+
+	private Product product;
 	private List<Orders> order = new ArrayList<>();
-	public Person getPerson() {
-		return person;
+
+	public Product getProduct() {
+		return product;
 	}
-	public void setPerson(Person person) {
-		this.person = person;
+
+	public void setProduct(Product product) {
+		this.product = product;
 	}
+
 	public List<Orders> getOrder() {
 		return order;
 	}
+
 	public void addOrder(Orders order) {
 		this.order.add(order);
-	}	
+	}
 }

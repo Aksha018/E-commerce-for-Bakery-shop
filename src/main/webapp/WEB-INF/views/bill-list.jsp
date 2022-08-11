@@ -14,7 +14,7 @@
 				<th>Bill Id</th>
 				<th>Bill Date</th>
 				<th>Order Id</th>
-				<th>PreOrder Id</th>
+				<th>Bill Amount</th>
 		  </tr>
 		</thead>
 		<tbody>
@@ -22,7 +22,8 @@
 				<tr>
 					<td>${bill.billId}</td>
 					<td>${bill.billDate}</td>
-					<td>${bill.orderId}</td>					
+					<td>${bill.orderId}</td>
+					<td>${bill.billAmount}</td>					
 				</tr>
 			</c:forEach>
 		</tbody>

@@ -10,8 +10,9 @@
 </head>
 <body>
 	<div id="root">
-		<div id="form">
-			<form:form action="addbill" method="post" modelAttribute="addbilldetail">
+		<div id="form" align="center">
+			<form:form action="addbill" method="post"
+				modelAttribute="addbilldetail">
 				<div>
 					<label for="billId">Bill Id</label>
 					<div>
@@ -21,7 +22,7 @@
 				<div>
 					<label for="billDate">Bill Date</label>
 					<div>
-						<form:input path="billDate" type="date"/>
+						<form:input path="billDate" type="date" />
 					</div>
 				</div>
 				<div>
@@ -30,8 +31,15 @@
 						<form:input path="orderId" />
 					</div>
 				</div>
+				<div>
+					<label for="billAmount">billAmount</label>
+					<div>
+						<form:input path="billAmount" />
+					</div>
+				</div>
 				<form:button>Add New</form:button>
 			</form:form>
 		</div>
+	</div>
 </body>
 </html>

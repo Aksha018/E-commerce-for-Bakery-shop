@@ -18,12 +18,8 @@ import javax.validation.constraints.Size;
 public class Category {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@NotEmpty
-	@Size(min = 5, max = 6, message = "Please enter integer only")
 	@Column(name = "CATEGORY_ID")
 	private int categoryId;
-	@NotEmpty
-	@Size(min = 8, max = 15, message = "Please enter alphabets only")
 	@Column(name = "CATEGORY_NAME")
 	private String categoryName;
 

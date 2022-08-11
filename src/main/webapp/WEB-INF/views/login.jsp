@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
@@ -10,12 +10,21 @@
 <style type="text/css">
 body {
 	background: #456;
+	background-image:
+		url('https://thumbs.dreamstime.com/b/picture-frame-cakes-cookies-cakepops-cupcakes-copy-space-table-pie-tarts-studio-shot-brown-wooden-background-flat-lay-80957100.jpg');
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: 100% 100%;
 }
+
+}
+
 h1 {
-	color: #fff;
+	color:#FFFFFF;
 }
+
 label {
-	color: #fff;
+	color:#FFFFFF;
 	font-size: 1.3em;
 	display: flex;
 	margin: 5px;
@@ -23,44 +32,53 @@ label {
 	cursor: pointer;
 	transition: .5s ease-in-out;
 }
+
 #personId {
 	width: 250px;
 	height: 30px;
-	border: none;
+	border-color:black;
 	border-radius: 3px;
 	padding-left: 8px;
 }
+
 #personName {
 	width: 250px;
 	height: 30px;
-	border: none;
+	border-color:black;
 	border-radius: 3px;
 	padding-left: 8px;
 }
+
 #email {
 	width: 250px;
 	height: 30px;
-	border: none;
+	border-color:black;
 	border-radius: 3px;
 	padding-left: 8px;
 }
+
 #password {
 	width: 250px;
 	height: 30px;
+	border-color:black;
 	border: none;
 	border-radius: 3px;
 	padding-left: 8px;
 }
+
 #mobileNumber {
 	width: 250px;
 	height: 30px;
+	border-color:black;
 	border: none;
 	border-radius: 3px;
 	padding-left: 8px;
 }
+
 #personType {
 	width: 250px;
 	height: 30px;
+	border-color:black;
 	border: none;
 	border-radius: 3px;
 	padding-left: 8px;
@@ -69,18 +87,17 @@ label {
 #log {
 	width: 250px;
 	height: 30px;
+	border-color:black;
 	border: none;
 	border-radius: 14px;
 	padding-left: 10px;
 	color: blue;
 }
+
 .box {
 	width: 400px;
 	height: 490px;
 	overflow: hidden;
-	background:
-		url("https://doc-08-2c-docs.googleusercontent.com/docs/securesc/68c90smiglihng9534mvqmq1946dmis5/fo0picsp1nhiucmc0l25s29respgpr4j/1631524275000/03522360960922298374/03522360960922298374/1Sx0jhdpEpnNIydS4rnN4kHSJtU1EyWka?e=view&authuser=0&nonce=gcrocepgbb17m&user=03522360960922298374&hash=tfhgbs86ka6divo3llbvp93mg4csvb38")
-		no-repeat center/cover;
 	border-radius: 10px;
 	box-shadow: 5px 20px 50px #000;
 	margin: auto;
@@ -90,49 +107,43 @@ label {
 </style>
 </head>
 <body>
-<h1 align="center">Sign Up</h1>
-    <div id="root" class="box">
-        <div id="form">
-            <form:form action="addperson" method="post" modelAttribute="addperson">
-                <div>
-                    <label for="personId">Person Id </label>
-                    <div>
-                        <form:input path="personId" />
-                    </div>
-                </div>
-                <div>
-                    <label for="personName">Person Name</label>
-                    <div>
-                        <form:input path="personName" />
-                    </div>
-                </div>
-                <div>
-                    <label for="email">Email</label>
-                    <div>
-                        <form:input path="email" />
-                    </div>
-                </div>
-                <div>
-                    <label for="password">Password</label>
-                    <div>
-                        <form:input path="password" />
-                    </div>
-                </div>
-                 <div>
-                    <label for="mobileNumber">Mobile Number</label>
-                    <div>
-                        <form:input path="mobileNumber" />
-                    </div>
-                </div>
-                <div>
-                    <label for="personType">Person Type</label>
-                    <div> 
-                        <form:input path="personType" />
-                    </div>
-                </div><br>
-                <form:button id="log">Sign Up</form:button>
-            </form:form>
-        </div>
-    </div>
+	<h1 align="center">Sign Up</h1>
+	<div id="root" class="box">
+		<div id="form">
+			<form:form action="addperson" method="post"
+				modelAttribute="addperson">
+				<div>
+					<label for="personId">Person Id </label>
+						<form:input path="personId" />
+				</div>
+				<div>
+					<label for="personName">Person Name</label>
+						<form:input path="personName" />
+				</div>
+				<div>
+					<label for="email">Email</label>
+						<form:input path="email" />
+				</div>
+				<div>
+					<label for="password">Password</label>
+						<form:input path="password" />
+				</div>
+				<div>
+					<label for="mobileNumber">Mobile Number</label>
+						<form:input path="mobileNumber" />
+				</div>
+				<div>
+					<label for="personType">Person Type</label>
+				<td><form:select path="personType">
+                                <form:errors path="personType" />
+                                        <form:option value="admin">Admin</form:option>
+                                        <form:option value="user">User</form:option>
+                                    </form:select></td>
+                                    </div><br>
+                                    </div>
+		<form:button id="log">Sign Up</form:button>
+		</form:form>
+	</div>
+	</div>
 </body>
 </html>
