@@ -13,12 +13,6 @@
 		<div id="form">
 			<form:form action="add" method="post" modelAttribute="addcategory">
 				<div>
-					<label for="categoryID"> Category Id </label>
-					<div>
-						<form:input path="categoryId" />
-					</div>
-				</div>
-				<div>
 					<label for="categoryName">Category Name</label>
 					<div>
 						<form:input path="categoryName" />

@@ -35,7 +35,10 @@ public class PersonService {
 	public void deletePersonById(int id) {
 		personRepository.deleteById(id);
 	}
-
+	public Person getEmailAndPassword(String email,String password) {
+        return personRepository.findByEmailAndPassword(email, password);
+	}
+	
 	public PersonOrderDTO getPersonOrderDTO(int id) {
 		Person person = personRepository.findById(id);
 		PersonOrderDTO dto = new PersonOrderDTO();

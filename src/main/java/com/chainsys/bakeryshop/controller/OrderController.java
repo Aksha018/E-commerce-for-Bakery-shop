@@ -75,12 +75,5 @@ public class OrderController {
 				model.addAttribute("order", dto.getOrder());
 				return "person-order";
 			}
-//OrderProductDTO			
-			@GetMapping("/getorderproduct")
-			public String getorderproduct(@RequestParam("id") int id, Model model) {
-				OrderProductDTO dto = productService.getOrderProductDTO(id);
-				model.addAttribute("product", dto.getProduct());
-				model.addAttribute("order", dto.getOrder());
-				return "order-product";
-			}
+
 		}

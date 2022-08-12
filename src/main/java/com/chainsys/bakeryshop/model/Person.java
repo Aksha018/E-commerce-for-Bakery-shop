@@ -9,8 +9,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 @Entity
@@ -18,17 +20,23 @@ import javax.validation.constraints.Size;
 public class Person {
 	
 	@Id
-	//@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.AUTO, generator = "PERSON_ID")
+    @SequenceGenerator(name = "PERSON_ID", sequenceName = "PERSON_ID", allocationSize = 1)	
 	@Column(name = "PERSON_ID")
 	private int personId;
+
 	@Column(name = "PERSON_NAME")
 	private String personName;
+
 	@Column(name = "EMAIL")
 	private String email;
+
 	@Column(name = "PASSWORD")
 	private String password;
+
 	@Column(name = "MOBILE_Number")
 	private long mobileNumber;
+
 	@Column(name = "PERSON_TYPE")
 	private String personType;
 	

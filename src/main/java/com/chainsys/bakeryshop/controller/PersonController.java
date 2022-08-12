@@ -19,12 +19,30 @@ import com.chainsys.bakeryshop.services.PersonService;
 public class PersonController {
 	@Autowired
 	PersonService personservice;
-
-	@GetMapping("/login")
-	public String index(Model model) {
-		Person theperson = new Person();
-		model.addAttribute("addperson", theperson);
-		return "login";
+	@GetMapping("/homepage")
+	public String index(Model model)
+	{
+      return "home";
+		}
+	@GetMapping("/indexpage")
+	public String homePage(Model model)
+	{
+      return "index";
+	}
+	
+	@GetMapping("/personloginpage")
+	public String personLogin(Model model) {
+		Person  theperson=new Person();
+	    model.addAttribute("uselogin", theperson);
+	    return "userlogin";
+	}
+	@PostMapping("/personlogin")
+	public String checkingAccess(@ModelAttribute("uselogin") Person person) {
+		Person  theperson=personservice.getEmailAndPassword(person.getEmail(),person.getPassword());
+	    if(theperson!=null) {
+	        return "redirect:/person/homepage";
+	    }else
+	        return "Invalid-user-error";
 	}
 
 	@GetMapping("/personlist")
@@ -34,17 +52,17 @@ public class PersonController {
 		return "person-list";
 	}
 
-	@GetMapping("/addpersonform")
+	@GetMapping("/signup")
 	public String showAdd(Model model) {
 		Person theperson = new Person();
 		model.addAttribute("add", theperson);
-		return "add-person";
+		return "signup";
 	}
 
 	@PostMapping("/addperson")
 	public String addNewPerson(@ModelAttribute("add") Person theperson) {
 		personservice.save(theperson);
-		return "redirect:/person/personlist";
+		return "redirect:/person/indexpage";
 	}
 
 	@GetMapping("/updatepersonform")
@@ -65,6 +83,4 @@ public class PersonController {
 		personservice.deletePersonById(id);
 		return "redirect:/person/personlist";
 	}
-	
-
 }

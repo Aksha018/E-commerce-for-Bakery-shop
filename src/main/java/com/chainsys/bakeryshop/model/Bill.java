@@ -1,32 +1,32 @@
 package com.chainsys.bakeryshop.model;
 
 import java.sql.Date;
-import java.util.List;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.Size;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "bill")
 public class Bill {
 	@Id
-   // @GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.AUTO, generator = "BILL_ID")
+    @SequenceGenerator(name = "BILL_ID", sequenceName = "BILL_ID", allocationSize = 1)	
 	@Column(name = "BILL_ID")
 	private long billId;
+
 	@Column(name = "BILL_DATE")
 	private Date billDate;
+
 	@Column(name = "ORDER_ID")
 	private int orderId;
+
 	@Column(name = "BILL_AMOUNT")
 	private int billAmount;
 

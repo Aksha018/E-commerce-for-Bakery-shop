@@ -62,12 +62,4 @@ public class PaymentController {
 		paymentService.deletePaymentById(id);
 		return "redirect:/person/paymentlist";
 	}
-//PaymentOrderDTO	
-	@GetMapping("/getpaymentorder")
-    public String getpaymentorder(@RequestParam("orderid") long id, Model model) {
-    	model.addAttribute("getorder",orderService.findByOrderId(id));
-    	model.addAttribute("getpayment",paymentService.getPayment());
-    	return "payment-order";
-    }
-
 }

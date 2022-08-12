@@ -20,7 +20,7 @@
 	background: #fff;
 }
 nav {
-	position: fixed;
+	position:fixed;
 	background: #1b1b1b;
 	width: 100%;
 	padding: 10px 0;
@@ -142,7 +142,8 @@ body {
 				<a href="#">Bakery And Cakes</a>
 			</div>
 			<ul>
-				<li><a href="/person/login">Sign up</a></li>
+			<li><a href="/person/personloginpage">Login</a></li>	
+				<li><a href="/person/signup">Sign up</a></li>	
 			</ul>
 		</div>
 	</nav>

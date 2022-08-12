@@ -23,12 +23,7 @@ public class AdminController {
 	CategoryService categoryService;
 	@Autowired
 	ProductService productService;
-
-	@GetMapping("/home")
-	public String index(Model model)
-	{
-      return "index";
-		}
+	
 	@GetMapping("/categorylist")
 	public String getcategory(Model model) {
 		List<Category> categorylist = categoryService.getCategory();
@@ -115,6 +110,7 @@ public class AdminController {
 		return "redirect:/admin/productlist";
 	}
 	
+	//CategoryProductDetails
 	
 	 @GetMapping("/getcategoryproductdetails")
 	    public String getCategoryProductDetails(@RequestParam("categoryId") int id, Model model) {

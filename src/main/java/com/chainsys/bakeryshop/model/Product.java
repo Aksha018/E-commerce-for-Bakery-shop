@@ -8,27 +8,33 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.Size;
 
 @Entity
 @Table(name = "product")
 public class Product {
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.AUTO, generator = "PRODUCT_ID")
+    @SequenceGenerator(name = "PRODUCT_ID", sequenceName = "PRODUCT_ID", allocationSize = 1)	
 	@Column(name = "PRODUCT_ID")
 	private long productId;
+
 	@Column(name = "PRODUCT_NAME")
 	private String productName;
+	
 	@Column(name = "CATEGORY_ID")
 	private int categoryId;
+
 	@Column(name = "STOCK_IN_HAND")
 	private int stockInhand;
+	
 	@Column(name = "PRICE")
 	private double price;
+	
 	@Column(name = "DESCRIPTION")
 	private String description;
+	
 	@Column(name = "IMAGE")
 	private String image;
 
@@ -104,16 +110,5 @@ public class Product {
 		super();
 		this.categoryId = categoryId;
 	}
-//	@ManyToOne
-//	@JoinColumn(name = "PRODUCT_ID", insertable = false, nullable = false, updatable = false)
-//	private Product product;
-//
-//	public Product getProduct() {
-//		return product;
-//	}
-//
-//	public void setProduct(Product product) {
-//		this.product = product;
-//	}
-
-	}
+	
+}

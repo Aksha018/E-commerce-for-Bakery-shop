@@ -13,16 +13,20 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 @Entity
 @Table(name = "payment")
 public class Payment {
 	
-	//@GeneratedValue(strategy = GenerationType.AUTO)
+	
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO, generator = "PAYMENT_ID")
+    @SequenceGenerator(name = "PAYMENT_ID", sequenceName = "PAYMENT_ID", allocationSize = 1)	
 	@Column(name = "PAYMENT_ID")
 	private long paymentId;
 	
@@ -31,13 +35,13 @@ public class Payment {
 
 	@Column(name = "ORDER_ID")
 	private int orderId;
-
+	
 	@Column(name = "AMOUNT")
 	private float amount;
-
+	
 	@Column(name = "PAYMENT_MODE")
 	private String paymentMode;
-
+	
 	@Column(name = "PAYMENT_DESCRIPTION")
 	private String paymentDescription;
 
@@ -89,15 +93,4 @@ public class Payment {
 		this.paymentDescription = paymentDescription;
 	}
 	
-	@ManyToOne
-	@JoinColumn(name = "ORDER_ID", insertable = false, nullable = false, updatable = false)
-	private Orders ord;
-
-	public Orders getOrders() {
-		return ord;
-	}
-
-	public void setOrders(Orders ord) {
-		this.ord = ord;
-	}
 }

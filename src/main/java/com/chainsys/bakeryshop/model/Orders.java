@@ -12,35 +12,48 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "orders")
 public class Orders {
 
 	
-	//@GeneratedValue(strategy = GenerationType.AUTO)
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO, generator = "ORDER_ID")
+    @SequenceGenerator(name = "ORDER_ID", sequenceName = "ORDER_ID", allocationSize = 1)	
 	@Column(name = "ORDER_ID")
 	private long orderId;
+	
 	@Column(name = "ORDER_DATE")
 	private Date orderDate;
+	
 	@Column(name = "PERSON_ID")
 	private int personId;
+	
 	@Column(name = "PRODUCT_ID")
 	private int productId;
+	
 	@Column(name = "QUANTITY")
 	private int quantity;
+	
 	@Column(name = "PRICE")
 	private int price;
+	
 	@Column(name = "AMOUNT")
 	private float amount;
+
 	@Column(name = "DELIVERY_TIME")
 	private String deliveryTime;
+	
 	@Column(name = "DELIVERY_DATE")
 	private Date deliveryDate;
+	
 	@Column(name = "DELIVERY_ADDRESS")
 	private String deliveryAddress;
+	
 	@Column(name = "STATUS")
 	private String status;
 
@@ -146,17 +159,7 @@ public class Orders {
 	public void setOrderId(int orderId) {
 		this.orderId = orderId;
 	}
-	
-@OneToMany(mappedBy = "product",fetch = FetchType.LAZY)	 
-  private List<Orders> order;
-	    public List<Orders>getOrder() 
-	    {
-		return order;
-  	}	    
-	public void setOrder(List<Orders> order) {
-		this.order = order;
-	}
-	
+		
 	@OneToMany(mappedBy = "orders",fetch = FetchType.LAZY)	 
     private List<Bill> bill;
 
@@ -167,18 +170,6 @@ public class Orders {
 	    
 	public void setBill(List<Bill> bill) {
 		this.bill = bill;
-	}
-	
-	@OneToMany(mappedBy = "orders",fetch = FetchType.LAZY)	 
-    private List<Payment> payment;
-
-	    public List<Payment>  getPayment() 
-	    {
-		return payment;
-    	}
-	    
-	public void setPayment(List<Payment> payment) {
-		this.payment = payment;
 	}
 	
 }

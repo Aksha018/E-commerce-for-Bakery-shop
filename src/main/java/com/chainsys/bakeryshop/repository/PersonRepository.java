@@ -12,11 +12,11 @@ public interface PersonRepository extends JpaRepository<Person,Integer> {
 	
 	 Person findById(int id);
 
-	Person save(Person payment); 
+	Person save(Person person); 
 	
 	void deleteById(int id);
 
 	List<Person> findAll();
 
-
+	Person findByEmailAndPassword(String email,String password);
 }

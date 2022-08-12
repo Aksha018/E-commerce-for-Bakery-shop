@@ -17,14 +17,12 @@ body {
 	background-size: 100% 100%;
 }
 
-}
-
 h1 {
-	color:#FFFFFF;
+color:	#ffff ;
 }
 
 label {
-	color:#FFFFFF;
+	color: 	#ffff;
 	font-size: 1.3em;
 	display: flex;
 	margin: 5px;
@@ -36,7 +34,7 @@ label {
 #personId {
 	width: 250px;
 	height: 30px;
-	border-color:black;
+	border-color: black;
 	border-radius: 3px;
 	padding-left: 8px;
 }
@@ -44,7 +42,7 @@ label {
 #personName {
 	width: 250px;
 	height: 30px;
-	border-color:black;
+	border-color: black;
 	border-radius: 3px;
 	padding-left: 8px;
 }
@@ -52,7 +50,7 @@ label {
 #email {
 	width: 250px;
 	height: 30px;
-	border-color:black;
+	border-color: black;
 	border-radius: 3px;
 	padding-left: 8px;
 }
@@ -60,7 +58,7 @@ label {
 #password {
 	width: 250px;
 	height: 30px;
-	border-color:black;
+	border-color: black;
 	border: none;
 	border-radius: 3px;
 	padding-left: 8px;
@@ -69,7 +67,7 @@ label {
 #mobileNumber {
 	width: 250px;
 	height: 30px;
-	border-color:black;
+	border-color: black;
 	border: none;
 	border-radius: 3px;
 	padding-left: 8px;
@@ -78,7 +76,7 @@ label {
 #personType {
 	width: 250px;
 	height: 30px;
-	border-color:black;
+	border-color: black;
 	border: none;
 	border-radius: 3px;
 	padding-left: 8px;
@@ -87,7 +85,7 @@ label {
 #log {
 	width: 250px;
 	height: 30px;
-	border-color:black;
+	border-color: black;
 	border: none;
 	border-radius: 14px;
 	padding-left: 10px;
@@ -108,42 +106,36 @@ label {
 </head>
 <body>
 	<h1 align="center">Sign Up</h1>
-	<div id="root" class="box">
-		<div id="form">
-			<form:form action="addperson" method="post"
-				modelAttribute="addperson">
-				<div>
-					<label for="personId">Person Id </label>
-						<form:input path="personId" />
-				</div>
-				<div>
-					<label for="personName">Person Name</label>
-						<form:input path="personName" />
-				</div>
-				<div>
-					<label for="email">Email</label>
-						<form:input path="email" />
-				</div>
-				<div>
-					<label for="password">Password</label>
-						<form:input path="password" />
-				</div>
-				<div>
-					<label for="mobileNumber">Mobile Number</label>
-						<form:input path="mobileNumber" />
-				</div>
-				<div>
-					<label for="personType">Person Type</label>
-				<td><form:select path="personType">
-                                <form:errors path="personType" />
-                                        <form:option value="admin">Admin</form:option>
-                                        <form:option value="user">User</form:option>
-                                    </form:select></td>
-                                    </div><br>
-                                    </div>
-		<form:button id="log">Sign Up</form:button>
+	<div class="box">
+		<form:form action="addperson" method="post" modelAttribute="add">
+			<div>
+				<label for="personName">Person Name</label>
+				<form:input id="personName" path="personName"/>
+			</div>
+			<div>
+				<label for="email">Email</label>
+				<form:input id="email" path="email"/>
+			</div>
+			<div>
+				<label for="password">Password</label>
+				<form:input id="password" path="password" type="password" />
+			</div>
+			<div>
+				<label for="mobileNumber">Mobile Number</label>
+				<form:input id="mobileNumber" path="mobileNumber"/>
+			</div>
+			<div>
+				<label for="personType">Person Type</label>
+				<form:select path="personType">
+					<form:errors path="personType" />
+					<form:option value="user">User</form:option>
+				</form:select>
+			</div>
+			<div>
+				<br>
+			</div>
+			<form:button id="log">Sign Up</form:button>
 		</form:form>
-	</div>
 	</div>
 </body>
 </html>
