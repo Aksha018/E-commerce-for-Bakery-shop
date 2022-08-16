@@ -142,8 +142,11 @@ body {
 				<a href="#">Bakery And Cakes</a>
 			</div>
 			<ul>
-			<li><a href="/person/personloginpage">Login</a></li>	
-				<li><a href="/person/signup">Sign up</a></li>	
+				<li><a href="/admin/categorylist">Category</a></li>	
+				<li><a href="/admin/productlist">Product</a></li>
+				<li><a href="/person/orderlist">Orders</a></li>		
+				<li><a href="/person/paymentlist">Payment Details</a></li>		
+				<li><a href="/bill/billlist">Bill Details</a></li>	
 			</ul>
 		</div>
 	</nav>

@@ -28,6 +28,10 @@
 					<td>${payment.amount}</td>
 					<td>${payment.paymentMode}</td>
 					<td>${payment.paymentDescription}</td>
+					<td><a href="updatepayment?id=${payment.paymentId}"><input
+							onclick="change()" type="button" value="Update" id="myButton1"></input></a></td>
+					<td><a href="deletepayment?id=${payment.paymentId}"><input
+							onclick="change()" type="button" value="Delete" id="myButton2"></input></a></td>
 				</tr>
 			</c:forEach>
 		</tbody>

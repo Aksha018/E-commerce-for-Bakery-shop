@@ -30,20 +30,28 @@ public class PersonController {
       return "index";
 	}
 	
+	@GetMapping("/adminindex")
+	public String adminPage(Model model)
+	{
+      return "admin-index";
+	}
+	
 	@GetMapping("/personloginpage")
 	public String personLogin(Model model) {
 		Person  theperson=new Person();
 	    model.addAttribute("uselogin", theperson);
 	    return "userlogin";
 	}
-	@PostMapping("/personlogin")
-	public String checkingAccess(@ModelAttribute("uselogin") Person person) {
-		Person  theperson=personservice.getEmailAndPassword(person.getEmail(),person.getPassword());
-	    if(theperson!=null) {
-	        return "redirect:/person/homepage";
-	    }else
-	        return "Invalid-user-error";
-	}
+	
+	  @PostMapping("/personlogin") public String
+	 checkingAccess(@ModelAttribute("uselogin") Person person) {
+		 Person theperson=personservice.getEmailAndPassword(person.getEmail(),person.getPassword()); 
+		 if(theperson!=null) {
+			 return "redirect:/person/homepage";
+	  } else
+		  return "Invalid-user-error"; 
+		 }
+	 
 
 	@GetMapping("/personlist")
 	public String getPersonAll(Model model) {
@@ -64,6 +72,23 @@ public class PersonController {
 		personservice.save(theperson);
 		return "redirect:/person/indexpage";
 	}
+	
+	@PostMapping("/checkuserlogin")
+    public String addNewAdmin(@ModelAttribute("add") Person theperson) {
+        Person person = personservice.getEmailAndPasswordAndPersonType(theperson.getEmail(), theperson.getPassword(),
+        		theperson.getPersonType());
+        if (theperson != null) {
+            if ("admin".equals(theperson.getPersonType())) {
+                return "redirect:/person/adminindex";
+                
+            } else {
+                return "redirect:/person/homepage";
+            }
+        } else {
+            return "invalid-user-error";
+        }
+        
+    }
 
 	@GetMapping("/updatepersonform")
 	public String showUpdateForm(@RequestParam("id") int id, Model model) {

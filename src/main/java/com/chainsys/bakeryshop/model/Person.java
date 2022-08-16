@@ -90,5 +90,8 @@ public class Person {
 	public void setOrder(List<Orders> order) {
 		this.order = order;
 	}
+	public Object getRole() { 
+		return null;
+	}
     
 }

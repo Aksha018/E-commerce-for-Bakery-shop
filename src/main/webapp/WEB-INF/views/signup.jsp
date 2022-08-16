@@ -129,6 +129,7 @@ label {
 				<form:select path="personType">
 					<form:errors path="personType" />
 					<form:option value="user">User</form:option>
+					<form:option value="user">Admin</form:option>
 				</form:select>
 			</div>
 			<div>

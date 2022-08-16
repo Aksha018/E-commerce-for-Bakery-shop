@@ -16,7 +16,7 @@ import com.chainsys.bakeryshop.services.BillService;
 import com.chainsys.bakeryshop.services.OrderService;
 
 @Controller
-@RequestMapping("/person")
+@RequestMapping("/bill")
 public class BillController {
 
 	@Autowired
@@ -41,7 +41,7 @@ public class BillController {
 	@PostMapping("/addbill")
 	public String addNewbill(@ModelAttribute("addbilldetail") Bill billlist) {
 		billservice.save(billlist);
-		return "redirect:/person/billlist";
+		return "redirect:/bill/billlist";
 	}
 
 	@GetMapping("/updatebillform")
@@ -60,7 +60,7 @@ public class BillController {
 	@GetMapping("/deletebill")
 	public String deleteBill(@RequestParam("id") long id) {
 		billservice.deleteBillById(id);
-		return "redirect:/person/billlist";
+		return "redirect:/bill/billlist";
 	}
 	 
 //OrderbBillDTO 

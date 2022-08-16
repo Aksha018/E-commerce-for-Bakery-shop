@@ -13,12 +13,6 @@
 		<div id="form">
 			<form:form action="addproduct" method="post" modelAttribute="product">
 				<div>
-					<label for="productID">Product Id</label>
-					<div>
-						<form:input path="productId" />
-					</div>
-				</div>
-				<div>
 					<label for="productName">Product Name</label>
 					<div>
 						<form:input path="productName" />
@@ -46,12 +40,6 @@
 					<label for="description">Description</label>
 					<div>
 						<form:input path="description" />
-					</div>
-					<div>
-						<label for="image">Image</label>
-						<div>
-							<form:input path="image" />
-						</div>
 					</div>
 				</div>
 				<form:button>Add New</form:button>

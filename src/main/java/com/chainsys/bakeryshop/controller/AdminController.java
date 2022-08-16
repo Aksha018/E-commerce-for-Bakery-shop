@@ -123,31 +123,29 @@ public class AdminController {
 	        model.addAttribute("getproductlist", productService.getProductsByCategoryId(id));
 	        return "category-product";
 	    }
+	 
+	 @GetMapping("/cake")
+	 public String cake(Model model) {
+		 return "cake";
+	 }
+	 @GetMapping("/cookies")
+	 public String cookies(Model model) {
+		 return "cookies";
+	 }
+	 @GetMapping("/cupcakes")
+	 public String cupcakes(Model model) {  
+		 return "cupcakes";
+	 }
+	 @GetMapping("/chocolates")
+	 public String chocolates(Model model) {
+		 return "chocolates";
+	 }
+	 @GetMapping("/donuts")
+	 public String donuts(Model model) {
+		 return "donuts";
+	 }
+	 @GetMapping("/muffins")
+	 public String muffins(Model model) {
+		 return "muffins";
+	 }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

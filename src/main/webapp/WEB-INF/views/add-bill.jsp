@@ -14,7 +14,7 @@
 			<form:form action="addbill" method="post"
 				modelAttribute="addbilldetail">
 				<div>
-					<label for="billId">Bill Id</label>
+					<label for="billId" >Bill Id</label>
 					<div>
 						<form:input path="billId" />
 					</div>

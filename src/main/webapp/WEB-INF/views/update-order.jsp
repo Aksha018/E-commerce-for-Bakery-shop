@@ -8,9 +8,44 @@
 <meta charset="ISO-8859-1">
 <title>Update Order</title>
 </head>
+<style type="text/css">
+.login-form {
+    width: 500px;
+    top: 400px;
+    left: 700px;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    color: #00000;
+}
+
+.login-form h1 {
+    font-size: 40px;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 30px 0;
+}
+
+.login-form label {
+    font-size: 20px;
+    margin: 15px 0;
+}
+
+.login-form input {
+    height:30px;
+    width:90%;
+}
+.login-form button {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 20px 0;
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: 0;
+}
+</style>
 <body>
 	<div id="root">
-		<div id="form">
+		<div class="login-form">
 			<form:form action="updateorder" method="post" modelAttribute="update">
 				<div>
 					<label for="orderId">Order Id</label>
@@ -22,12 +57,6 @@
 					<label for="orderDate">Order Date</label>
 					<div>
 						<form:input path="orderDate" />
-					</div>
-				</div>
-				<div>
-					<label for="personId">Person Id</label>
-					<div>
-						<form:input path="personId" />
 					</div>
 				</div>
 				<div>
@@ -72,13 +101,7 @@
 						<form:input path="deliveryAddress" />
 					</div>
 				</div>
-				<div>
-					<label for="status">Status</label>
-					<div>
-						<form:input path="status" />
-					</div>
-				</div>
-				<form:button>Update New</form:button>
+				<form:button>Update Order</form:button>
 			</form:form>
 		</div>
 	</div>

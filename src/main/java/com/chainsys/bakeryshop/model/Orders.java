@@ -14,13 +14,11 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
-import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "orders")
 public class Orders {
 
-	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO, generator = "ORDER_ID")
     @SequenceGenerator(name = "ORDER_ID", sequenceName = "ORDER_ID", allocationSize = 1)	
@@ -54,9 +52,6 @@ public class Orders {
 	@Column(name = "DELIVERY_ADDRESS")
 	private String deliveryAddress;
 	
-	@Column(name = "STATUS")
-	private String status;
-
 	public long getOrderId() {
 		return orderId;
 	}
@@ -135,14 +130,6 @@ public class Orders {
 
 	public void setDeliveryAddress(String deliveryAddress) {
 		this.deliveryAddress = deliveryAddress;
-	}
-
-	public String getStatus() {
-		return status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
 	}
 
 	@ManyToOne

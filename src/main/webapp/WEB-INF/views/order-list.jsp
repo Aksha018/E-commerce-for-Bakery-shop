@@ -21,7 +21,6 @@
 				<th>Delivery Time</th>
 				<th>Delivery Date</th>
 				<th>Delivery Address</th>
-				<th>Status</th>
 		  </tr>
 		</thead>
 		<tbody>
@@ -36,9 +35,7 @@
 					<td>${order.amount}</td>
 					<td>${order.deliveryTime}</td>
 					<td>${order.deliveryDate}</td>
-					<td>${order.deliveryAddress}</td>
-					<td>${order.status}</td>
-					
+					<td>${order.deliveryAddress}</td>				
 				</tr>
 			</c:forEach>
 		</tbody>

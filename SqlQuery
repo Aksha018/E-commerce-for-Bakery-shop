@@ -1,5 +1,6 @@
 
-CREATE TABLE CATEGORY (CUSTOMER_ID NUMBER PRIMARY KEY, CATEGORY_NAME VARCHAR2(100) );
+CREATE TABLE CATEGORY (CATEGORY_ID NUMBER PRIMARY KEY, CATEGORY_NAME VARCHAR2(100) );
+create sequence CATEGORY_ID  start with 1 increment by 1;
 
 ----------------------------------------------------------------------------------------
 CREATE TABLE PRODUCT(
@@ -11,7 +12,7 @@ PRICE NUMBER,
 DESCRIPTION VARCHAR2(100),
 IMAGE VARCHAR2(100),
 CONSTRAINT CATEGORY_FK FOREIGN KEY (CATEGORY_ID) REFERENCES CATEGORY (CATEGORY_ID));
-
+create sequence PRODUCT_ID  start with 1 increment by 1;
 ------------------------------------------------------------------------------------------
 
 CREATE TABLE PERSON(
@@ -21,6 +22,7 @@ MOBILE_NUMBER NUMBER(10),
 EMAIL VARCHAR2(100),
 PASSWORD VARCHAR2(50),
 PERSON_TYPE VARCHAR2(100));
+create sequence PERSON_ID  start with 1 increment by 1;
 
 -------------------------------------------------------------------------------------------
 
@@ -29,12 +31,13 @@ ORDER_ID NUMBER PRIMARY KEY,
 ORDER_DATE DATE,
 PERSON_ID NUMBER,
 PRODUCT_ID NUMBER,
+QUANTITY NUMBER,
 PRICE NUMBER,
 AMOUNT FLOAT,
 DELIVERY_TIME VARCHAR2(50),
 DELIVERY_DATE DATE,
-DELIVERY_ADDRESS VARCHAR2(200),
-STATUS VARCHAR2(50));
+DELIVERY_ADDRESS VARCHAR2(200));
+create sequence ORDER_ID  start with 1 increment by 1;
 
 --------------------------------------------------------------------------------------------
 
@@ -48,11 +51,15 @@ PAYMENT_MODE VARCHAR2(200),
 PAYMENT_DESCRIPTION VARCHAR2(200),
 CONSTRAINT ORDER_FK FOREIGN KEY (ORDER_ID) REFERENCES ORDERS (ORDER_ID),
 CONSTRAINT BILL_FK FOREIGN KEY (BILL_ID) REFERENCES BILL (BILL_ID));
+create sequence PAYMENT_ID  start with 1 increment by 1;
 
 ---------------------------------------------------------------------------------------------
 
+
 CREATE TABLE BILL(
 BILL_ID NUMBER PRIMARY KEY,
-BILL_DATE NUMBER,
+BILL_DATE DATE,
 ORDER_ID NUMBER,
+BILL_AMOUNT NUMBER,
 CONSTRAINT CONS_2 FOREIGN KEY (ORDER_ID) REFERENCES ORDERS (ORDER_ID));
+create sequence BILL_ID  start with 1 increment by 1;

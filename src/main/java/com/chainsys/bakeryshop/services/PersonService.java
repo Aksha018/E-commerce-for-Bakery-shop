@@ -38,6 +38,10 @@ public class PersonService {
 	public Person getEmailAndPassword(String email,String password) {
         return personRepository.findByEmailAndPassword(email, password);
 	}
+	public Person getEmailAndPasswordAndPersonType(String email, String password, String personType) {
+		return personRepository.findByEmailAndPasswordAndPersonType(email,password,personType);
+	}
+
 	
 	public PersonOrderDTO getPersonOrderDTO(int id) {
 		Person person = personRepository.findById(id);
@@ -51,4 +55,5 @@ public class PersonService {
 		return dto;
 	}
 
+	
 }

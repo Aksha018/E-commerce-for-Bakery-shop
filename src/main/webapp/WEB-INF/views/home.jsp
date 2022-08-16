@@ -6,7 +6,6 @@
 <meta charset="ISO-8859-1">
 <title>Home Page</title>
 <style type="text/css">
-
 * {
     box-sizing: border-box;
     margin: 0;
@@ -17,12 +16,12 @@
   .navbar {
     background: #131313;
     height: 80px;
-    display: flex;
+    display: block;
     justify-content: center;
     align-items: center;
     font-size: 1rem;
-    position: sticky;
-    top: 0;
+    position:relative;
+    top:40px;
     z-index: 999;
   }
   .navbar__container {
@@ -356,7 +355,7 @@ border-radius: 4px;
     width: 400px;
     border-radius: 20px;
     background-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(17,17,17,0.6) 100%),
-    url('http://img.taste.com.au/-dGYc9Ej/taste/2016/11/top-50-cakes-image-49-66387-1.jpg');
+    url('https://img.taste.com.au/agd6Pjl3/w643-h428-cfill-q90/taste/2021/08/giant-choc-chip-cookie-173372-2.jpg');
     background-size: 100% 100%;
     background-repeat: no-repeat;
     position: relative;
@@ -382,7 +381,7 @@ border-radius: 4px;
     width: 400px;
     border-radius: 20px;
     background-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(17,17,17,0.6) 100%),
-    url('http://img.taste.com.au/4XPFiEkj/taste/2016/11/top-50-cakes-image-2-66316-1.jpg');
+    url('https://img.taste.com.au/tgbrlfkC/w643-h428-cfill-q90/taste/2020/05/snickers-tray-bake-slice-174305-2.jpg');
     background-size: 100% 100%;
     background-repeat: no-repeat;
     position: relative;
@@ -395,7 +394,7 @@ border-radius: 4px;
     width: 400px;
     border-radius: 20px;
     background-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(17,17,17,0.6) 100%),
-    url('http://img.taste.com.au/a1EjasDr/taste/2016/11/top-50-cakes-image-6-66322-1.jpg');
+    url('https://img.taste.com.au/OhuGA19Q/w643-h428-cfill-q90/taste/2021/10/strawberries-and-cream-oreo-cupcake-174226-2.jpg');
     background-size: 100% 100%;
     background-repeat: no-repeat;
     position: relative;
@@ -408,7 +407,7 @@ border-radius: 4px;
     width: 400px;
     border-radius: 20px;
     background-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(17,17,17,0.6) 100%),
-    url('http://img.taste.com.au/rJ3hoA49/taste/2016/11/top-50-cakes-image-11-66329-1.jpg');
+    url('https://img.taste.com.au/ztBOxEfc/w643-h428-cfill-q90/taste/2018/05/vegan-choc-doughnuts-137447-1.jpg');
     background-size: 100% 100%;
     background-repeat: no-repeat;
     position: relative;
@@ -421,15 +420,12 @@ border-radius: 4px;
     width: 400px;
     border-radius: 20px;
     background-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(17,17,17,0.6) 100%),
-    url('http://img.taste.com.au/mlQHBARG/taste/2016/11/top-50-cakes-image-20-66342-1.jpg');
+    url('https://img.taste.com.au/rkgxLQsK/w643-h428-cfill-q90/taste/2016/11/double-choc-lamington-muffins-104049-1.jpeg');
     background-size: 100% 100%;
     background-repeat: no-repeat;
     position: relative;
     color: #fff;
 }
-
-
-
 .images__card:before {
     opacity: 0.2;
 }
@@ -607,6 +603,14 @@ nav .menu {
 	font-size: 35px;
 	font-weight: 600;
 }
+
+.menu .logo1 a {
+	text-decoration: none;
+	color: #fff;
+	text-align:"right";
+	font-size: 20px;
+	font-weight: 300;
+}
 .menu ul {
 	display: inline-flex;
 }
@@ -693,17 +697,87 @@ nav .menu {
 	background: white;
 	color: black;
 }
+/*  */
+.navbar {
+    overflow: hidden;
+    background-color: white;
+}
+
+.navbar a {
+    float: left;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.dropdown {
+    float: left;
+    overflow: hidden;
+}
+
+.dropdown .dropbtn {
+    font-size: 16px;
+    border: none;
+    outline: none;
+    color:white;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+    background-color: #fa6e6e;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #000000;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;	
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
 </style>
 </head>
 <body>
-    <nav>
+    <nav>
 		<div class="menu">
 			<div class="logo">
 				<a href="#">Bakery And Cakes</a>
 			</div>
-			<ul>
-			<li><a href="/admin/categorylist"></a></li>	
-			</ul>
+			<div class="logo1">
+			<div class="dropdown">
+			<button class= "dropbtn">Category</button>
+			<div class="dropdown-content">
+			<a href="/admin/cake">Cakes</a>
+			<a href="/admin/cookies">Cookies</a>
+			<a href="/admin/chocolates">Chocolates</a>
+			<a href="/admin/cupcakes">Cupcakes</a>
+			<a href="/admin/donuts">Doughnuts</a>
+			<a href="/admin/muffins">Muffins</a>
+			</div>
+			</div>
+			</div>
 		</div>
 	</nav>
 	<div class="img"></div>
@@ -714,22 +788,22 @@ nav .menu {
      <h1>Gallery</h1>
      <div class="images__container">
          <div class="images__card">
-             <h2> Raspberry and almond cake</h2>   
+             <h2>Cookies</h2>   
          </div>
          <div class="images__card">
-             <h2>Red Velvet Cake<h2>
+             <h2>Cakes<h2>
          </div>
          <div class="images__card">
-             <h2> NewYork Baked Cheesecake</h2>
+             <h2>Chocolates </h2>
          </div>
          <div class="images__card">
-             <h2>Chocolate Mud cupcakes</h2>
+             <h2>Cupcakes</h2>
          </div>
          <div class="images__card">
-             <h2>Classic No-bake Vanilla cheese</h2>
+             <h2>Doughnuts</h2>
          </div>
          <div class="images__card">
-             <h2>Black forest cake</h2>
+             <h2>Muffins</h2>
          </div>
      </div>
  </div>

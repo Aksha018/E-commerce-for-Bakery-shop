@@ -61,7 +61,6 @@ public class OrderController {
 				orderService.save(theorder);
 				return "redirect:/person/orderlist";
 			}
-
 			@GetMapping("/deleteorder")
 			public String deleteorder(@RequestParam("id") long id) {
 					orderService.deleteOrderById(id);

@@ -17,7 +17,6 @@
 					<th>StockInhand</th>
 					<th>Price</th>
 					<th>Description</th>
-					<th>Image</th>
 	          </tr>
 			</thead>
 			<tbody>
@@ -29,7 +28,12 @@
 						<td>${product.stockInhand}</td>
 						<td>${product.price}</td>
 						<td>${product.description}</td>
-						<td>${product.image}</td>
+						<td><a href="addform?id=${product.productId}"><input
+							onclick="change()" type="button" value="Add" id="myButton1"></input></a></td>
+						<td><a href="updateform?id=${product.productId}"><input
+							onclick="change()" type="button" value="Update" id="myButton2"></input></a></td>
+					<td><a href="deleteperson?id=${product.productId}"><input
+							onclick="change()" type="button" value="Delete" id="myButton3"></input></a></td>
 					</tr>
 				</c:forEach>
 			</tbody>

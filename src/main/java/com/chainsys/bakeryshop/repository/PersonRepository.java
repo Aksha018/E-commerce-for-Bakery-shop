@@ -19,4 +19,6 @@ public interface PersonRepository extends JpaRepository<Person,Integer> {
 	List<Person> findAll();
 
 	Person findByEmailAndPassword(String email,String password);
+
+	Person findByEmailAndPasswordAndPersonType(String email, String password, String personType);
 }

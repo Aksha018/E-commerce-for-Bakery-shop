@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+	pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,24 +9,33 @@
 <title>List-Category</title>
 </head>
 <div id="table root">
-		<table>
-			<thead>
+	<table>
+		<thead>
+			<tr>
+				<th>Category Id</th>
+				<th>Category Name</th>
+			</tr>
+		</thead>
+		<tbody>
+			<c:forEach var="category" items="${allcategory}">
 				<tr>
-					<th>Category Id</th>
-					<th>Category Name</th>
-	          </tr>
-			</thead>
-			<tbody>
-				<c:forEach var="category" items="${allcategory}">
-					<tr>
-						<td>${category.categoryId}</td>
-						<td>${category.categoryName}</td>
-						
-					</tr>
-				</c:forEach>
-			</tbody>
-		</table>
-	</div>
+					<td>${category.categoryId}</td>
+					<td>${category.categoryName}</td>
+					<td><a href="update?categoryId=${category.categoryId}"><input
+							                                    onclick="change()"
+							type="button" value="Update" id="myButton1"></input></a></td>            
+					               
+					<td><a href="deletecategory?categoryId=${category.categoryId }"><input
+							                                    onclick="change()"
+							type="button" value="Delete" id="myButton2"></input></a></td> 
+
+
+
+				</tr>
+			</c:forEach>
+		</tbody>
+	</table>
+</div>
 
 </body>
 </html>

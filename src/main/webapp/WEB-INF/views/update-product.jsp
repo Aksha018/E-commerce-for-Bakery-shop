@@ -12,7 +12,7 @@
 	<div id="root">
 		<div id="form">
 			<form:form action="update" method="post" modelAttribute="updateproduct">
-				<div>
+			<div>
 					<label for="productId">Product Id</label>
 					<div>
 						<form:input path="productId" />
@@ -46,12 +46,6 @@
 					<label for="description">Description</label>
 					<div>
 						<form:input path="description" />
-					</div>
-					<div>
-						<label for="image">Image</label>
-						<div>
-							<form:input path="image" />
-						</div>
 					</div>
 				</div>
 				<form:button>Update New</form:button>
