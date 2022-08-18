@@ -7,10 +7,23 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Update Product</title>
+n<style>
+<%@include file="/WEB-INF/views/css/findbyidproduct.css"%>
+</style>
 </head>
 <body>
+  <nav>
+		<div class="menu">
+			<div class="logo">
+				<a href="#">Bakery And Cakes</a>
+			</div>
+			<ul>
+			<li><a href="/person/homepage">Back</a></li>	
+			</ul>
+		</div>
+	</nav>
 	<div id="root">
-		<div id="form">
+		<div class="login-form">
 			<form:form action="" method="post" modelAttribute="findproduct">
 			<div>
 					<label for="productId">Product Id</label>
