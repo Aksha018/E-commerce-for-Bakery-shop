@@ -7,13 +7,33 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>List-Category</title>
+<style type="text/css">
+body {
+	background: #456;
+	background-color:#f5deb3;
+	background-size: 100% 100%;
+	}
+table{
+    text-align: center;
+    width: 90%;
+}
+ 
+ table, th, td {
+    border: 2px solid black;
+    border-collapse: collapse;
+}
+</style>
 </head>
 <div id="table root">
+<div id="form" align="center">
 	<table>
 		<thead>
 			<tr>
 				<th>Category Id</th>
 				<th>Category Name</th>
+				<th>Update</th>
+				<th>Delete</th>
+				
 			</tr>
 		</thead>
 		<tbody>
@@ -28,10 +48,7 @@
 					<td><a href="deletecategory?categoryId=${category.categoryId }"><input
 							                                    onclick="change()"
 							type="button" value="Delete" id="myButton2"></input></a></td> 
-
-
-
-				</tr>
+               </tr>
 			</c:forEach>
 		</tbody>
 	</table>

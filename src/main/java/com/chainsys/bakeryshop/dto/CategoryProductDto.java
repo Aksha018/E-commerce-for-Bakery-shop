@@ -1,4 +1,4 @@
-package com.chainsys.bakeryshop.DTO;
+package com.chainsys.bakeryshop.dto;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,7 +6,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.chainsys.bakeryshop.model.Product;
-public class CategoryProductDTO {
+public class CategoryProductDto {
 	private List<Product> product = new ArrayList<Product>();
 	@Autowired
 	private int category;

@@ -6,28 +6,18 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Add Product</title>
-<style type="text/css">
-body {
-	background: #456;
-	background-color:#f5deb3;
-	background-size: 100% 100%;
-	}
-table{
-    text-align: center;
-    width: 90%;
-}
- 
- table, th, td {
-    border: 2px solid black;
-    border-collapse: collapse;
-}
-</style>
+<title>Update Product</title>
 </head>
 <body>
 	<div id="root">
-		<div id="form" align="center">
-			<form:form action="addproduct" method="post" modelAttribute="product">
+		<div id="form">
+			<form:form action="" method="post" modelAttribute="findproduct">
+			<div>
+					<label for="productId">Product Id</label>
+					<div>
+						<form:input path="productId" />
+					</div>
+				</div>
 				<div>
 					<label for="productName">Product Name</label>
 					<div>
@@ -49,7 +39,7 @@ table{
 				<div>
 					<label for="price">Price</label>
 					<div>
-						<form:input path="Price" />
+						<form:input path="price" />
 					</div>
 				</div>
 				<div>
@@ -58,8 +48,8 @@ table{
 						<form:input path="description" />
 					</div>
 				</div>
-				<form:button>Add New</form:button>
-			</form:form>
+				<form:button><a href ="/person/addorderform">Order</a></form:button>
+		</form:form>
 		</div>
 	</div>
 </body>

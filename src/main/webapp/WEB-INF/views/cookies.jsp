@@ -522,6 +522,10 @@ nav .menu {
 	background: white;
 	color: black;
 }
+a{
+text-decoration: none;
+color:white;
+}
 </style>
 </head>
 <body>

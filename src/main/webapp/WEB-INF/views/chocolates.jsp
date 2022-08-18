@@ -522,6 +522,10 @@ nav .menu {
 	background: white;
 	color: black;
 }
+a {
+text-decoration: none;
+color: white;
+}
 </style>
 </head>
 <body>
@@ -534,13 +538,13 @@ nav .menu {
 					<h1>Chocolates</h1>
 					<div class="images__container">
 						<div class="images__card">
-							<a href="/person/addorderform"><h2>Banana, oat & chocolate bars</h2></a>
+							<a href="/admin/findbyproductid?id=29"><h2>Banana, oat & chocolate bars</h2></a>
 						</div>
 						<div class="images__card">
-							<a href="/person/addorderform"><h2>Nanaimo choco bars</h2></a>
+							<a href="/admin/findbyproductid?id=30"><h2>Nanaimo choco bars</h2></a>
 						</div>
 						<div class="images__card">
-							<a href="/person/addorderform"><h2>Date and choc-chip cookie bars</h2></a>
+							<a href="/admin/findbyproductid?id=31"><h2>Date and choc-chip cookie bars</h2></a>
 						</div>
 				</div>
 			</section>

@@ -1,29 +1,24 @@
-package com.chainsys.bakeryshop.DTO;
+package com.chainsys.bakeryshop.dto;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import com.chainsys.bakeryshop.model.Orders;
-import com.chainsys.bakeryshop.model.Product;
+import com.chainsys.bakeryshop.model.Person;
 
-public class OrderProductDTO {
-
-	private Product product;
+public class PersonOrderDto {
+	private Person person;
 	private List<Orders> order = new ArrayList<>();
-
-	public Product getProduct() {
-		return product;
+	public Person getPerson() {
+		return person;
 	}
-
-	public void setProduct(Product product) {
-		this.product = product;
+	public void setPerson(Person person) {
+		this.person = person;
 	}
-
 	public List<Orders> getOrder() {
 		return order;
 	}
-
 	public void addOrder(Orders order) {
 		this.order.add(order);
-	}
+	}	
 }

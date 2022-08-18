@@ -6,15 +6,36 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>List-Bill</title>
+<style type="text/css">
+body {
+	background: #456;
+	background-color:#f5deb3;
+	background-size: 100% 100%;
+	}
+table{
+    text-align: center;
+    width: 90%;
+}
+ 
+ table, th, td {
+    border: 2px solid black;
+    border-collapse: collapse;
+}
+</style>
 </head>
+<body>
 <div id="table root">
-	<table>
+   <div id="form" align="center">
+   
+   <table>
 		<thead>
 			<tr>
 				<th>Bill Id</th>
 				<th>Bill Date</th>
 				<th>Order Id</th>
 				<th>Bill Amount</th>
+				<th>Update</th>
+				<th>Delete</th>
 			</tr>
 		</thead>
 		<tbody>

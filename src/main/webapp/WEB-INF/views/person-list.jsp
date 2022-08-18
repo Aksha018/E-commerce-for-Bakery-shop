@@ -6,9 +6,27 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>List-Person</title>
+<style type="text/css">
+body {
+	background: #456;
+	background-color:#f5deb3;
+	background-size: 100% 100%;
+	}
+table{
+    text-align: center;
+    width: 90%;
+}
+ 
+ table, th, td {
+    border: 2px solid black;
+    border-collapse: collapse;
+}
+</style>
 </head>
-<div id="table root">
-	<table>
+<body>
+	<div id="root">
+		<div id="form" align="center">
+ <table>
 		<thead>
 			<tr>
 				<th>Person Id</th>

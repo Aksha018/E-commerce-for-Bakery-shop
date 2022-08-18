@@ -78,19 +78,19 @@ public class PersonController {
         Person person = personservice.getEmailAndPasswordAndPersonType(theperson.getEmail(), theperson.getPassword(),
         		theperson.getPersonType());
         if (theperson != null) {
-            if ("admin".equals(theperson.getPersonType())) {
-                return "redirect:/person/adminindex";
-                
-            } else {
-                return "redirect:/person/homepage";
-            }
-        } else {
-            return "invalid-user-error";
-        }
+        	 if ("admin".equals(theperson.getPersonType())) {
+                 return "redirect:/person/adminindex";
+                 
+             } else {
+                 return "redirect:/person/homepage";
+             }
+         } else {
+         return "invalid-user-error";
+         }
         
-    }
-
-	@GetMapping("/updatepersonform")
+	}
+       
+    @GetMapping("/updatepersonform")
 	public String showUpdateForm(@RequestParam("id") int id, Model model) {
 		Person theperson = personservice.findByPersonId(id);
 		model.addAttribute("updateperson", theperson);

@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.chainsys.bakeryshop.DTO.OrderProductDTO;
-import com.chainsys.bakeryshop.DTO.PersonOrderDTO;
+import com.chainsys.bakeryshop.dto.OrderProductDto;
+import com.chainsys.bakeryshop.dto.PersonOrderDto;
 import com.chainsys.bakeryshop.model.Orders;
 import com.chainsys.bakeryshop.services.OrderService;
 import com.chainsys.bakeryshop.services.PersonService;
@@ -69,7 +69,7 @@ public class OrderController {
 //PersonOrderDTO
 			@GetMapping("/getpersonorder")
 			public String getPersonOrder(@RequestParam("id") int id, Model model) {
-				PersonOrderDTO dto=	personService.getPersonOrderDTO(id);
+				PersonOrderDto dto=	personService.getPersonOrderDTO(id);
 				model.addAttribute("person", dto.getPerson());
 				model.addAttribute("order", dto.getOrder());
 				return "person-order";

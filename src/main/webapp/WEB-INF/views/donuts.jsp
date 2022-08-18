@@ -534,13 +534,13 @@ nav .menu {
 					<h1>Doughnuts</h1>
 					<div class="images__container">
 						<div class="images__card">
-							<a href="/person/addorderform"><h2>Vegan choc doughnuts</h2></a>
+							<a href="/admin/findbyproductid?id=38"><h2>Vegan choc doughnuts</h2></a>
 						</div>
 						<div class="images__card">
-						<a href="/person/addorderform"><h2>Cinnamon doughnuts</h2></a>
+						<a href="/admin/findbyproductid?id=39"><h2>Cinnamon doughnuts</h2></a>
 						</div>
 						<div class="images__card">
-				        <a href="/person/addorderform"><h2>Brownie doughnuts</h2></a>
+				        <a href="/admin/findbyproductid?id=40"><h2>Brownie doughnuts</h2></a>
 						</div>
 				</div>
 			</section>

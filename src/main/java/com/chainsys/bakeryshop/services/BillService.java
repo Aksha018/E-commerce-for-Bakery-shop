@@ -9,7 +9,7 @@ import javax.persistence.criteria.Order;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.chainsys.bakeryshop.DTO.BillOrderDTO;
+import com.chainsys.bakeryshop.dto.BillOrderDto;
 import com.chainsys.bakeryshop.model.Bill;
 import com.chainsys.bakeryshop.model.Orders;
 import com.chainsys.bakeryshop.repository.BillRepository;
@@ -39,9 +39,9 @@ public class BillService {
 		billRepository.deleteById(id);
 	}
 
-	public BillOrderDTO getBillorder(int id) {
+	public BillOrderDto getBillorder(int id) {
 		Orders order = orderRepository.findByOrderId(id);
-		BillOrderDTO dto = new BillOrderDTO();
+		BillOrderDto dto = new BillOrderDto();
 		dto.setOrders(order);
 		List<Bill> bill = billRepository.findAll();
 		Iterator<Bill> itr = bill.iterator();

@@ -1,4 +1,4 @@
-package com.chainsys.bakeryshop.DTO;
+package com.chainsys.bakeryshop.dto;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,7 +6,7 @@ import java.util.List;
 import com.chainsys.bakeryshop.model.Payment;
 import com.chainsys.bakeryshop.model.Orders;
 
-public class PaymentOrderDTO {
+public class PaymentOrderDto {
 	private Payment Payment;
 	 private List<Orders> Order = new ArrayList<>();
 	public Payment getPayment() {

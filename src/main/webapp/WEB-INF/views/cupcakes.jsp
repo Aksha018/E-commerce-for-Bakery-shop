@@ -576,22 +576,22 @@ nav .menu {
 					<h1>CupCakes</h1>
 					<div class="images__container">
 						<div class="images__card">
-							<a href="/person/addorderform"><h2>Gingerbread cupcake</h2></a>
+							<a href="/admin/findbyproductid?id=32"><h2>Gingerbread cupcake</h2></a>
 						</div>
 						<div class="images__card">
-							<a href="/person/addorderform"><h2>Beehive cupcake</h2></a>
+							<a href="/admin/findbyproductid?id=33"><h2>Beehive cupcake</h2></a>
 						</div>
 						<div class="images__card">
-							<a href="/person/addorderform"><h2>Neapolitan cupcake</h2></a>
+							<a href="/admin/findbyproductid?id=34"><h2>Neapolitan cupcake</h2></a>
 						</div>
 						 <div class="images__card">
-							<a href="/person/addorderform"><h2>Unicorn cupcake</h2></a>
+							<a href="/admin/findbyproductid?id=35"><h2>Unicorn cupcake</h2></a>
 						</div>
 						<div class="images__card">
-					        <a href="/person/addorderform"><h2>Strawberries and cream Oreo cupcake</h2></a>
+					        <a href="/admin/findbyproductid?id=36"><h2>Strawberries and cream Oreo cupcake</h2></a>
 						</div>
 						<div class="images__card">
-							<a href="/person/addorderform"><h2>Lamington cupcake</h2></a>
+							<a href="/admin/findbyproductid?id=37"><h2>Lamington cupcake</h2></a>
 						</div>
 					</div>
 				</div>

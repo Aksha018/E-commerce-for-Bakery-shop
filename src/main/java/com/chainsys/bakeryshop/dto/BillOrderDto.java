@@ -1,11 +1,11 @@
-package com.chainsys.bakeryshop.DTO;
+package com.chainsys.bakeryshop.dto;
 
 import java.util.List;
 
 import com.chainsys.bakeryshop.model.Bill;
 import com.chainsys.bakeryshop.model.Orders;
 
-public class BillOrderDTO {
+public class BillOrderDto {
 
 	private Orders orders;
 	 private List<Bill> bill;

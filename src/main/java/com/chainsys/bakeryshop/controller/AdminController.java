@@ -103,6 +103,16 @@ public class AdminController {
 		model.addAttribute("updateproduct", product);
 		return "update-product";
 	}
+	@GetMapping("/findbyproductid")
+	public String findProduct(@RequestParam("id") int id, Model model) {
+		Product product = productService.findByProductId(id);
+		if (product==null) {
+        	System.out.println("debug:product is null");
+        	return " ";
+        }
+		model.addAttribute("findproduct", product);
+		return "findbyidproduct";
+	}
 
 	@PostMapping("update")
 	public String updateProduct(@ModelAttribute("updateproduct") Product product) {
