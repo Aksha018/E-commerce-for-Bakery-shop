@@ -52,7 +52,7 @@ public class PaymentController {
 	}
 
 	@PostMapping("/updatepayment")
-	public String updatepayment(@ModelAttribute("updatepay") Payment thepayment) {
+	public String paymentupdate(@ModelAttribute("updatepay") Payment thepayment) {
 		paymentService.save(thepayment);
 		return "redirect:/person/paymentlist";
 	}

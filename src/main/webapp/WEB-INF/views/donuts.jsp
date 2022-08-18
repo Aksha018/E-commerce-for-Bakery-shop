@@ -2,7 +2,7 @@
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="ISO-8859-1">
 <title>Category</title>
@@ -28,6 +28,7 @@
 						<div class="images__card">
 				        <a href="/admin/findbyproductid?id=40"><h2>Brownie doughnuts</h2></a>
 						</div>
+				</div>
 				</div>
 			</section>
 			<!-- Footer Section -->

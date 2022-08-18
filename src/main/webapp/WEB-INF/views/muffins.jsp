@@ -29,6 +29,7 @@
 							<a href="/admin/findbyproductid?id=43"><h2>Creme Egg muffins</h2></a>
 						</div>
 				</div>
+				</div>
 			</section>
 			<!-- Footer Section -->
 			<div class="footer__container"></div>

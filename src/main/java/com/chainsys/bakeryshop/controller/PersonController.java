@@ -85,7 +85,7 @@ public class PersonController {
                  return "redirect:/person/homepage";
              }
          } else {
-         return "invalid-user-error";
+          return "invalid-user-error";
          }
         
 	}

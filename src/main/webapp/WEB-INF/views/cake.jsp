@@ -2,7 +2,7 @@
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="ISO-8859-1">
 <title>Category</title>
@@ -26,12 +26,11 @@
 							<a href="/admin/findbyproductid?id=21"><h2>Red Velvet Cake</h2></a>
 						</div>
 						<div class="images__card">
-							<a href="/admin/findbyproductid?id=22"><h2>NewYork Baked Cheesecake</h2></a>
+							<a href="/admin/findbyproductid?id=22"><h2>NewYork Baked Cheese cake</h2></a>
 						</div>
 						 <div class="images__card">
 							<a href="/admin/findbyproductid?id=23"><h2>Lemon curd coconut pavlova cake</h2></a>
 						</div>
-						
 						<div class="images__card">
 							<a href="/admin/findbyproductid?id=24"><h2>Classic No-bake Vanilla cheese</h2></a>
 						</div>

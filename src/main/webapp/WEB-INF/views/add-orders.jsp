@@ -18,7 +18,7 @@
 				<a href="#">Bakery And Cakes</a>
 			</div>
 			<ul>
-			<li><a href="/person/indexpage">Back</a></li>	
+			<li><a href="/admin/findbyproductid">Back</a></li>	
 			</ul>
 		</div>
 	</nav>
@@ -79,7 +79,8 @@
 					<div>
 						<form:input path="deliveryDate"  type="date" />
 					</div>
-					<div>
+					</div>
+				<div>
 					<label for="deliveryAddress">Delivery Address</label>
 					<div>
 						<form:input path="deliveryAddress" />

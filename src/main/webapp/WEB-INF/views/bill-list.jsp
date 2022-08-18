@@ -2,7 +2,7 @@
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="ISO-8859-1">
 <title>List-Bill</title>
@@ -13,8 +13,7 @@
 <body>
 <div id="table root">
    <div id="form" align="center">
-   
-   <table>
+  <table>
 		<thead>
 			<tr>
 				<th>Bill Id</th>
@@ -42,6 +41,7 @@
 			</c:forEach>
 		</tbody>
 	</table>
+</div>
 </div>
 </body>
 </html>

@@ -7,9 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.chainsys.bakeryshop.dto.OrderProductDto;
-import com.chainsys.bakeryshop.dto.PersonOrderDto;
 import com.chainsys.bakeryshop.model.Orders;
-import com.chainsys.bakeryshop.model.Person;
 import com.chainsys.bakeryshop.model.Product;
 import com.chainsys.bakeryshop.repository.CategoryRepository;
 import com.chainsys.bakeryshop.repository.OrderRepository;

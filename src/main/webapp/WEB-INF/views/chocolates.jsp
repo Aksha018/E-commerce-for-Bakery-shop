@@ -29,6 +29,7 @@
 							<a href="/admin/findbyproductid?id=31"><h2>Date and choc-chip cookie bars</h2></a>
 						</div>
 				</div>
+				</div>
 			</section>
 			<!-- Footer Section -->
 			<div class="footer__container"></div>
