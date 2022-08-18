@@ -6,21 +6,8 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>List-Orders</title>
-<style type="text/css">
-body {
-	background: #456;
-	background-color:#f5deb3;
-	background-size: 100% 100%;
-	}
-table{
-    text-align: center;
-    width: 90%;
-}
- 
- table, th, td {
-    border: 2px solid black;
-    border-collapse: collapse;
-}
+<style>
+<%@include file="/WEB-INF/views/css/orderlist.css"%>
 </style>
 </head>
 <body>

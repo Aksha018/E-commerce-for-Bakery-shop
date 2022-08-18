@@ -13,7 +13,7 @@
 	background: #fff;
 }
 nav {
-	bottom:100;
+	position:fixed;
 	background: #1b1b1b;
 	width: 100%;
 	padding: 10px 0;
@@ -21,6 +21,7 @@ nav {
 }
 nav .menu {
 	max-width: 1250px;
+	margin: auto;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
@@ -118,46 +119,10 @@ nav .menu {
 	background: white;
 	color: black;
 }
-.login-form {
-    width: 400px;
-    top: 400px;
-    left: 700px;
-    transform: translate(-50%, -50%);
-    position: absolute;
-    color: #ffff;
-}
-                                                 
-.login-form h1 {
-    font-size: 40px;
-    text-align: center;
-    text-transform: uppercase;
-    margin: 30px 0;
-}
-
-.login-form label {
-    font-size: 20px;
-    margin: 15px 0;
-    margin-left: -140px;
-    bottom: 25px;
-}
-
-.login-form input {
-    height:30px;
-    width:90%;
-    bottom:20px;
-}
-.login-form button {
-    font-size: 18px;
-    font-weight: bold;
-    margin: 20px 0;
-    padding: 10px 15px;
-    border-radius: 5px;
-    border: 0;
-}
 body {
-    background-image: url('https://images.creativemarket.com/0.1.0/ps/797108/600/400/m2/fpnw/wm0/cake-shop-logo-mock-up-1-.jpg?1448176497&s=fca93295192f47cf4a2255136b34d1db&fmt=webp');
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: 100% 100%;
-    }
-
+	background-image:
+	    url('https://img.freepik.com/free-photo/assortment-pieces-cake_114579-30728.jpg?w=740&t=st=1660125353~exp=1660125953~hmac=dea86451ea19144d9dd2e1d7ae668378bc00b097620b2723a9608dd2033e888a');
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: 100% 100%;
+}

@@ -7,6 +7,9 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Add Bill</title>
+<style>
+<%@include file="/WEB-INF/views/css/addbill.css"%>
+</style>
 </head>
 <body>
 	<div id="root">

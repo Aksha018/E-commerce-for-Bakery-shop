@@ -7,6 +7,9 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Update Product</title>
+<style>
+<%@include file="/WEB-INF/views/css/update-product.css"%>
+</style>
 </head>
 <body>
 	<div id="root">

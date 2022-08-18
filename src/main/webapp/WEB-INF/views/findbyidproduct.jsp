@@ -7,7 +7,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Update Product</title>
-n<style>
+<style>
 <%@include file="/WEB-INF/views/css/findbyidproduct.css"%>
 </style>
 </head>
@@ -28,37 +28,31 @@ n<style>
 			<div>
 					<label for="productId">Product Id</label>
 					<div>
-						<form:input path="productId" />
+						<form:input path="productId" readonly = "true" />
 					</div>
 				</div>
 				<div>
 					<label for="productName">Product Name</label>
 					<div>
-						<form:input path="productName" />
-					</div>
-				</div>
-				<div>
-					<label for="categoryId">Category Id</label>
-					<div>
-						<form:input path="categoryId" />
+						<form:input path="productName" readonly = "true"/>
 					</div>
 				</div>
 				<div>
 					<label for="stockInhand">Stock In Hand</label>
 					<div>
-						<form:input path="stockInhand" />
+						<form:input path="stockInhand" readonly = "true"/>
 					</div>
 				</div>
 				<div>
 					<label for="price">Price</label>
 					<div>
-						<form:input path="price" />
+						<form:input path="price" readonly = "true" />
 					</div>
 				</div>
 				<div>
 					<label for="description">Description</label>
 					<div>
-						<form:input path="description" />
+						<form:input path="description" readonly = "true"/>
 					</div>
 				</div>
 				<form:button><a href ="/person/addorderform">Order</a></form:button>
