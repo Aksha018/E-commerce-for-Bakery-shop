@@ -106,9 +106,4 @@ public class Product {
 		this.category = category;
 	}
 
-	public Product() {
-		super();
-		this.categoryId = categoryId;
-	}
-	
 }

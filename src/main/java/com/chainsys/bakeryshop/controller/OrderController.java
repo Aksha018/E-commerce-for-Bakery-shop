@@ -2,6 +2,8 @@ package com.chainsys.bakeryshop.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.chainsys.bakeryshop.dto.PersonOrderDto;
 import com.chainsys.bakeryshop.model.Orders;
+import com.chainsys.bakeryshop.model.Product;
 import com.chainsys.bakeryshop.services.OrderService;
 import com.chainsys.bakeryshop.services.PersonService;
 import com.chainsys.bakeryshop.services.ProductService;
@@ -36,15 +39,19 @@ public class OrderController {
 			}
 
 			@GetMapping("/addorderform")
-			public String show(Model model) {
+			public String show(@RequestParam("id")int productId,Model model) {
 				Orders theorder = new Orders();
+				theorder.setProductId(productId);
+				Product product=productService.findByProductId(productId);
+				theorder.setPrice((int)product.getPrice());
 				model.addAttribute("add", theorder);
 				return "add-orders";
 			}
 
 			@PostMapping("/addorder")
-			public String addNewOrder(@ModelAttribute("add") Orders theorder) {
+			public String addNewOrder(@ModelAttribute("add") Orders theorder,HttpSession session) {
 				orderService.save(theorder);
+				session.setAttribute("orderId", theorder.getOrderId());
 				return "redirect:/person/orderlist";
 			}
 

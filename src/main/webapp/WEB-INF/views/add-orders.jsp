@@ -9,7 +9,7 @@
 <title>Add Orders</title>
 </head>
 <style>
-<%@include file="/WEB-INF/views/css/add-orders.css"%>
+<%@include file="/WEB-INF/views/css/addorders.css"%>
 </style>
 <body>
 <nav>
@@ -26,9 +26,8 @@
 		<div>
 			<form:form action="addorder" method="post" modelAttribute="add">
 				<div>
-					<label for="orderId">Order Id</label>
 					<div>
-						<form:input path="orderId" id="orderId" />
+						<form:input path="productId" type="hidden"/>
 					</div>
 				</div>
 				<div>
@@ -91,9 +90,7 @@
 		</div>
 	</div>
 </body>
-<script type="text/javascript">
-        document.getElementById('orderId').value = Math.floor(Math.random() * 1000);
- </script>
+
  <script>
  
     function add_number() {

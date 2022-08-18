@@ -25,12 +25,6 @@
 	<div id="root">
 		<div class="login-form">
 			<form:form action="" method="post" modelAttribute="findproduct">
-			<div>
-					<label for="productId">Product Id</label>
-					<div>
-						<form:input path="productId" readonly = "true" />
-					</div>
-				</div>
 				<div>
 					<label for="productName">Product Name</label>
 					<div>
@@ -55,7 +49,7 @@
 						<form:input path="description" readonly = "true"/>
 					</div>
 				</div>
-				<form:button><a href ="/person/addorderform">Order</a></form:button>
+				<form:button><a href ="/person/addorderform?id=${findproduct.productId}">Order</a></form:button>
 		</form:form>
 		</div>
 	</div>

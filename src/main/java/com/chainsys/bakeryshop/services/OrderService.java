@@ -15,13 +15,15 @@ public class OrderService {
 	OrderRepository orderRepository;
 	@Autowired
 	PersonRepository personRepository;
-	
+	private ProductService productService;
 	
 	public List<Orders> getOrder() {
 		List<Orders> Orderlist = orderRepository.findAll();
 		return Orderlist;
 	}
 	public Orders save(Orders theorder) {
+		productService.findByProductId(theorder.getProductId());
+		
 		return orderRepository.save(theorder);
 	}
 
