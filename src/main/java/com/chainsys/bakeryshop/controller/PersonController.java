@@ -2,6 +2,8 @@ package com.chainsys.bakeryshop.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,6 +13,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.chainsys.bakeryshop.model.Login;
 import com.chainsys.bakeryshop.model.Person;
 import com.chainsys.bakeryshop.services.PersonService;
 
@@ -74,22 +77,23 @@ public class PersonController {
 	}
 	
 	@PostMapping("/checkuserlogin")
-    public String addNewAdmin(@ModelAttribute("add") Person theperson) {
-        Person person = personservice.getEmailAndPasswordAndPersonType(theperson.getEmail(), theperson.getPassword(),
-        		theperson.getPersonType());
-        if (theperson != null) {
-        	 if ("admin".equals(theperson.getPersonType())) {
-                 return "redirect:/person/adminindex";
-                 
-             } else {
-                 return "redirect:/person/homepage";
-             }
-         } else {
-          return "invalid-user-error";
-         }
-        
+    public String addNewAdmin(@ModelAttribute("login")Person person,Model model,HttpSession session) {
+        Person persons = personservice.getEmailAndPassword(person.getEmail(),person.getPassword());
+        if (persons!=null) {
+        	if(persons.getPersonType().equalsIgnoreCase("admin"))
+        	    return "admin-index";
+        	else if(persons.getPersonType().equalsIgnoreCase("user")){
+        		session.setAttribute("personId", persons.getPersonId());
+        		model.addAttribute("pId", persons.getPersonId());
+        		return "home";
+        	}else {
+        		return "invalid-user-error";
+        	}
+        }else {
+        	return "redirect:/person/personloginpage";
+        }
 	}
-       
+    
     @GetMapping("/updatepersonform")
 	public String showUpdateForm(@RequestParam("id") int id, Model model) {
 		Person theperson = personservice.findByPersonId(id);
@@ -109,3 +113,5 @@ public class PersonController {
 		return "redirect:/person/personlist";
 	}
 }
+
+

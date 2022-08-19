@@ -26,7 +26,7 @@ public class Orders {
 	private long orderId;
 	
 	@Column(name = "ORDER_DATE")
-	private Date orderDate;
+	private String orderDate;
 	
 	@Column(name = "PERSON_ID")
 	private int personId;
@@ -60,11 +60,11 @@ public class Orders {
 		this.orderId = orderId;
 	}
 
-	public Date getOrderDate() {
+	public String getOrderDate() {
 		return orderDate;
 	}
 
-	public void setOrderDate(Date orderDate) {
+	public void setOrderDate(String orderDate) {
 		this.orderDate = orderDate;
 	}
 

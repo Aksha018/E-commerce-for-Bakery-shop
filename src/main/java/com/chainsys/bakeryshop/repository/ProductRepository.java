@@ -7,7 +7,6 @@ import org.springframework.stereotype.Repository;
 
 import com.chainsys.bakeryshop.model.Product;
 
-@Repository 
 public interface ProductRepository extends CrudRepository<Product,Long> {
 	
 	List<Product> findByCategoryId(int categoryId);

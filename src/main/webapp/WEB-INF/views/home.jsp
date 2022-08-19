@@ -19,12 +19,12 @@
 			<div class="dropdown">
 			<button class= "dropbtn">Category</button>
 			<div class="dropdown-content">
-			<a href="/admin/cake">Cakes</a>
-			<a href="/admin/cookies">Cookies</a>
-			<a href="/admin/chocolates">Chocolates</a>
-			<a href="/admin/cupcakes">Cupcakes</a>
-			<a href="/admin/donuts">Doughnuts</a>
-			<a href="/admin/muffins">Muffins</a>
+			<a href="/admin/cake?id=${pId}">Cakes</a>
+			<a href="/admin/cookies?id=${pId}">Cookies</a>
+			<a href="/admin/chocolates?id=${pId}">Chocolates</a>
+			<a href="/admin/cupcakes?id=${pId}">Cupcakes</a>
+			<a href="/admin/donuts?id=${pId}">Doughnuts</a>
+			<a href="/admin/muffins?id=${pId}">Muffins</a>
 			</div>
 			</div>
 			</div>
@@ -38,22 +38,22 @@
      <h1>Category</h1>
      <div class="images__container">
          <div class="images__card">
-          <a href="/admin/cookies"><h2>Cookies</h2></a>  
+          <a href="/admin/cookies?id=${pId}"><h2>Cookies</h2></a>
          </div>
          <div class="images__card">
-            <a href="/admin/cake"><h2>Cakes</h2></a> 
+            <a href="/admin/cake?id=${pId}"><h2>Cakes</h2></a> 
          </div>
          <div class="images__card">
-           <a href="/admin/chocolates"><h2>Chocolates</h2></a>
+           <a href="/admin/chocolates?id=${pId}"><h2>Chocolates</h2></a>
          </div>
          <div class="images__card">
-           <a href="/admin/cupcakes"><h2>Cupcakes</h2></a>
+           <a href="/admin/cupcakes?id=${pId}"><h2>Cupcakes</h2></a>
          </div>
          <div class="images__card">
-            <a href="/admin/donuts"><h2>Doughnuts</h2></a>
+            <a href="/admin/donuts?id=${pId}"><h2>Doughnuts</h2></a>
          </div>
          <div class="images__card">
-             <a href="/admin/muffins"><h2>Muffins</h2></a>
+             <a href="/admin/muffins?id=${pId}"><h2>Muffins</h2></a>
          </div>
      </div>
  </div>

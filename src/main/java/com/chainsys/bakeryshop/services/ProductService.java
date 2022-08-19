@@ -39,13 +39,7 @@ public class ProductService {
 	}
 
 	public Product findByProductId(long id) {
-		Product product = productRepository.findByProductId(id);
-		if (product==null) {
-        	System.out.println("debug:product is null");
-        	return null;
-        }
-		return product;
-		
+		return productRepository.findByProductId(id);
 	}
 	public void deleteProductById(long id) {
 		productRepository.deleteById(id);

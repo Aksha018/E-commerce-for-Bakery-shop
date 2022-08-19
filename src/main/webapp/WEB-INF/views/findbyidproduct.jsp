@@ -49,7 +49,7 @@
 						<form:input path="description" readonly = "true"/>
 					</div>
 				</div>
-				<form:button><a href ="/person/addorderform?id=${findproduct.productId}">Order</a></form:button>
+				<form:button><a href ="/person/addorderform?id=${findproduct.productId}&pId=${pId}">Order</a></form:button>
 		</form:form>
 		</div>
 	</div>

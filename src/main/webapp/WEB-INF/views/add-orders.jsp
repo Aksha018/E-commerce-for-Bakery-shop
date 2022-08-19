@@ -25,33 +25,34 @@
 	<div class="login-form">
 		<div>
 			<form:form action="addorder" method="post" modelAttribute="add">
-				<div>
 					<div>
-						<form:input path="productId" type="hidden"/>
+						<form:input path="productId" readonly="true"/>
 					</div>
-				</div>
+				<div>
+						<form:input path="personId" readonly="true"/>
+					</div>
 				<div>
 					<label for="orderDate">Order Date</label>
 					<div>
-						<form:input path="orderDate" type="date" />
+						<form:input path="orderDate" id="date" readonly="true" />
 					</div>
 				</div>
 				<div>
-					<label for="quantity">Quantity</label>
+					<label for="quantity">Quantity<span>(Kg)</span></label>
 					<div>
-						<form:input path="quantity"/>
+						<form:input path="quantity" id="num1"/>
 					</div>
 				</div>
 				<div>
 					<label for="price">price</label>
 					<div>
-						<form:input path="price" />
+						<form:input path="price" id="num2" readonly="true" />
 					</div>
 				</div>
 				<div>
 					<label for="amount">Amount</label>
 					<div>
-						<form:input path="amount"  onmouseover="add_number()"/>
+					<form:input path="amount" id="result" onmouseover="calculate()" readonly="true" />
 					</div>
 				</div>
 				<div>
@@ -86,21 +87,21 @@
 					</div>
 				</div>
 				<form:button>Order</form:button>
+			
 			</form:form>
 		</div>
 	</div>
 </body>
+<script type="text/javascript">
+  document.getElementById('date').value = new Date().toISOString(); 
+</script>
 
- <script>
- 
-    function add_number() {
-
-        var first_number = parseInt(document.getElementById("num1").value);
-        var second_number = parseInt(document.getElementById("num2").value);
-        var result = first_number * second_number;
-
-        document.getElementById("result").value = result;
-      }
-    
-    </script>
+<script>
+  function calculate() {
+  var num1=document.getElementById('num1').value;
+  var num2=document.getElementById('num2').value;
+  var result=num1*num2;
+  document.getElementById("result").value=result;
+}
+</script>
 </html>

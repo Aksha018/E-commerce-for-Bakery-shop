@@ -24,8 +24,16 @@ public class Payment {
 	private Date paymentDate;
 
 	@Column(name = "ORDER_ID")
-	private int orderId;
+	private long orderId;
 	
+	public long getOrderId() {
+		return orderId;
+	}
+
+	public void setOrderId(long orderId) {
+		this.orderId = orderId;
+	}
+
 	@Column(name = "AMOUNT")
 	private float amount;
 	
@@ -51,13 +59,7 @@ public class Payment {
 		this.paymentDate = paymentDate;
 	}
 
-	public int getOrderId() {
-		return orderId;
-	}
-
-	public void setOrderId(int orderId) {
-		this.orderId = orderId;
-	}
+	
 
 	public float getAmount() {
 		return amount;

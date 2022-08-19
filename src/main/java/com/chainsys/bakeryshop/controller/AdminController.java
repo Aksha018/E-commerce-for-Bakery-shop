@@ -2,6 +2,9 @@ package com.chainsys.bakeryshop.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -104,13 +107,14 @@ public class AdminController {
 		return "update-product";
 	}
 	@GetMapping("/findbyproductid")
-	public String findProduct(@RequestParam("id") int id, Model model) {
+	public String findProduct(@RequestParam("id") int id,@RequestParam("pId") int pId, Model model) {
 		Product product = productService.findByProductId(id);
 		if (product==null) {
         	System.out.println("debug:product is null");
-        	return " ";
+        	return "";
         }
 		model.addAttribute("findproduct", product);
+		model.addAttribute("pId", pId);
 		return "findbyidproduct";
 	}
 
@@ -135,27 +139,51 @@ public class AdminController {
 	    }
 	 
 	 @GetMapping("/cake")
-	 public String cake(Model model) {
+	 public String cake(@RequestParam("id")int pId,Model model,HttpServletRequest request) {
+		HttpSession session= request.getSession();
+		session.setAttribute("pId", session.getAttribute("personId"));
+		System.out.println(session.getAttribute("personId"));
+		model.addAttribute("pId", pId);
 		 return "cake";
 	 }
 	 @GetMapping("/cookies")
-	 public String cookies(Model model) {
-		 return "cookies";
+	 public String cookies(@RequestParam("id")int pId,Model model,HttpServletRequest request) {
+				HttpSession session= request.getSession();
+				session.setAttribute("pId", session.getAttribute("personId"));
+				System.out.println(session.getAttribute("personId"));
+				model.addAttribute("pId", pId);
+				 return "cookies";
 	 }
 	 @GetMapping("/cupcakes")
-	 public String cupcakes(Model model) {  
-		 return "cupcakes";
+		 public String cupcakes(@RequestParam("id")int pId,Model model,HttpServletRequest request) {
+				HttpSession session= request.getSession();
+				session.setAttribute("pId", session.getAttribute("personId"));
+				System.out.println(session.getAttribute("personId"));
+				model.addAttribute("pId", pId);
+				 return "cupcakes";
 	 }
 	 @GetMapping("/chocolates")
-	 public String chocolates(Model model) {
-		 return "chocolates";
+		 public String chocolates(@RequestParam("id")int pId,Model model,HttpServletRequest request) {
+				HttpSession session= request.getSession();
+				session.setAttribute("pId", session.getAttribute("personId"));
+				System.out.println(session.getAttribute("personId"));
+				model.addAttribute("pId", pId);
+				 return "chocolates";
 	 }
 	 @GetMapping("/donuts")
-	 public String donuts(Model model) {
-		 return "donuts";
+		 public String donuts(@RequestParam("id")int pId,Model model,HttpServletRequest request) {
+				HttpSession session= request.getSession();
+				session.setAttribute("pId", session.getAttribute("personId"));
+				System.out.println(session.getAttribute("personId"));
+				model.addAttribute("pId", pId);
+				 return "donuts";
 	 }
 	 @GetMapping("/muffins")
-	 public String muffins(Model model) {
-		 return "muffins";
+	 public String muffins(@RequestParam("id")int pId,Model model,HttpServletRequest request) {
+				HttpSession session= request.getSession();
+				session.setAttribute("pId", session.getAttribute("personId"));
+				System.out.println(session.getAttribute("personId"));
+				model.addAttribute("pId", pId);
+				 return "muffins";
 	 }
 }

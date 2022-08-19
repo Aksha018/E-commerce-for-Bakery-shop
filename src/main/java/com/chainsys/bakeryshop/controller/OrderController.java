@@ -2,6 +2,7 @@ package com.chainsys.bakeryshop.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.chainsys.bakeryshop.dto.PersonOrderDto;
 import com.chainsys.bakeryshop.model.Orders;
+import com.chainsys.bakeryshop.model.Person;
 import com.chainsys.bakeryshop.model.Product;
 import com.chainsys.bakeryshop.services.OrderService;
 import com.chainsys.bakeryshop.services.PersonService;
@@ -27,8 +29,9 @@ public class OrderController {
 	OrderService orderService;
 	@Autowired
 	PersonService personService;
+	
 	@Autowired
-	ProductService productService;
+	private ProductService productService;
 
 	
 			@GetMapping("/orderlist")
@@ -39,20 +42,24 @@ public class OrderController {
 			}
 
 			@GetMapping("/addorderform")
-			public String show(@RequestParam("id")int productId,Model model) {
+			public String show(@RequestParam("id")int productId,@RequestParam("pId")int pId,Model model,HttpServletRequest request) {
 				Orders theorder = new Orders();
+				System.out.println(productId);
 				theorder.setProductId(productId);
-				Product product=productService.findByProductId(productId);
-				theorder.setPrice((int)product.getPrice());
+//				int personId =(int)request.getAttribute("personId");
+			Product product=productService.findByProductId(productId);
+				theorder.setPersonId(pId);
+			theorder.setPrice((int)product.getPrice());
 				model.addAttribute("add", theorder);
 				return "add-orders";
 			}
 
 			@PostMapping("/addorder")
-			public String addNewOrder(@ModelAttribute("add") Orders theorder,HttpSession session) {
+			public String addNewOrder(@ModelAttribute("add") Orders theorder){
+				long id=theorder.getOrderId();
 				orderService.save(theorder);
-				session.setAttribute("orderId", theorder.getOrderId());
-				return "redirect:/person/orderlist";
+				return "redirect:/payment/addpaymentform?id="+id;
+
 			}
 
 			@GetMapping("/updateorderform")

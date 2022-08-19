@@ -11,12 +11,13 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.chainsys.bakeryshop.model.Orders;
 import com.chainsys.bakeryshop.model.Payment;
 import com.chainsys.bakeryshop.services.OrderService;
 import com.chainsys.bakeryshop.services.PaymentService;
 
 @Controller
-@RequestMapping("/person")
+@RequestMapping("/payment")
 public class PaymentController {
 
 	@Autowired
@@ -32,8 +33,11 @@ public class PaymentController {
 	}
 
 	@GetMapping("/addpaymentform")
-	public String showpayment(Model model) {
+	public String showpayment(@RequestParam("id")long id,Model model) {
 		Payment thepayment = new Payment();
+		Orders order=orderService.findByOrderId(id);
+		thepayment.setOrderId(id);
+		thepayment.setAmount(order.getAmount());
 		model.addAttribute("add", thepayment);
 		return "add-payment";
 	}
@@ -54,12 +58,12 @@ public class PaymentController {
 	@PostMapping("/updatepayment")
 	public String paymentupdate(@ModelAttribute("updatepay") Payment thepayment) {
 		paymentService.save(thepayment);
-		return "redirect:/person/paymentlist";
+		return "redirect:/payment/paymentlist";
 	}
 
 	@GetMapping("/deletepayment")
 	public String deletepayment(@RequestParam("id") long id) {
 		paymentService.deletePaymentById(id);
-		return "redirect:/person/paymentlist";
+		return "redirect:/payment/paymentlist";
 	}
 }
