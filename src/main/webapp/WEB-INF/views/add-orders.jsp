@@ -26,10 +26,10 @@
 		<div>
 			<form:form action="addorder" method="post" modelAttribute="add">
 					<div>
-						<form:input path="productId" readonly="true"/>
+						<form:input path="productId" type="hidden"/>
 					</div>
 				<div>
-						<form:input path="personId" readonly="true"/>
+						<form:input path="personId" type="hidden"/>
 					</div>
 				<div>
 					<label for="orderDate">Order Date</label>

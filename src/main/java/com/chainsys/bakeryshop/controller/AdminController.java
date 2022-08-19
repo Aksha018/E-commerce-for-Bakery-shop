@@ -22,6 +22,9 @@ import com.chainsys.bakeryshop.services.ProductService;
 @Controller
 @RequestMapping("/admin")
 public class AdminController {
+	public static final String LISTOFCATEGORY="redirect:/admin/categorylist";
+	public static final String LISTOFPRODUCT="redirect:/admin/productlist";
+	
 	@Autowired
 	CategoryService categoryService;
 	@Autowired
@@ -45,13 +48,13 @@ public class AdminController {
 	public String addNewCategory(@ModelAttribute("addcategory") Category category) {
 		System.out.println(category);
 		categoryService.save(category);
-		return "redirect:/admin/categorylist";
+		return LISTOFCATEGORY;
 	}
 
 	@GetMapping("/deletecategory")
 	public String deleteCategory(@RequestParam("categoryId") int id) {
 		categoryService.deleteById(id);
-		return "redirect:/admin/categorylist";
+		return LISTOFCATEGORY;
 
 	}
 
@@ -65,7 +68,7 @@ public class AdminController {
 	@PostMapping("updatecategory")
 	public String updateCategory(@ModelAttribute("updatecategory") Category category) {
 		categoryService.save(category);
-		return "redirect:/admin/categorylist";
+		return LISTOFCATEGORY;
 	}
 
 	// products
@@ -87,13 +90,13 @@ public class AdminController {
 	@PostMapping("/addproduct")
 	public String addNewProduct(@ModelAttribute("product") Product product) {
 		productService.save(product);
-		return "redirect:/admin/productlist";
+		return LISTOFPRODUCT;
 	}
 
 	@GetMapping("/deleteproduct")
 	public String deleteProduct(@RequestParam("id") int id) {
 		productService.deleteProductById(id);
-		return "redirect:/admin/productlist";
+		return LISTOFPRODUCT;
 	}
 
 	@GetMapping("/updateform")
@@ -121,7 +124,7 @@ public class AdminController {
 	@PostMapping("update")
 	public String updateProduct(@ModelAttribute("updateproduct") Product product) {
 		productService.save(product);
-		return "redirect:/admin/productlist";
+		return LISTOFPRODUCT;
 	}
 	
 	//CategoryProductDetails
@@ -137,6 +140,7 @@ public class AdminController {
 	        model.addAttribute("getproductlist", productService.getProductsByCategoryId(id));
 	        return "category-product";
 	    }
+	 
 	 
 	 @GetMapping("/cake")
 	 public String cake(@RequestParam("id")int pId,Model model,HttpServletRequest request) {

@@ -3,8 +3,6 @@ package com.chainsys.bakeryshop.controller;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.chainsys.bakeryshop.dto.PersonOrderDto;
 import com.chainsys.bakeryshop.model.Orders;
-import com.chainsys.bakeryshop.model.Person;
 import com.chainsys.bakeryshop.model.Product;
 import com.chainsys.bakeryshop.services.OrderService;
 import com.chainsys.bakeryshop.services.PersonService;
@@ -46,7 +43,7 @@ public class OrderController {
 				Orders theorder = new Orders();
 				System.out.println(productId);
 				theorder.setProductId(productId);
-//				int personId =(int)request.getAttribute("personId");
+				int personId =(int)request.getAttribute("personId");
 			Product product=productService.findByProductId(productId);
 				theorder.setPersonId(pId);
 			theorder.setPrice((int)product.getPrice());
