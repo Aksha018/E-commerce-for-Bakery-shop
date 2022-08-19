@@ -50,6 +50,12 @@ public class BillController {
 		model.addAttribute("updatebill", billlist);
 		return "update-bill";
 	}
+	@GetMapping("/getbillbyid")
+	public String findById(@RequestParam("id") long id, Model model) {
+		Bill billlist = billservice.findByBillId(id);
+		model.addAttribute("update", billlist);
+		return "findbybill";
+	}
 
 	@PostMapping("/updatebill")
 	public String updateBill(@ModelAttribute("update") Bill billlist) {

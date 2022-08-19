@@ -23,6 +23,7 @@
 	</div>
 	<div id="table root">
 		<table>
+		<caption></caption>
 			<thead>
 				<tr>
 					<th>Bill Id</th>

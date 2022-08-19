@@ -14,6 +14,7 @@
 <div id="table root">
 <div id="form" align="center">
 	<table>
+	<caption></caption>
 		<thead>
 			<tr>
 				<th>Category Id</th>

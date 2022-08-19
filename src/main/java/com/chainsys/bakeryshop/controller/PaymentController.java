@@ -1,5 +1,6 @@
 package com.chainsys.bakeryshop.controller;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,8 +12,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.chainsys.bakeryshop.model.Bill;
 import com.chainsys.bakeryshop.model.Orders;
 import com.chainsys.bakeryshop.model.Payment;
+import com.chainsys.bakeryshop.services.BillService;
 import com.chainsys.bakeryshop.services.OrderService;
 import com.chainsys.bakeryshop.services.PaymentService;
 
@@ -24,7 +27,9 @@ public class PaymentController {
 	PaymentService paymentService;
 	@Autowired
 	OrderService orderService;
-
+	@Autowired
+	BillService billservice;
+	
 	@GetMapping("/paymentlist")
 	public String getPaymentAll(Model model) {
 		List<Payment> paymentlist = paymentService.getPayment();
@@ -41,11 +46,16 @@ public class PaymentController {
 		model.addAttribute("add", thepayment);
 		return "add-payment";
 	}
-
 	@PostMapping("/addpayment")
 	public String addNewpayment(@ModelAttribute("add") Payment thepayment) {
 		paymentService.save(thepayment);
-		return "redirect:/person/paymentlist";
+		Bill billlist = new Bill();
+		billlist.setOrderId((int)thepayment.getOrderId());
+		billlist.setBillAmount(billlist.getBillAmount());
+		billlist.setBillDate(thepayment.getPaymentDate());
+		billservice.save(billlist);
+		int id=(int)thepayment.getOrderId();
+		return "redirect:/bill/getbillbyid?id="+id;
 	}
 
 	@GetMapping("/updatepaymentform")

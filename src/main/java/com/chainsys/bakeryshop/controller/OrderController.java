@@ -56,7 +56,6 @@ public class OrderController {
 				long id=theorder.getOrderId();
 				orderService.save(theorder);
 				return "redirect:/payment/addpaymentform?id="+id;
-
 			}
 
 			@GetMapping("/updateorderform")

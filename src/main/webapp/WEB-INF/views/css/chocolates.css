@@ -333,54 +333,11 @@ h3 {
 	padding: 30px;
 }
 
-/* category section */
-.tab_col {
-	color: #fff;
-	background-color: #000;
-	padding: 80px;
-	height: 100wh;
-}
-
-.add_cat {
-	margin: 50px;
-	padding: 10px;
-	background-color: #000;
-	border-color: #b8860b;
-	color: #fff;
-}
-
-.text-value {
-	background-color: #141414;
-}
-
-.nft_name {
-	text-align: center;
-	color: #fff;
-	padding: 100px;
-	font-size: 400%;
-}
-
-#text_box {
-	height: 50px;
-	width: 400px;
-	text-align: center;
-	border-radius: 5px;
-	border-color: gold;
-}
-
-#add_cate {
-	margin: 50px;
-	padding: 10px;
-	background-color: #000;
-	border-color: #b8860b;
-	color: #fff;
-	width: 10%;
-}
 /* signup */
 .form-label {
 	color: #fff;
 }
-index
+.index
    ::selection {
 	color: #000;
 	background: #fff;
