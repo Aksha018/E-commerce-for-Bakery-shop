@@ -65,8 +65,8 @@ public class PaymentController {
 	}
 
 	@PostMapping("/updatepayment")
-	public String paymentupdate(@ModelAttribute("updatepay") Payment thepayment) {
-		paymentService.save(thepayment);
+	public String paymentupdate(@ModelAttribute("updatepay") Payment payments) {
+		paymentService.save(payments);
 		return "redirect:/payment/paymentlist";
 	}
 

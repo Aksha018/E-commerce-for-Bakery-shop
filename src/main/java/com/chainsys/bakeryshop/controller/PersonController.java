@@ -46,8 +46,8 @@ public class PersonController {
 	}
 	
 	  @PostMapping("/personlogin") public String
-	 checkingAccess(@ModelAttribute("uselogin") Person person) {
-		 Person theperson=personservice.getEmailAndPassword(person.getEmail(),person.getPassword()); 
+	 checkingAccess(@ModelAttribute("uselogin") Person pers) {
+		 Person theperson=personservice.getEmailAndPassword(pers.getEmail(),pers.getPassword()); 
 		 if(theperson!=null) {
 			 return "redirect:/person/homepage";
 	  } else
@@ -101,8 +101,8 @@ public class PersonController {
 	}
 
 	@PostMapping("/update")
-	public String updateperson(@ModelAttribute("updateperson") Person theperson) {
-		personservice.save(theperson);
+	public String updateperson(@ModelAttribute("updateperson") Person per) {
+		personservice.save(per);
 		return "redirect:/person/personlist";
 	}
 

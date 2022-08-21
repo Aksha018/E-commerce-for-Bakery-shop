@@ -45,9 +45,9 @@ public class AdminController {
 	}
 
 	@PostMapping("/add")
-	public String addNewCategory(@ModelAttribute("addcategory") Category category) {
-		System.out.println(category);
-		categoryService.save(category);
+	public String addNewCategory(@ModelAttribute("addcategory") Category cat) {
+		//System.out.println(category);
+		categoryService.save(cat);
 		return LISTOFCATEGORY;
 	}
 
@@ -66,8 +66,8 @@ public class AdminController {
 	}
 
 	@PostMapping("updatecategory")
-	public String updateCategory(@ModelAttribute("updatecategory") Category category) {
-		categoryService.save(category);
+	public String updateCategory(@ModelAttribute("updatecategory") Category cate) {
+		categoryService.save(cate);
 		return LISTOFCATEGORY;
 	}
 
@@ -88,8 +88,8 @@ public class AdminController {
 	}
 
 	@PostMapping("/addproduct")
-	public String addNewProduct(@ModelAttribute("product") Product product) {
-		productService.save(product);
+	public String addNewProduct(@ModelAttribute("product") Product prod) {
+		productService.save(prod);
 		return LISTOFPRODUCT;
 	}
 
@@ -114,8 +114,8 @@ public class AdminController {
 	}
 
 	@PostMapping("update")
-	public String updateProduct(@ModelAttribute("updateproduct") Product product) {
-		productService.save(product);
+	public String updateProduct(@ModelAttribute("updateproduct") Product products) {
+		productService.save(products);
 		return LISTOFPRODUCT;
 	}
 	

@@ -162,10 +162,10 @@
         margin: 0;
     }
 
-    .navbar__toggle .bar {
+   /* .navbar__toggle .bar {
         display: block;
         cursor: pointer;
-    }
+    }*/
 
     #mobile-menu {
         position: absolute;
@@ -646,11 +646,6 @@ nav .menu {
 .center .btns button:last-child {
 	background: white;
 	color: black;
-}
-/*  */
-.navbar {
-    overflow: hidden;
-    background-color: white;
 }
 
 .navbar a {

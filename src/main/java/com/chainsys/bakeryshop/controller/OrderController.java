@@ -51,9 +51,9 @@ public class OrderController {
 			}
 
 			@PostMapping("/addorder")
-			public String addNewOrder(@ModelAttribute("add") Orders theorder){
-				theorder=orderService.save(theorder);
-				long id=theorder.getOrderId();
+			public String addNewOrder(@ModelAttribute("add") Orders order){
+				order=orderService.save(order);
+				long id=order.getOrderId();
 				return "redirect:/payment/addpaymentform?id="+id;
 			}
 

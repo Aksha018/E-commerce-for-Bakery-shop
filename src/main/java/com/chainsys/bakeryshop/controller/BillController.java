@@ -39,8 +39,8 @@ public class BillController {
 	}
 
 	@PostMapping("/addbill")
-	public String addNewbill(@ModelAttribute("addbilldetail") Bill billlist) {
-		billservice.save(billlist);
+	public String addNewbill(@ModelAttribute("addbilldetail") Bill blist) {
+		billservice.save(blist);
 		return "redirect:/bill/billlist";
 	}
 
@@ -58,8 +58,8 @@ public class BillController {
 	}
 
 	@PostMapping("/updatebill")
-	public String updateBill(@ModelAttribute("update") Bill billlist) {
-		billservice.save(billlist);
+	public String updateBill(@ModelAttribute("update") Bill list) {
+		billservice.save(list);
 		return "redirect:/person/billlist";
 	}
 

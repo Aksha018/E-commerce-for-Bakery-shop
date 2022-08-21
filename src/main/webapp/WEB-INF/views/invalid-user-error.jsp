@@ -9,6 +9,6 @@
 <body>
  <h2>Invalid User </h2>
  <div> Check your user name and password</div>
- <!-- <a href="/person/checkuserlogin">Back to Person login</a> -->
+  <a href="/person/checkuserlogin">Back to Person login</a> 
 </body>
 </html>

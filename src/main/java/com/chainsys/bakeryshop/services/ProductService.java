@@ -28,10 +28,6 @@ public class ProductService {
 	}
 	public List<Product> getProductsByCategoryId(int categoryId) {
 		List<Product> productlist = productRepository.findByCategoryId(categoryId);
-		if(productlist== null)
-		{
-		 System.out.println("debug:productlist is null");
-		}
 		return productlist;
 	}
 	public Product save(Product product) {
