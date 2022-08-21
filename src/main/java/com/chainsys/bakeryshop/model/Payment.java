@@ -1,6 +1,5 @@
 package com.chainsys.bakeryshop.model;
 
-import java.sql.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -21,28 +20,17 @@ public class Payment {
 	private long paymentId;
 	
 	@Column(name = "PAYMENT_DATE")
-	private Date paymentDate;
+	private String paymentDate;
 
 	@Column(name = "ORDER_ID")
 	private long orderId;
 	
-	public long getOrderId() {
-		return orderId;
-	}
-
-	public void setOrderId(long orderId) {
-		this.orderId = orderId;
-	}
-
 	@Column(name = "AMOUNT")
 	private float amount;
 	
 	@Column(name = "PAYMENT_MODE")
 	private String paymentMode;
 	
-	@Column(name = "PAYMENT_DESCRIPTION")
-	private String paymentDescription;
-
 	public long getPaymentId() {
 		return paymentId;
 	}
@@ -51,15 +39,22 @@ public class Payment {
 		this.paymentId = paymentId;
 	}
 
-	public Date getPaymentDate() {
+	public String getPaymentDate() {
 		return paymentDate;
 	}
 
-	public void setPaymentDate(Date paymentDate) {
+	public void setPaymentDate(String paymentDate) {
 		this.paymentDate = paymentDate;
 	}
 
-	
+	public long getOrderId() {
+		return orderId;
+	}
+
+	public void setOrderId(long orderId) {
+		this.orderId = orderId;
+	}
+
 
 	public float getAmount() {
 		return amount;
@@ -77,12 +72,4 @@ public class Payment {
 		this.paymentMode = paymentMode;
 	}
 
-	public String getPaymentDescription() {
-		return paymentDescription;
-	}
-
-	public void setPaymentDescription(String paymentDescription) {
-		this.paymentDescription = paymentDescription;
-	}
-	
 }

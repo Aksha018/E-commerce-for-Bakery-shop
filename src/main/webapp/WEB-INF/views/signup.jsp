@@ -44,16 +44,12 @@
 			<div>
 				<label for="personType">Person Type</label>
 				<form:select path="personType">
-					<form:errors path="personType"/>
+					<form:errors path="personType" />
 					<form:option value="user">User</form:option>
-					<form:option value="user">Admin</form:option>
 				</form:select>
-			</div>
-			<div>
-		       <br>
 			</div>
 			<form:button id="log">Sign Up</form:button>
 		</form:form>
-	</div>
+		</div>
 </body>
 </html>

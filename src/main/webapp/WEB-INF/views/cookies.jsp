@@ -20,14 +20,14 @@
 					<h1>Cookies</h1>
 					<div class="images__container">
 						<div class="images__card">
-							<a href="/person/addorderform"><h2>Almond and cherry cookies</h2></a>
+							<a href="/admin/findbyproductid?id=26&pId=${pId}"><h2>Almond and cherry cookies</h2></a>
 						</div>
 						<div class="images__card">
-							<a href="/person/addorderform"><h2>Choc-chip cookie mash-up</h2></a>
+							<a href="/admin/findbyproductid?id=27&pId=${pId}"><h2>Choc-chip cookie mash-up</h2></a>
 						</div>
 						
 						<div class="images__card">
-							<a href="/person/addorderform"><h2>Jam cheesecake cookies</h2></a>
+							<a href="/admin/findbyproductid?id=28&pId=${pId}"><h2>Jam cheesecake cookies</h2></a>
 						</div>
 				</div>
 				</div>

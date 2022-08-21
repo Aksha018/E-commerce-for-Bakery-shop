@@ -13,6 +13,7 @@
 <body>
 <div>
 		<table class="table root">
+		<caption></caption>
 			<thead>
 				<tr>
 					<th>Product Id</th>

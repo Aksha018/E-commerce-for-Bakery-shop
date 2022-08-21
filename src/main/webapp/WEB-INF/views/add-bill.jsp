@@ -14,8 +14,7 @@
 <body>
 	<div id="root">
 		<div id="form" align="center">
-			<form:form action="addbill" method="post"
-				modelAttribute="addbilldetail">
+			<form:form action="addbill" method="post" modelAttribute="addbilldetail">
 				<div>
 					<label for="billId" >Bill Id</label>
 					<div>

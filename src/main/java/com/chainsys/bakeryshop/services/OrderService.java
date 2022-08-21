@@ -15,16 +15,16 @@ public class OrderService {
 	OrderRepository orderRepository;
 	@Autowired
 	PersonRepository personRepository;
-	private ProductService productService;
+
 	
 	public List<Orders> getOrder() {
 		List<Orders> Orderlist = orderRepository.findAll();
 		return Orderlist;
 	}
 	public Orders save(Orders theorder) {
-		productService.findByProductId(theorder.getProductId());
+		theorder=orderRepository.save(theorder); 
 		
-		return orderRepository.save(theorder);
+		return theorder;
 	}
 
 	public  Orders findByOrderId(long id) {

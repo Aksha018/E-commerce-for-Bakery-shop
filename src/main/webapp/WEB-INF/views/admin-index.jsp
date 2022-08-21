@@ -19,14 +19,14 @@
 				<li><a href="/admin/categorylist">Category</a></li>	
 				<li><a href="/admin/productlist">Product</a></li>
 				<li><a href="/person/orderlist">Orders</a></li>		
-				<li><a href="/person/paymentlist">Payment Details</a></li>		
+				<li><a href="/payment/paymentlist">Payment Details</a></li>		
 				<li><a href="/bill/billlist">Bill Details</a></li>	
 			</ul>
 		</div>
 	</nav>
 	<div class="img"></div>
 	<div class="center">
-		<div class="title">Indulge in Sweetness</div>
+		<div class="title">Welcome Admin!</div>
 		<div class="btns"></div>
 	</div>
 </body>

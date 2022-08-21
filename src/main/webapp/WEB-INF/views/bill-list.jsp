@@ -21,8 +21,6 @@
 				<th>Bill Date</th>
 				<th>Order Id</th>
 				<th>Bill Amount</th>
-				<th>Update</th>
-				<th>Delete</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -32,12 +30,6 @@
 					<td>${bill.billDate}</td>
 					<td>${bill.orderId}</td>
 					<td>${bill.billAmount}</td>
-					<td><a href="addbillform?id=${bill.billId}"><input
-							onclick="change()" type="button" value="Add" id="myButton1"></input></a></td>
-					<td><a href="updatebillform?id=${bill.billId}"><input
-							onclick="change()" type="button" value="Update" id="myButton2"></input></a></td>
-					<td><a href="deletebill?id=${bill.billId}"><input
-							onclick="change()" type="button" value="Delete" id="myButton3"></input></a></td>
 				</tr>
 			</c:forEach>
 		</tbody>

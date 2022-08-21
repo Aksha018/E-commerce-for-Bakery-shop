@@ -29,7 +29,7 @@ public class BillService {
 	}
 
 	public Bill findByBillId(long id) {
-		return billRepository.findById(id);
+		return billRepository.findByBillId(id);
 	}
 
 	public void deleteBillById(long id) {

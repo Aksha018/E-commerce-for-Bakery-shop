@@ -1,6 +1,5 @@
 package com.chainsys.bakeryshop.controller;
 
-import java.time.LocalDate;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,7 +42,7 @@ public class PaymentController {
 		Orders order=orderService.findByOrderId(id);
 		thepayment.setOrderId(id);
 		thepayment.setAmount(order.getAmount());
-		model.addAttribute("add", thepayment);
+	    model.addAttribute("add", thepayment);
 		return "add-payment";
 	}
 	@PostMapping("/addpayment")
@@ -51,10 +50,10 @@ public class PaymentController {
 		paymentService.save(thepayment);
 		Bill billlist = new Bill();
 		billlist.setOrderId((int)thepayment.getOrderId());
-		billlist.setBillAmount(billlist.getBillAmount());
+		billlist.setBillAmount(thepayment.getAmount());
 		billlist.setBillDate(thepayment.getPaymentDate());
-		billservice.save(billlist);
-		int id=(int)thepayment.getOrderId();
+		billlist=billservice.save(billlist);
+		long id= billlist.getBillId();
 		return "redirect:/bill/getbillbyid?id="+id;
 	}
 

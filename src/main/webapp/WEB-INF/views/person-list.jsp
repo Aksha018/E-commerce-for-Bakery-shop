@@ -27,7 +27,8 @@ table{
 	<div id="root">
 		<div id="form" align="center">
  <table>
-		<thead>
+ <caption></caption>
+ 		<thead>
 			<tr>
 				<th>Person Id</th>
 				<th>Person Name</th>

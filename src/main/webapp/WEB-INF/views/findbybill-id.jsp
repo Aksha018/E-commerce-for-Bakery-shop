@@ -8,26 +8,30 @@
 <meta charset="ISO-8859-1">
 <title>Find By Bill Id</title>
 </head>
+<style>
+<%@include file="/WEB-INF/views/css/findby-billid.css"%>
+</style>
 <body>
+<nav>
+		<div class="menu">
+			<div class="logo">
+				<a href="#">Bakery And Cakes</a>
+			</div>
+			<ul>
+			<li><a href="/person/homepage">Back</a></li>	
+			</ul>
+		</div>
+	</nav>
+	<div class="login-form">
 	<div id="root">
-		<div id="form">
 			<form:form action="updatebill" method="post" modelAttribute="update">
-				<div>
-					<label for="billId">Bill Id</label>
 					<div>
-						<form:input path="billId" />
+						<form:input path="billId" type="hidden" />
 					</div>
-				</div>
 				<div>
 					<label for="billDate">Bill Date</label>
 					<div>
-						<form:input path="billDate" />
-					</div>
-				</div>
-				<div>
-					<label for="orderId">Order Id</label>
-					<div>
-						<form:input path="orderId" />
+						<form:input path="billDate" id="date" readonly="true" />
 					</div>
 				</div>
 				<div>
@@ -46,4 +50,7 @@
 		</div>
 	</div>
 </body>
+<script type="text/javascript">
+  document.getElementById('date').value = new Date().toISOString(); 
+</script>
 </html>

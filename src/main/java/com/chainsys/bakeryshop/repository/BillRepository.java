@@ -10,7 +10,7 @@ import com.chainsys.bakeryshop.model.Bill;
 @Repository 
 public interface BillRepository extends JpaRepository<Bill,Long> {
 		
-		Bill findById(long id);
+		Bill findByBillId(long id);
 
 		Bill save(Bill bill); 
 		

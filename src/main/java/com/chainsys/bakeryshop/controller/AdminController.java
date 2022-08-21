@@ -102,20 +102,12 @@ public class AdminController {
 	@GetMapping("/updateform")
 	public String showUpdates(@RequestParam("id") int id, Model model) {
 		Product product = productService.findByProductId(id);
-		if (product==null) {
-        	System.out.println("debug:product is null");
-        	return " ";
-        }
 		model.addAttribute("updateproduct", product);
 		return "update-product";
 	}
 	@GetMapping("/findbyproductid")
 	public String findProduct(@RequestParam("id") int id,@RequestParam("pId") int pId, Model model) {
 		Product product = productService.findByProductId(id);
-		if (product==null) {
-        	System.out.println("debug:product is null");
-        	return "";
-        }
 		model.addAttribute("findproduct", product);
 		model.addAttribute("pId", pId);
 		return "findbyidproduct";
@@ -132,10 +124,6 @@ public class AdminController {
 	 @GetMapping("/getcategoryproductdetails")
 	    public String getCategoryProductDetails(@RequestParam("categoryId") int id, Model model) {
 	     Category category = categoryService.findByCategoryId(id);  
-	     if(category==null) {
-	    	 System.out.println("debug:category is null");
-	    	 return "";
-	     }
 	     model.addAttribute("getcategory",category);
 	        model.addAttribute("getproductlist", productService.getProductsByCategoryId(id));
 	        return "category-product";

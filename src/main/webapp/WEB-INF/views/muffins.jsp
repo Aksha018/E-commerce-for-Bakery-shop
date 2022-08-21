@@ -2,7 +2,7 @@
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="ISO-8859-1">
 <title>Category</title>
@@ -20,13 +20,13 @@
 					<h1>Muffins</h1>
 					<div class="images__container">
 						<div class="images__card">
-							<a href="/admin/findbyproductid?id=41"><h2>Apple and custard muffins</h2></a>
+							<a href="/admin/findbyproductid?id=41&pId=${pId}"><h2>Apple and custard muffins</h2></a>
 						</div>
 						<div class="images__card">
-							<a href="/admin/findbyproductid?id=42"><h2>Chocolate mud muffins</h2></a>
+							<a href="/admin/findbyproductid?id=42&pId=${pId}"><h2>Chocolate mud muffins</h2></a>
 						</div>
 						<div class="images__card">
-							<a href="/admin/findbyproductid?id=43"><h2>Creme Egg muffins</h2></a>
+							<a href="/admin/findbyproductid?id=43&pId=${pId}"><h2>Creme Egg muffins</h2></a>
 						</div>
 				</div>
 				</div>

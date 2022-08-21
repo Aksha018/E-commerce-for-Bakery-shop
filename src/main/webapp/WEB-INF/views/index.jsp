@@ -16,6 +16,7 @@
 				<a href="#">Bakery And Cakes</a>
 			</div>
 			<ul>
+			<li><a href="/person/about">About</a></li>
 			<li><a href="/person/personloginpage">Login</a></li>	
 				<li><a href="/person/signup">Sign up</a></li>	
 			</ul>

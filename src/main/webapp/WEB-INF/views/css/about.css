@@ -1,1 +1,38 @@
 @charset "ISO-8859-1";
+.box{
+border:19px solid #408080;
+border-radius: 5px;
+margin-top: 93px;
+height:280px;
+width:680px;
+font-size:22px;
+margin-left:21%;
+color: #ffffff;
+backdrop-filter: blur(10px);
+
+}
+body {
+    background-image: url('https://images.creativemarket.com/0.1.0/ps/797108/600/400/m2/fpnw/wm0/cake-shop-logo-mock-up-1-.jpg?1448176497&s=fca93295192f47cf4a2255136b34d1db&fmt=webp');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    }
+h2{
+    color:#000000;
+    height: 29px;
+    width: 289px;
+    margin-left: 500px;
+    border-radius: 10px;
+    background-color: #ffffff;
+    text-align: center;
+}
+.parell{
+    margin-left: 66%;
+    margin-top: -33%;
+    height: 32%;
+    width: 258px;
+    background-color: white;
+    color: #000000;
+    font-size: larger;
+    
+}

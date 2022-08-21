@@ -16,6 +16,7 @@
 
 <div id="table root">
 	<table>
+	<caption></caption>
 		<thead>
 			<tr>
 				<th>Order Id</th>
@@ -47,6 +48,8 @@
 			</c:forEach>
 		</tbody>
 	</table>
+</div>
+</div>
 </div>
 </body>
 </html>

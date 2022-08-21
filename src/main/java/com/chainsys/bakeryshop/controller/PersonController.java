@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.chainsys.bakeryshop.model.Login;
 import com.chainsys.bakeryshop.model.Person;
 import com.chainsys.bakeryshop.services.PersonService;
 
@@ -111,6 +110,12 @@ public class PersonController {
 	public String deleteperson(@RequestParam("id") int id) {
 		personservice.deletePersonById(id);
 		return "redirect:/person/personlist";
+	}
+	
+	@GetMapping("/about")
+	public String about(Model model)
+	{
+      return "about";
 	}
 }
 

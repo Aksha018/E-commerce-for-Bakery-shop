@@ -41,9 +41,8 @@ public class OrderController {
 			@GetMapping("/addorderform")
 			public String show(@RequestParam("id")int productId,@RequestParam("pId")int pId,Model model,HttpServletRequest request) {
 				Orders theorder = new Orders();
-				System.out.println(productId);
+				//System.out.println(productId);
 				theorder.setProductId(productId);
-				int personId =(int)request.getAttribute("personId");
 			Product product=productService.findByProductId(productId);
 				theorder.setPersonId(pId);
 			theorder.setPrice((int)product.getPrice());
@@ -53,8 +52,8 @@ public class OrderController {
 
 			@PostMapping("/addorder")
 			public String addNewOrder(@ModelAttribute("add") Orders theorder){
+				theorder=orderService.save(theorder);
 				long id=theorder.getOrderId();
-				orderService.save(theorder);
 				return "redirect:/payment/addpaymentform?id="+id;
 			}
 

@@ -83,7 +83,7 @@
 				<div>
 					<label for="deliveryAddress">Delivery Address</label>
 					<div>
-						<form:input path="deliveryAddress" />
+						<form:input path="deliveryAddress" placeholder="Enter Your address" />
 					</div>
 				</div>
 				<form:button>Order</form:button>

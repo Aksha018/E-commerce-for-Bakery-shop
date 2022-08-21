@@ -20,13 +20,13 @@
 					<h1>Chocolates</h1>
 					<div class="images__container">
 						<div class="images__card">
-							<a href="/admin/findbyproductid?id=29"><h2>Banana, oat & chocolate bars</h2></a>
+							<a href="/admin/findbyproductid?id=29&pId=${pId}"><h2>Banana, oat & chocolate bars</h2></a>
 						</div>
 						<div class="images__card">
-							<a href="/admin/findbyproductid?id=30"><h2>Nanaimo choco bars</h2></a>
+							<a href="/admin/findbyproductid?id=30&pId=${pId}"><h2>Nanaimo choco bars</h2></a>
 						</div>
 						<div class="images__card">
-							<a href="/admin/findbyproductid?id=31"><h2>Date and choc-chip cookie bars</h2></a>
+							<a href="/admin/findbyproductid?id=31&pId=${pId}"><h2>Date and choc-chip cookie bars</h2></a>
 						</div>
 				</div>
 				</div>

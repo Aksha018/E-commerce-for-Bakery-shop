@@ -15,6 +15,7 @@
 <div id="form" align="center">
 
 	<table>
+	<caption></caption>
 		<thead>
 			<tr>
 				<th>Payment Id</th>
@@ -22,7 +23,6 @@
 				<th>Order Id</th>
 				<th>Amount</th>
 				<th>Payment Mode</th>
-				<th>Payment Description</th>
 		  </tr>
 		</thead>
 		<tbody>
@@ -33,11 +33,6 @@
 					<td>${payment.orderId}</td>
 					<td>${payment.amount}</td>
 					<td>${payment.paymentMode}</td>
-					<td>${payment.paymentDescription}</td>
-					<td><a href="updatepayment?id=${payment.paymentId}"><input
-							onclick="change()" type="button" value="Update" id="myButton1"></input></a></td>
-					<td><a href="deletepayment?id=${payment.paymentId}"><input
-							onclick="change()" type="button" value="Delete" id="myButton2"></input></a></td>
 				</tr>
 			</c:forEach>
 		</tbody>
