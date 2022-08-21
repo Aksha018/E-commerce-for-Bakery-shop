@@ -24,6 +24,8 @@
 	</nav>
 	<div class="login-form">
 	<div id="root">
+	<h1 align="center" style="margin-top: -100px;">PAYMENT SUCCESSFULL</h1>
+	
 			<form:form action="updatebill" method="post" modelAttribute="update">
 					<div>
 						<form:input path="billId" type="hidden" />
@@ -37,13 +39,13 @@
 				<div>
 					<label for="orderId">Order Id</label>
 					<div>
-						<form:input path="orderId" />
+						<form:input path="orderId" readonly="true"/>
 					</div>
 				</div>
 				<div>
 					<label for="billAmount">Bill Amount</label>
 					<div>
-						<form:input path="billAmount" />
+						<form:input path="billAmount" readonly="true"/>
 					</div>
 				</div>
 			</form:form>
