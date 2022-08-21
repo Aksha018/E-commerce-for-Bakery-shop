@@ -46,7 +46,6 @@ public class AdminController {
 
 	@PostMapping("/add")
 	public String addNewCategory(@ModelAttribute("addcategory") Category cat) {
-		//System.out.println(category);
 		categoryService.save(cat);
 		return LISTOFCATEGORY;
 	}

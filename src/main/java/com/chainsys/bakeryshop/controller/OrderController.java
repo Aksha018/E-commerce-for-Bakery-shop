@@ -41,7 +41,6 @@ public class OrderController {
 			@GetMapping("/addorderform")
 			public String show(@RequestParam("id")int productId,@RequestParam("pId")int pId,Model model,HttpServletRequest request) {
 				Orders theorder = new Orders();
-				//System.out.println(productId);
 				theorder.setProductId(productId);
 			Product product=productService.findByProductId(productId);
 				theorder.setPersonId(pId);

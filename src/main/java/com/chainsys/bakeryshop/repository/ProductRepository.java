@@ -3,8 +3,6 @@ package com.chainsys.bakeryshop.repository;
 import java.util.List;
 
 import org.springframework.data.repository.CrudRepository;
-import org.springframework.stereotype.Repository;
-
 import com.chainsys.bakeryshop.model.Product;
 
 public interface ProductRepository extends CrudRepository<Product,Long> {
