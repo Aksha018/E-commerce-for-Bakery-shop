@@ -25,6 +25,8 @@ import com.chainsys.bakeryshop.services.ProductService;
 @RequestMapping("/person")
 public class OrderController {
 	
+	public static final String ADDORDERS="add-orders";
+	
 	@Autowired
 	OrderService orderService;
 	@Autowired
@@ -32,9 +34,9 @@ public class OrderController {
 	
 	@Autowired
 	private ProductService productService;
-
 	
-			@GetMapping("/orderlist")
+	
+       @GetMapping("/orderlist")
 			public String getorderAll(Model model) {
 				List<Orders> orderlist = orderService.getOrder();
 				model.addAttribute("allorder", orderlist);
@@ -50,20 +52,20 @@ public class OrderController {
 				theorder.setPersonId(pId);
 			theorder.setPrice((int)product.getPrice());
 				model.addAttribute("add", theorder);
-				return "add-orders";
+				return ADDORDERS;
 			}
 
 			@PostMapping("/addorder")
 			public String addNewOrder(@Valid @ModelAttribute("add") Orders order, Errors error,Model model){
 				if(error.hasErrors()) {
-	               return "add-orders";
+	               return ADDORDERS;
 				}try {
 				order=orderService.save(order);
 				long id=order.getOrderId();
 				return "redirect:/payment/addpaymentform?id="+id;
 				}catch (Exception e) {
 					model.addAttribute("message","Please!!!, enter the valid data");
-				    return "add-orders";
+				    return ADDORDERS;
 				}
 			}
 
