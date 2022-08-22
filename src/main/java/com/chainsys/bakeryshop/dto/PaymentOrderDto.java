@@ -7,20 +7,20 @@ import com.chainsys.bakeryshop.model.Payment;
 import com.chainsys.bakeryshop.model.Orders;
 
 public class PaymentOrderDto {
-	private Payment Payment;
-	 private List<Orders> Order = new ArrayList<>();
+	private Payment payment;
+	 private List<Orders> order = new ArrayList<>();
 	public Payment getPayment() {
-		return Payment;
+		return payment;
 	}
-	public void setPayment(Payment Payment) {
-		this.Payment = Payment;
+	public void setPayment(Payment payment) {
+		this.payment = payment;
 	}
 	public List<Orders> getOrdert() {
-		return Order;
+		return order;
 	}
 	
-	public void setProduct(List<Orders> Order) {
-		this.Order = Order;
+	public void setProduct(List<Orders> order) {
+		this.order = order;
 	}
 	 
 }

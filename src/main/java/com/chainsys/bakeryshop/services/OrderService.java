@@ -18,8 +18,8 @@ public class OrderService {
 
 	
 	public List<Orders> getOrder() {
-		List<Orders> Orderlist = orderRepository.findAll();
-		return Orderlist;
+		return orderRepository.findAll();
+		 
 	}
 	public Orders save(Orders theorder) {
 		theorder=orderRepository.save(theorder); 

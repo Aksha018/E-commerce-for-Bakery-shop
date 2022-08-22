@@ -14,8 +14,8 @@ import com.chainsys.bakeryshop.repository.PaymentRepository;
 		PaymentRepository paymentRepository;
 		
 		public List<Payment> getPayment() {
-			List<Payment> Paymentlist = paymentRepository.findAll();
-			return Paymentlist;
+			return paymentRepository.findAll();
+			
 		}
 		public Payment save(Payment pay) {
 			return paymentRepository.save(pay);

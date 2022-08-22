@@ -20,8 +20,8 @@ public class BillService {
 	OrderRepository orderRepository;
 
 	public List<Bill> getBill() {
-		List<Bill> billlist = billRepository.findAll();
-		return billlist;
+		return  billRepository.findAll();
+		
 	}
 
 	public Bill save(Bill bill) {

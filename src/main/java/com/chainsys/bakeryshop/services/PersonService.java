@@ -20,8 +20,8 @@ public class PersonService {
 	OrderRepository orderRepository;
 
 	public List<Person> getPerson() {
-		List<Person> productlist = personRepository.findAll();
-		return productlist;
+		return personRepository.findAll();
+		
 	}
 
 	public Person save(Person per) {

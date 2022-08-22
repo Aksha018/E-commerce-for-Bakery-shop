@@ -23,8 +23,8 @@ public class ProductService {
 	OrderRepository orderRepository;
 	
 	public List<Product> getProduct() {
-		List<Product> productlist = productRepository.findAll();
-		return productlist;
+		return productRepository.findAll();
+		
 	}
 	public List<Product> getProductsByCategoryId(int categoryId) {
 		List<Product> productlist = productRepository.findByCategoryId(categoryId);

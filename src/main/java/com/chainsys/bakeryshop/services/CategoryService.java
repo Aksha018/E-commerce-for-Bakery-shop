@@ -15,8 +15,8 @@ public class CategoryService {
 	ProductRepository productRepository;
 	
 	public List<Category> getCategory() {
-		List<Category> categorylist = categoryRepository.findAll();
-		return categorylist;
+		 return categoryRepository.findAll();
+		
 	}	
 
 	public Category save( Category category) {
