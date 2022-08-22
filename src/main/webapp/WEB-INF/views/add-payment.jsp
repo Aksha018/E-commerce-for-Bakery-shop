@@ -37,13 +37,13 @@
 				<div>
 					<label for="orderId">Order Id</label>
 					<div>
-						<form:input path="orderId" />
+						<form:input path="orderId" readonly="true" />
 					</div>
 				</div>
 				<div>
 					<label for="amount">Amount</label>
 					<div>
-						<form:input path="amount" />
+						<form:input path="amount" readonly="true"/>
 					</div>
 				</div>
 				<div>

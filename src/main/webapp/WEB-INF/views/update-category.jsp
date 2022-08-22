@@ -25,7 +25,7 @@
 				<div>
 					<label for="categoryName">Category Name</label>
 					<div>
-						<form:input path="categoryName" />
+						<form:input path="categoryName" required="true" />
 					</div>
 				</div>
 				<form:button>Update New</form:button>

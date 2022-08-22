@@ -19,10 +19,9 @@ body {
      left: 10%;
      right: 10%;
      bottom: 10%;
-     display: flex;
      justify-content: center;
      align-items: center;
-     background:url('https://images.creativemarket.com/0.1.0/ps/797108/600/400/m2/fpnw/wm0/cake-shop-logo-mock-up-1-.jpg?1448176497&s=fca93295192f47cf4a2255136b34d1db&fmt=webp') #151729;
+     background: #000000;
      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
 }
 

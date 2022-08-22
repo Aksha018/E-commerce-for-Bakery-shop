@@ -6,10 +6,16 @@ body {
 	}
 table{
     text-align: center;
-    width: 90%;
+    width: 703px;
+    margin: 144px;
+    height: 344px;
+    margin-left: 264px;
 }
  
  table, th, td {
     border: 2px solid black;
     border-collapse: collapse;
 }
+tr:hover {
+	background-color: Aquamarine;
+	}
