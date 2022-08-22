@@ -50,7 +50,7 @@ public class PersonService {
 		List<Orders> order = orderRepository.findByPersonId(id);
 		Iterator<Orders> itr = order.iterator();
 		while (itr.hasNext()) {
-			dto.addOrder((Orders) itr.next());
+			dto.addOrder(itr.next());
 		}
 		return dto;
 	}
