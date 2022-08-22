@@ -3,9 +3,12 @@ package com.chainsys.bakeryshop.controller;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -40,6 +43,7 @@ public class OrderController {
 
 			@GetMapping("/addorderform")
 			public String show(@RequestParam("id")int productId,@RequestParam("pId")int pId,Model model,HttpServletRequest request) {
+				
 				Orders theorder = new Orders();
 				theorder.setProductId(productId);
 			Product product=productService.findByProductId(productId);
@@ -50,10 +54,17 @@ public class OrderController {
 			}
 
 			@PostMapping("/addorder")
-			public String addNewOrder(@ModelAttribute("add") Orders order){
+			public String addNewOrder(@Valid @ModelAttribute("add") Orders order, Errors error,Model model){
+				if(error.hasErrors()) {
+	               return "add-orders";
+				}try {
 				order=orderService.save(order);
 				long id=order.getOrderId();
 				return "redirect:/payment/addpaymentform?id="+id;
+				}catch (Exception e) {
+					model.addAttribute("message","Please!!!, enter the valid data");
+				    return "add-orders";
+				}
 			}
 
 			@GetMapping("/updateorderform")

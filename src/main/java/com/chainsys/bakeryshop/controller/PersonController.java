@@ -86,11 +86,12 @@ public class PersonController {
         		model.addAttribute("pId", persons.getPersonId());
         		return "home";
         	}else {
-        		return "invalid-user-error";
+        		
+        		model.addAttribute("result","Invalid username and password");
         	}
-        }else {
-        	return "redirect:/person/personloginpage";
+        	return "invalid-user-error";
         }
+        return "redirect:/person/personloginpage";
 	}
     
     @GetMapping("/updatepersonform")

@@ -119,8 +119,8 @@ nav .menu {
 }
 .login-form {
     width: 500px;
-    top: 400px;
-    left: 700px;
+    top:200px;
+    left: 550px;
     transform: translate(-50%, -50%);
     position: absolute;
     color: #fff;

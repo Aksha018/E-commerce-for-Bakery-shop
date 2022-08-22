@@ -48,6 +48,9 @@
 				</form:select>
 			</div>
 			<form:button id="log">Login</form:button>
+			<div class="error">
+			<div>${result}</div>
+			</div>
 		</form:form>
 	</div>
 </body>

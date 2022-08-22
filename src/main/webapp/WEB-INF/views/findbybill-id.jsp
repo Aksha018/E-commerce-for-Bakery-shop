@@ -11,6 +11,9 @@
 <style>
 <%@include file="/WEB-INF/views/css/findby-billid.css"%>
 </style>
+<style>
+<%@include file="/WEB-INF/views/css/payment-success.css"%>
+</style>
 <body>
 <nav>
 		<div class="menu">
@@ -22,9 +25,11 @@
 			</ul>
 		</div>
 	</nav>
-	<div class="login-form">
+	<div id=container>
+        <div class="content">
+           <div class="login-form">
 	<div id="root">
-	<h1 style="text-align: center" style="margin-top: -100px;">PAYMENT SUCCESSFULL</h1>
+	<h4>PAYMENT SUCCESSFUL</h4>
 	
 			<form:form action="updatebill" method="post" modelAttribute="update">
 					<div>
@@ -51,8 +56,20 @@
 			</form:form>
 		</div>
 	</div>
+        </div>
+    </div>
 </body>
 <script type="text/javascript">
   document.getElementById('date').value = new Date().toISOString(); 
+</script>
+<script>
+var container  = document.getElementById('container');
+window.onmousemove =  function(e) {
+    var x = - e.clientX/5;
+        y = - e.clienty/5;
+    container.style.backgroundPositionX = x + 'px';
+    container.style.backgroundPositionY = y + 'py';
+
+}
 </script>
 </html>

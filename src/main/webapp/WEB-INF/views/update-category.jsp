@@ -14,6 +14,7 @@
 <body>
 	<div id="root">
 		<div id="form">
+		<div id="form" style="text-align: center">
 			<form:form action="updatecategory" method="post" modelAttribute="updatecategory">
 				<div>
 					<label for="categoryId">Category Id</label>
@@ -30,6 +31,7 @@
 				<form:button>Update New</form:button>
 			</form:form>
 		</div>
+	</div>
 	</div>
 </body>
 </html>

@@ -22,6 +22,7 @@
 			</ul>
 		</div>
 	</nav>
+	<div>${message}</div>
 	<div class="login-form">
 		<div>
 			<form:form action="addorder" method="post" modelAttribute="add">
