@@ -10,12 +10,14 @@ table{
     margin: 144px;
     height: 344px;
     margin-left: 264px;
+    color: #000000;
+    font-size: 20px;
 }
  
  table, th, td {
-    border: 2px solid black;
+    border: 2px solid  black;
     border-collapse: collapse;
 }
 tr:hover {
-	background-color: Aquamarine;
+	background-color:#F5FFFA;
 	}

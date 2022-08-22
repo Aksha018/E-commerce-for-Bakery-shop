@@ -21,6 +21,7 @@
 				<li><a href="/person/orderlist">Orders</a></li>		
 				<li><a href="/payment/paymentlist">Payment Details</a></li>		
 				<li><a href="/bill/billlist">Bill Details</a></li>	
+				
 			</ul>
 		</div>
 	</nav>
