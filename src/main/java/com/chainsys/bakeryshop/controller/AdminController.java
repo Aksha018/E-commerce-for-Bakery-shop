@@ -70,7 +70,7 @@ public class AdminController {
 	}
 
 	@PostMapping("updatecategory")
-	public String updateCategory(@Valid @ModelAttribute("updatecategory") Category cate, Errors error, Model model) {
+	public String categoryUpdate(@Valid @ModelAttribute("updatecategory") Category cate, Errors error, Model model) {
 		if (error.hasErrors()) {	
 			return UPDATECATEGORY;
 		} else {
@@ -119,7 +119,7 @@ public class AdminController {
 		return UPDATEPRODUCT;
 	}
 	@PostMapping("update")
-	public String updateProduct(@Valid @ModelAttribute("updateproduct") Product products,Errors error,Model model) {
+	public String productUpdate(@Valid @ModelAttribute("updateproduct") Product products,Errors error,Model model) {
 		if (error.hasErrors()) {
 			return UPDATEPRODUCT;
 		} else {
