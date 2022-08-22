@@ -27,8 +27,8 @@ public class ProductService {
 		
 	}
 	public List<Product> getProductsByCategoryId(int categoryId) {
-		List<Product> productlist = productRepository.findByCategoryId(categoryId);
-		return productlist;
+		return productRepository.findByCategoryId(categoryId);
+		
 	}
 	public Product save(Product product) {
 		return productRepository.save(product);
@@ -48,7 +48,7 @@ public class ProductService {
 		List<Orders> order = orderRepository.findByProductId(id);
 		Iterator<Orders> itr = order.iterator();
 		while (itr.hasNext()) {
-			dto.addOrder((Orders) itr.next());
+			dto.addOrder(itr.next());
 		}
 		return dto;
 }
