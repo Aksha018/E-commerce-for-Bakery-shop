@@ -23,6 +23,7 @@ import com.chainsys.bakeryshop.services.ProductService;
 public class AdminController {
 	public static final String LISTOFCATEGORY="redirect:/admin/categorylist";
 	public static final String LISTOFPRODUCT="redirect:/admin/productlist";
+	public static final String  PERSONID="personId";
 	
 	@Autowired
 	CategoryService categoryService;
@@ -132,42 +133,42 @@ public class AdminController {
 	 @GetMapping("/cake")
 	 public String cake(@RequestParam("id")int pId,Model model,HttpServletRequest request) {
 		HttpSession session= request.getSession();
-		session.setAttribute("pId", session.getAttribute("personId"));
+		session.setAttribute("pId", session.getAttribute(PERSONID));
 		model.addAttribute("pId", pId);
 		 return "cake";
 	 }
 	 @GetMapping("/cookies")
 	 public String cookies(@RequestParam("id")int pId,Model model,HttpServletRequest request) {
 				HttpSession session= request.getSession();
-				session.setAttribute("pId", session.getAttribute("personId"));
+				session.setAttribute("pId", session.getAttribute(PERSONID));
 				model.addAttribute("pId", pId);
 				 return "cookies";
 	 }
 	 @GetMapping("/cupcakes")
 		 public String cupcakes(@RequestParam("id")int pId,Model model,HttpServletRequest request) {
 				HttpSession session= request.getSession();
-				session.setAttribute("pId", session.getAttribute("personId"));
+				session.setAttribute("pId", session.getAttribute(PERSONID));
 				model.addAttribute("pId", pId);
 				 return "cupcakes";
 	 }
 	 @GetMapping("/chocolates")
 		 public String chocolates(@RequestParam("id")int pId,Model model,HttpServletRequest request) {
 				HttpSession session= request.getSession();
-				session.setAttribute("pId", session.getAttribute("personId"));
+				session.setAttribute("pId", session.getAttribute(PERSONID));
 				model.addAttribute("pId", pId);
 				 return "chocolates";
 	 }
 	 @GetMapping("/donuts")
 		 public String donuts(@RequestParam("id")int pId,Model model,HttpServletRequest request) {
 				HttpSession session= request.getSession();
-				session.setAttribute("pId", session.getAttribute("personId"));
+				session.setAttribute("pId", session.getAttribute(PERSONID));
 				model.addAttribute("pId", pId);
 				 return "donuts";
 	 }
 	 @GetMapping("/muffins")
 	 public String muffins(@RequestParam("id")int pId,Model model,HttpServletRequest request) {
 				HttpSession session= request.getSession();
-				session.setAttribute("pId", session.getAttribute("personId"));
+				session.setAttribute("pId", session.getAttribute(PERSONID));
 				model.addAttribute("pId", pId);
 				 return "muffins";
 	 }
