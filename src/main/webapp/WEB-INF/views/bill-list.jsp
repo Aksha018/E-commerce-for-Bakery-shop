@@ -12,7 +12,7 @@
 </head>
 <body>
 <div id="table root">
-   <div id="form" align="center">
+   <div id="form" style="text-align: center">
   <table>
   <caption></caption>
 		<thead>

@@ -22,7 +22,7 @@
 			</ul>
 		</div>
 	</nav>
-	<h1 align="center" style="margin-top: 80px;">Sign Up</h1>
+	<h1 style="text-align: center" style="margin-top: 80px;">Sign Up</h1>
 	<div class="login-form">
 		<form:form action="addperson" method="post" modelAttribute="add">
 	        <div>

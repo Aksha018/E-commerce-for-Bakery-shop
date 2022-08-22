@@ -7,12 +7,13 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>List-Category</title>
+</head>
 <style>
 <%@include file="/WEB-INF/views/css/cat-list.css"%>
 </style>
-</head>
+<body>
 <div id="table root">
-<div id="form" align="center">
+<div id="form" style="text-align: center">
 	<table>
 	<caption></caption>
 		<thead>

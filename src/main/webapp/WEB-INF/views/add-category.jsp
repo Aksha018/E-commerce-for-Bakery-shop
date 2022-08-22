@@ -13,7 +13,7 @@
 </head>
 <body>
 	<div id="root">
-		<div id="form" align="center">
+		<div id="form" style="text-align: center">
 			<form:form action="add" method="post" modelAttribute="addcategory">
 				<div>
 					<label for="categoryName">Category Name</label>

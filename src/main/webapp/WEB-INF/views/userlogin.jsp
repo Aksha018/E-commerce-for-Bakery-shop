@@ -22,7 +22,7 @@
 			</ul>
 		</div>
 	</nav>
-	<h1 align="center" style="margin-top: 110px;">Login</h1>
+	<h1 style="text-align: center" style="margin-top: 110px;">Login</h1>
 	<div class="login-form">
 		<form:form action="checkuserlogin" method="post"
 			modelAttribute="uselogin">

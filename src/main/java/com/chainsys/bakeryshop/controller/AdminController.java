@@ -4,7 +4,6 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -37,7 +36,7 @@ public class AdminController {
 		return "category-list";
 	}
 
-	@GetMapping("/addcatgoryform")
+	@GetMapping("/addcategoryform")
 	public String showAddForm(Model model) {
 		Category category = new Category();
 		model.addAttribute("addcategory", category);
@@ -46,9 +45,10 @@ public class AdminController {
 
 	@PostMapping("/add")
 	public String addNewCategory(@ModelAttribute("addcategory") Category cat) {
-		categoryService.save(cat);
-		return LISTOFCATEGORY;
-	}
+		       categoryService.save(cat);
+				return LISTOFCATEGORY;
+			}
+	
 
 	@GetMapping("/deletecategory")
 	public String deleteCategory(@RequestParam("categoryId") int id) {

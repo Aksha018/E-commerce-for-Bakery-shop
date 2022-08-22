@@ -24,7 +24,7 @@
 	</nav>
 	<div class="login-form">
 	<div id="root">
-	<h1 align="center" style="margin-top: -100px;">PAYMENT SUCCESSFULL</h1>
+	<h1 style="text-align: center" style="margin-top: -100px;">PAYMENT SUCCESSFULL</h1>
 	
 			<form:form action="updatebill" method="post" modelAttribute="update">
 					<div>
