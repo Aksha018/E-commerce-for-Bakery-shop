@@ -133,7 +133,6 @@ public class AdminController {
 	 public String cake(@RequestParam("id")int pId,Model model,HttpServletRequest request) {
 		HttpSession session= request.getSession();
 		session.setAttribute("pId", session.getAttribute("personId"));
-		System.out.println(session.getAttribute("personId"));
 		model.addAttribute("pId", pId);
 		 return "cake";
 	 }
@@ -141,7 +140,6 @@ public class AdminController {
 	 public String cookies(@RequestParam("id")int pId,Model model,HttpServletRequest request) {
 				HttpSession session= request.getSession();
 				session.setAttribute("pId", session.getAttribute("personId"));
-				System.out.println(session.getAttribute("personId"));
 				model.addAttribute("pId", pId);
 				 return "cookies";
 	 }
@@ -149,7 +147,6 @@ public class AdminController {
 		 public String cupcakes(@RequestParam("id")int pId,Model model,HttpServletRequest request) {
 				HttpSession session= request.getSession();
 				session.setAttribute("pId", session.getAttribute("personId"));
-				System.out.println(session.getAttribute("personId"));
 				model.addAttribute("pId", pId);
 				 return "cupcakes";
 	 }
@@ -157,7 +154,6 @@ public class AdminController {
 		 public String chocolates(@RequestParam("id")int pId,Model model,HttpServletRequest request) {
 				HttpSession session= request.getSession();
 				session.setAttribute("pId", session.getAttribute("personId"));
-				System.out.println(session.getAttribute("personId"));
 				model.addAttribute("pId", pId);
 				 return "chocolates";
 	 }
@@ -165,7 +161,6 @@ public class AdminController {
 		 public String donuts(@RequestParam("id")int pId,Model model,HttpServletRequest request) {
 				HttpSession session= request.getSession();
 				session.setAttribute("pId", session.getAttribute("personId"));
-				System.out.println(session.getAttribute("personId"));
 				model.addAttribute("pId", pId);
 				 return "donuts";
 	 }
@@ -173,7 +168,6 @@ public class AdminController {
 	 public String muffins(@RequestParam("id")int pId,Model model,HttpServletRequest request) {
 				HttpSession session= request.getSession();
 				session.setAttribute("pId", session.getAttribute("personId"));
-				System.out.println(session.getAttribute("personId"));
 				model.addAttribute("pId", pId);
 				 return "muffins";
 	 }
