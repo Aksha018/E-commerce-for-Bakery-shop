@@ -25,6 +25,7 @@ User -----> User SignUp---->User Login
                              -Order Details 
                              -Payment Gateway
                              -Bill details
+                             
 # Features
 
 1.DB Connectivity.
@@ -34,8 +35,6 @@ User -----> User SignUp---->User Login
 5.Form null validation in Oracle database level.
 6.Exception Handling with try and catch.
 7. Generating Id automatically.
-
-# Technology
 
 # FrontEnd 
 
