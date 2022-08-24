@@ -27,7 +27,8 @@
 		<form:form action="addperson" method="post" modelAttribute="add">
 	        <div>
 				<label for="personName">Person Name</label>
-				<form:input id="personName" path="personName" pattern="^[a-z A-Z]+$" title="Please Enter Alphabtes Only"  placeholder = "Enter Your Name"/>
+				<form:input id="personName" path="personName" pattern="^[a-z A-Z]+$" title="Please Enter Alphabtes Only"  placeholder = "Enter Your Name" required="true"/>
+	
 			</div>
 			<div>
 				<label for="email">Email</label>

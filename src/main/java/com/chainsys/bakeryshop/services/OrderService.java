@@ -6,25 +6,27 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.chainsys.bakeryshop.model.Orders;
+import com.chainsys.bakeryshop.model.Product;
 import com.chainsys.bakeryshop.repository.OrderRepository;
-import com.chainsys.bakeryshop.repository.PersonRepository;
 
 @Service
 public class OrderService {
 	@Autowired
 	OrderRepository orderRepository;
-	@Autowired
-	PersonRepository personRepository;
-
+@Autowired
+ProductService productService;
 	
 	public List<Orders> getOrder() {
 		return orderRepository.findAll();
 		 
 	}
 	public Orders save(Orders theorder) {
-		theorder=orderRepository.save(theorder); 
+    Product product=productService.findByProductId(theorder.getProductId());
+	product.setStockInhand(product.getStockInhand()-theorder.getQuantity());
+	productService.save(product);
+		return orderRepository.save(theorder); 
 		
-		return theorder;
+		
 	}
 
 	public  Orders findByOrderId(long id) {

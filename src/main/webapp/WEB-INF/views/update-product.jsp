@@ -51,6 +51,9 @@
 						<form:input path="description" />
 					</div>
 				</div>
+				<div>
+				${message}
+				</div>
 				<form:button>Update New</form:button>
 			</form:form>
 		</div>

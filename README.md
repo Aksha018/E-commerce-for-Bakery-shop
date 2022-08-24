@@ -11,31 +11,32 @@
 	IndexPage---->Sign-Up--->Log-in--->User login
 
     Admin -----> Log-in----->Admin login 
-    -Category List 
-    -Update Category ,Delete Category 
-    -Product List 
-    -Update Product, Delete Product 
-    -Order Details List 
-    -Payment Details List 
-    -Bill Details List
-
+                          -Category List 
+                          -Update Category ,Delete Category 
+                          -Product List 
+                          -Update Product, Delete Product 
+                          -Order Details List 
+                          -Payment Details List 
+                          -Bill Details List
+                          
+    
     User -----> User SignUp---->User Login 
-    -View Category---->Select Category 
-    -View Product----->Select product 
-	-View product Details 
-	-Order Details 
-	-Payment Gateway -Bill details
+                     -View Category---->Select Category 
+                     -View Product----->Select product 
+	                 -View product Details 
+	                 -Order Details 
+	                 -Payment Gateway
+	                 -Bill details
 
 
 #Features
 
     1.DB Connectivity. 
     2.DB Relational data Handling. One to many relation. 
-    3.Form validation in FrontEnd level. 
-    4.Form validation in JavaScript level. 
-    5.Form null validation in Oracle database level. 
-    6.Exception Handling with try and catch.
-    7.Generating Id automatically.
+    3.Form validation in FrontEnd level.  
+    4.Form null validation in Oracle database level. 
+    5.Exception Handling with try and catch.
+    6.Generating Id automatically.
 
 #FrontEnd
 

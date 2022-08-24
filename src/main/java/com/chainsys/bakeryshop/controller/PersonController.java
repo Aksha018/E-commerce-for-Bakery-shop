@@ -21,6 +21,7 @@ import com.chainsys.bakeryshop.services.PersonService;
 public class PersonController {
 	@Autowired
 	PersonService personservice;
+	
 	@GetMapping("/homepage")
 	public String index(Model model)
 	{
